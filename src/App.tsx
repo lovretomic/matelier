@@ -17,7 +17,7 @@ function App() {
         <div className="footer-contacts">
           <h2>kontakt</h2>
           <div className="icon-div">
-            <PhoneIcon />
+            <PhoneIcon className="contact-icon" />
           </div>
         </div>
       </div>
