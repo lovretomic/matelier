@@ -40,3 +40,15 @@ body {
   width: 379px;
   height: 110px;
 }
+
+.icon-div {
+  width: 38px;
+  height: 38px;
+  gap: 8px;
+  border-radius: 8px;
+  padding: 8px;
+  background-color: rgba(247, 247, 247, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
