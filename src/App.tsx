@@ -1,10 +1,12 @@
 import "./App.scss";
+import LogoSmall from "./assets/icons/logo-small.svg?react";
 
 function App() {
   return (
-    <>
-      <h1 className="text">Hello world</h1>
-    </>
+    <footer className="footer">
+      <LogoSmall />
+      <h1 className="title">PRIPREME ZA PRIJEMNE ISPITE IZ MATEMATIKE</h1>
+    </footer>
   );
 }
 

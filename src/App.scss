@@ -1,3 +1,13 @@
-.text {
+.title {
   font-family: Figtree;
+}
+
+.footer {
+  height: 100dvh;
+  background-color: $dark-blue;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
