@@ -14,12 +14,29 @@ body {
   padding: 94px 0 32px 0;
 }
 
-.title {
+.footer-title {
+  width: 433px;
+  height: 185px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.title-text {
   font-family: "Figtree";
   font-weight: 700;
-  font-style: bold;
   color: $ugly-white;
   opacity: 0.6;
   font-size: 24px;
   letter-spacing: 10%;
+  text-align: center;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 10%;
+}
+
+.logo {
+  width: 379px;
+  height: 110px;
 }
