@@ -1,5 +1,5 @@
-.title {
-  font-family: Figtree;
+body {
+  margin: 0;
 }
 
 .footer {
@@ -8,6 +8,18 @@
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+
+  padding: 94px 0 32px 0;
+}
+
+.title {
+  font-family: "Figtree";
+  font-weight: 700;
+  font-style: bold;
+  color: $ugly-white;
+  opacity: 0.6;
+  font-size: 24px;
+  letter-spacing: 10%;
 }
