@@ -10,7 +10,7 @@ function App() {
       <div className="footer-title">
         <LogoSmall className="logo" />
         <h1 className="footer-title-text">
-          PRIPREME ZA PRIJEMNE ISPITE IZ MATEMATIKE
+          PRIPREME ZA PRIJEMNE <br /> ISPITE IZ MATEMATIKE
         </h1>
       </div>
       <div className="footer-content">

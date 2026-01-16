@@ -15,8 +15,6 @@ body {
 }
 
 .footer-title {
-  width: 433px;
-  height: 185px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -37,8 +35,9 @@ body {
 }
 
 .logo {
-  width: 379px;
-  height: 110px;
+  width: 100%;
+  max-width: 330px;
+  height: auto;
 }
 
 .contact-icon {
