@@ -16,8 +16,11 @@ function App() {
       <div className="footer-content">
         <div className="footer-contacts">
           <h2 className="footer-h2">KONTAKT</h2>
-          <div className="icon-div">
-            <PhoneIcon className="contact-icon" />
+          <div className="contact-item">
+            <div className="icon-div">
+              <PhoneIcon className="contact-icon" />
+            </div>
+            <span className="footer-text">098 923 4897</span>
           </div>
         </div>
       </div>
