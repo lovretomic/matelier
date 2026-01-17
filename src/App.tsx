@@ -16,11 +16,27 @@ function App() {
       <div className="footer-content">
         <div className="footer-contacts">
           <h2 className="footer-h2">KONTAKT</h2>
-          <div className="contact-item">
-            <div className="icon-div">
-              <PhoneIcon className="contact-icon" />
+          <div className="contact-items">
+            <div className="contact">
+              <div className="icon-div">
+                <PhoneIcon className="contact-icon" />
+              </div>
+              <span className="footer-text">098 923 4897</span>
             </div>
-            <span className="footer-text">098 923 4897</span>
+
+            <div className="contact">
+              <div className="icon-div">
+                <EmailIcon className="contact-icon" />
+              </div>
+              <span className="footer-text">matelierpripreme@gmail.com</span>
+            </div>
+
+            <div className="contact">
+              <div className="icon-div">
+                <InstagramIcon className="contact-icon" />
+              </div>
+              <span className="footer-text">@matelier_pripreme</span>
+            </div>
           </div>
         </div>
       </div>

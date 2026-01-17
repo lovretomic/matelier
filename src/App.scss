@@ -38,8 +38,7 @@ body {
   font-family: "Figtree";
   font-weight: 900;
   color: $ugly-white;
-  size: 34px;
-  line-height: 100%;
+  font-size: 34px;
 }
 
 .footer-text {
@@ -48,6 +47,11 @@ body {
   color: $ugly-white;
   font-size: 34px;
   line-height: 100%;
+}
+
+.footer-contacts {
+  display: flex;
+  flex-direction: column;
 }
 
 .logo {
@@ -72,9 +76,15 @@ body {
   align-items: center;
 }
 
-.contact-item {
+.contact {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 32px;
+}
+
+.contact-items {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
 }
