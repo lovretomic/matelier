@@ -13,30 +13,29 @@ function App() {
           Pripreme za prijemne <br /> ispite iz matematike
         </h1>
       </div>
-      <div className="content">
-        <div className="contacts">
-          <h2 className="label">Kontakt</h2>
+
+      <div className="contacts">
+        <h2 className="label">Kontakt</h2>
+        <div className="items-wrapper">
           <div className="item">
-            <div className="contact">
-              <div className="icon-div">
-                <PhoneIcon className="icon" />
-              </div>
-              <span className="text">098 923 4897</span>
+            <div className="icon-div">
+              <PhoneIcon className="icon" />
             </div>
+            <span className="text">098 923 4897</span>
+          </div>
 
-            <div className="contact">
-              <div className="icon-div">
-                <EmailIcon className="icon" />
-              </div>
-              <span className="text">matelierpripreme@gmail.com</span>
+          <div className="item">
+            <div className="icon-div">
+              <EmailIcon className="icon" />
             </div>
+            <span className="text">matelierpripreme@gmail.com</span>
+          </div>
 
-            <div className="contact">
-              <div className="icon-div">
-                <InstagramIcon className="icon" />
-              </div>
-              <span className="text">@matelier_pripreme</span>
+          <div className="item">
+            <div className="icon-div">
+              <InstagramIcon className="icon" />
             </div>
+            <span className="text">@matelier_pripreme</span>
           </div>
         </div>
       </div>
