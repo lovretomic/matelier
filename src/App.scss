@@ -2,6 +2,10 @@ body {
   margin: 0;
 }
 
+* {
+  font-family: "Figtree";
+}
+
 .footer {
   min-height: 100dvh;
   background-color: $dark-blue;
@@ -10,8 +14,6 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-
-  padding: 94px 0 32px 0;
 }
 
 .footer-title {
@@ -19,30 +21,27 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  margin-top: 93px;
 }
 
 .footer-title-text {
-  font-family: "Figtree";
   font-weight: 700;
   color: $ugly-white;
   opacity: 0.6;
   font-size: 24px;
   letter-spacing: 10%;
   text-align: center;
-  font-weight: 700;
   line-height: 100%;
   letter-spacing: 10%;
 }
 
 .footer-h2 {
-  font-family: "Figtree";
   font-weight: 900;
   color: $ugly-white;
   font-size: 34px;
 }
 
 .footer-text {
-  font-family: "Figtree";
   font-weight: 400;
   color: $ugly-white;
   font-size: 34px;
