@@ -6,6 +6,22 @@ body {
   font-family: "Figtree";
 }
 
+.packages {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(#2a9d8f, #01ccb3);
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    text-align: center;
+    font-size: 96px;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: $ugly-white;
+  }
+}
+
 .footer {
   min-height: 100dvh;
   background-color: $dark-blue;

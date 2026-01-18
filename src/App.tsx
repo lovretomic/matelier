@@ -13,7 +13,10 @@ function App() {
       <section className="methods"></section>
       <section className="goal"></section>
       <section className="who"></section>
-      <section className="packages"></section>
+      <section className="packages">
+        <h2 className="title">Paketi</h2>
+        <div className="stickies-wrapper"></div>
+      </section>
       <section className="location"></section>
       <footer className="footer">
         <div className="logo-wrapper">
