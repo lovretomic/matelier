@@ -33,10 +33,9 @@ body {
       color: $ugly-white;
       opacity: 0.6;
       font-size: 24px;
-      letter-spacing: 10%;
       text-align: center;
       line-height: 100%;
-      letter-spacing: 10%;
+      letter-spacing: 4px;
       text-transform: uppercase;
     }
   }
@@ -105,7 +104,9 @@ body {
           gap: 24px;
 
           .contact {
-            width: 460px;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0 40px;
             height: 150px;
             background-color: rgba(247, 247, 247, 0.05);
             border-radius: 16px;
