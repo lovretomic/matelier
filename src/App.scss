@@ -15,12 +15,15 @@ body {
   justify-content: flex-start;
   align-items: center;
 
+  gap: 60px;
+
   .logo-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     margin-top: 93px;
+    max-width: 80%;
 
     .logo {
       width: 100%;
@@ -90,10 +93,14 @@ body {
     }
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
+    .logo-wrapper {
+      margin: 24px 40px;
+      width: 80%;
+    }
     .content {
-      margin-top: 174px;
-      margin-bottom: 123px;
+      margin-top: 10px;
+      margin-bottom: 20px;
 
       .contacts {
         .label {
@@ -106,7 +113,7 @@ body {
           .contact {
             width: 100%;
             box-sizing: border-box;
-            padding: 0 40px;
+            padding: 0 10px;
             height: 150px;
             background-color: rgba(247, 247, 247, 0.05);
             border-radius: 16px;
