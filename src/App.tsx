@@ -17,21 +17,39 @@ function App() {
       <div className="contacts">
         <h2 className="label">Kontakt</h2>
         <div className="items-wrapper">
-          <div className="item">
+          <div
+            className="item"
+            onClick={() => {
+              window.location.href = "tel:0989234897";
+            }}
+          >
             <div className="icon-div">
               <PhoneIcon className="icon" />
             </div>
             <span className="text">098 923 4897</span>
           </div>
 
-          <div className="item">
+          <div
+            className="item"
+            onClick={() => {
+              window.location.href = "mailto:matelierpripreme@gmail.com";
+            }}
+          >
             <div className="icon-div">
               <EmailIcon className="icon" />
             </div>
             <span className="text">matelierpripreme@gmail.com</span>
           </div>
 
-          <div className="item">
+          <div
+            className="item"
+            onClick={() => {
+              window.open(
+                "https://www.instagram.com/matelier_pripreme/",
+                "_blank",
+              );
+            }}
+          >
             <div className="icon-div">
               <InstagramIcon className="icon" />
             </div>
