@@ -1,10 +1,63 @@
 import "./App.scss";
+import LogoSmall from "./assets/icons/logo-small.svg?react";
+import PhoneIcon from "./assets/icons/phone.svg?react";
+import EmailIcon from "./assets/icons/email.svg?react";
+import InstagramIcon from "./assets/icons/instagram.svg?react";
 
 function App() {
   return (
-    <>
-      <h1 className="text">Hello world</h1>
-    </>
+    <footer className="footer">
+      <div className="logo-wrapper">
+        <LogoSmall className="logo" />
+        <h1 className="subtitle">
+          Pripreme za prijemne <br /> ispite iz matematike
+        </h1>
+      </div>
+
+      <div className="contacts">
+        <h2 className="label">Kontakt</h2>
+        <div className="items-wrapper">
+          <div
+            className="item"
+            onClick={() => {
+              window.location.href = "tel:0989234897";
+            }}
+          >
+            <div className="icon-div">
+              <PhoneIcon className="icon" />
+            </div>
+            <span className="text">098 923 4897</span>
+          </div>
+
+          <div
+            className="item"
+            onClick={() => {
+              window.location.href = "mailto:matelierpripreme@gmail.com";
+            }}
+          >
+            <div className="icon-div">
+              <EmailIcon className="icon" />
+            </div>
+            <span className="text">matelierpripreme@gmail.com</span>
+          </div>
+
+          <div
+            className="item"
+            onClick={() => {
+              window.open(
+                "https://www.instagram.com/matelier_pripreme/",
+                "_blank",
+              );
+            }}
+          >
+            <div className="icon-div">
+              <InstagramIcon className="icon" />
+            </div>
+            <span className="text">@matelier_pripreme</span>
+          </div>
+        </div>
+      </div>
+    </footer>
   );
 }
 
