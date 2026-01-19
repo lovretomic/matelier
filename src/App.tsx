@@ -37,22 +37,27 @@ function App() {
           </div>
         </div>
         <div className="content-wrapper">
-          <h2 className="title">Termini i lokacija</h2>
-          <div className="address-tag">
-            <LocationPinIcon className="icon" />
-            <span className="address">
-              Varšavska 18, 10000 Zagreb (OŠ Josipa Jurja Strossmayera)
-            </span>
+          <div className="text-wrapper">
+            <h2 className="title">Termini i lokacija</h2>
+            <div className="address-tag">
+              <LocationPinIcon className="icon" />
+              <span className="address">
+                Varšavska 18, 10000 Zagreb{" "}
+                <span className="secondary">
+                  (OŠ Josipa Jurja Strossmayera)
+                </span>
+              </span>
+            </div>
+            <p className="paragraph">
+              Pripreme iz <b>Paketa 1</b> odvijaju se jednom tjedno od 17:30 do
+              18 h. Za učenike koji imaju nastavu u smjenana, pripreme će se
+              prilagoditi njihovoj smjeni (ujutro i poslijepodne).
+            </p>
+            <p className="paragraph">
+              Pripreme iz <b>Paketa 2</b> odvijat će se svakodnevno od 12.
+              lipnja 2026., tj. nakon završetka nastave.
+            </p>
           </div>
-          <p className="paragraph">
-            Pripreme iz Paketa 1 odvijaju se jednom tjedno od 17:30 do 18 h. Za
-            učenike koji imaju nastavu u smjenana, pripreme će se prilagoditi
-            njihovoj smjeni (ujutro i poslijepodne).
-          </p>
-          <p className="paragraph">
-            Pripreme iz Paketa 2 odvijat će se svakodnevno od 12. lipnja 2026.,
-            tj. nakon završetka nastave.
-          </p>
           <GeographyTracing className="tracing" />
         </div>
       </section>
