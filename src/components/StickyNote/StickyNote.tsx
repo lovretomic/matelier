@@ -1,5 +1,12 @@
+import StickyNoteBack from "../../assets/images/sticky-note.svg?react";
+import c from "./StickyNote.module.scss";
+
 const StickyNote = () => {
-  return <div>sticky note</div>;
+  return (
+    <div className={c.wrapper}>
+      <StickyNoteBack className={c.background} />
+    </div>
+  );
 };
 
 export default StickyNote;

@@ -1,0 +1,15 @@
+.wrapper {
+  border: 2px solid rgba(red, 0.5);
+  display: flex;
+  width: 350px;
+  height: 280px;
+  position: relative;
+
+  .background {
+    position: absolute;
+    width: 150%;
+    height: 110%;
+    left: -120px;
+    top: -12px;
+  }
+}

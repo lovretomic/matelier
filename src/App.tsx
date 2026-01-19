@@ -16,7 +16,7 @@ function App() {
       <section className="who"></section>
       <section className="packages">
         <h2 className="title">Paketi</h2>
-        <div className="stickies-wrapper">
+        <div className="sticky-notes-wrapper">
           <StickyNote />
           <StickyNote />
           <StickyNote />

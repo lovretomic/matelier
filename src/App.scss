@@ -8,10 +8,18 @@ body {
 
 .packages {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-image: linear-gradient(#2a9d8f, #01ccb3);
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+
+  @media screen and (max-width: 890px) {
+    box-sizing: border-box;
+    padding-top: 40px;
+    gap: 0;
+  }
 
   .title {
     text-align: center;
@@ -19,6 +27,61 @@ body {
     text-transform: uppercase;
     font-weight: 900;
     color: $ugly-white;
+    margin: 0;
+
+    @media screen and (max-width: 890px) {
+      font-size: 70px;
+    }
+  }
+
+  .sticky-notes-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 40px 0;
+    overflow: hidden;
+
+    > div:nth-child(1) {
+      margin-top: -10px;
+      rotate: 3deg;
+    }
+
+    > div:nth-child(3) {
+      margin-top: -10px;
+      rotate: -3deg;
+    }
+
+    @media screen and (max-width: 1170px) {
+      gap: 0px;
+      > div {
+        scale: 0.85;
+      }
+    }
+    @media screen and (max-width: 1100px) {
+      > div {
+        scale: 0.75;
+        margin: 0 -30px;
+      }
+    }
+    @media screen and (max-width: 890px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+
+      > div {
+        rotate: 0deg !important;
+        margin: none;
+        scale: 1;
+      }
+    }
+    @media screen and (max-width: 460px) {
+      gap: 0;
+      > div {
+        scale: 0.8;
+      }
+    }
   }
 }
 
