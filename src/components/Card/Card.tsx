@@ -17,21 +17,21 @@ const palette = {
 type CardProps = {
   text: string;
   icon: string | React.ReactElement;
-  variant?: "default" | "small" | "large";
+  variant?: "small" | "medium" | "large";
   color: string;
 };
 
 const Card: React.FC<CardProps> = ({
   text,
   icon,
-  variant = "default",
+  variant = "small",
   color,
 }) => {
   return (
     <div
       className={clsx({
-        [c.default]: variant === "default",
         [c.small]: variant === "small",
+        [c.medium]: variant === "medium",
         [c.large]: variant === "large",
       })}
     >
