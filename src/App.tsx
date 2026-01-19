@@ -3,13 +3,16 @@ import LogoSmall from "./assets/icons/logo-small.svg?react";
 import PhoneIcon from "./assets/icons/phone.svg?react";
 import EmailIcon from "./assets/icons/email.svg?react";
 import InstagramIcon from "./assets/icons/instagram.svg?react";
+import Card from "./components/Card";
 
 function App() {
   return (
     <>
       <header className="header"></header>
       <section className="hero"></section>
-      <section className="why"></section>
+      <section className="why">
+        <Card text="Sample Text" icon={<PhoneIcon />} color="#ff0000" />
+      </section>
       <section className="methods"></section>
       <section className="goal"></section>
       <section className="who"></section>
