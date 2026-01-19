@@ -50,7 +50,7 @@ const Card: React.FC<CardProps> = ({
         ) : null}
       </div>
       {variant === "large" && title && <h3 className={c.title}>{title}</h3>}
-      {text}
+      {text && <span className={c.text}>{text}</span>}
     </div>
   );
 };
