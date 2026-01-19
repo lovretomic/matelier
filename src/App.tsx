@@ -6,6 +6,8 @@ import InstagramIcon from "./assets/icons/instagram.svg?react";
 
 import LocationPinIcon from "./assets/icons/location-pin.svg?react";
 
+import GeographyTracing from "./assets/tracings/geography.svg?react";
+
 function App() {
   return (
     <>
@@ -20,9 +22,10 @@ function App() {
         <div className="map-wrapper">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d437.7662589974481!2d15.970276874384956!3d45.812043529664045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d6e335d05a35%3A0x8e7b0e973cb2dfc7!2sOsnovna%20%C5%A1kola%20Josipa%20Jurja%20Strossmayera!5e0!3m2!1sen!2shr!4v1768836864912!5m2!1sen!2shr"
-            width="600"
-            height="450"
-            style={{ border: 0 }}
+            style={{
+              overflow: "hidden",
+              border: 0,
+            }}
             loading="lazy"
           />
           <div className="address-wrapper">
@@ -32,6 +35,25 @@ function App() {
               <span className="secondary"> (OŠ Josipa Jurja Strossmayera)</span>
             </span>
           </div>
+        </div>
+        <div className="content-wrapper">
+          <h2>Termini i lokacija</h2>
+          <div className="address-tag">
+            <LocationPinIcon className="icon" />
+            <span className="address">
+              Varšavska 18, 10000 Zagreb (OŠ Josipa Jurja Strossmayera)
+            </span>
+          </div>
+          <p className="paragraph">
+            Pripreme iz Paketa 1 odvijaju se jednom tjedno od 17:30 do 18 h. Za
+            učenike koji imaju nastavu u smjenana, pripreme će se prilagoditi
+            njihovoj smjeni (ujutro i poslijepodne).
+          </p>
+          <p>
+            Pripreme iz Paketa 2 odvijat će se svakodnevno od 12. lipnja 2026.,
+            tj. nakon završetka nastave.
+          </p>
+          <GeographyTracing className="tracing" />
         </div>
       </section>
       <footer className="footer">
