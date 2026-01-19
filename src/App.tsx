@@ -25,6 +25,7 @@ function App() {
               { icon: PhoneIcon, text: "blok sat jednom tjedno" },
               { icon: PhoneIcon, text: "od veljače 2025." },
             ]}
+            price={345}
           />
           <StickyNote
             title="Paket 2"
@@ -34,6 +35,7 @@ function App() {
               { icon: PhoneIcon, text: "svakodnevno po tri školska sata" },
               { icon: PhoneIcon, text: "nakon završetka nastavne godine" },
             ]}
+            price={285}
           />
           <StickyNote
             title="Simulacija"
@@ -44,6 +46,7 @@ function App() {
                 text: "uključuje povratnu informaciju i individualne konzultacije",
               },
             ]}
+            price={15}
           />
         </div>
       </section>

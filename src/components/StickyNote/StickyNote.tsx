@@ -10,12 +10,16 @@ type StickyNoteProps = {
   title: string;
   subtitle?: string;
   listItems?: IconListItem[];
+  price: number;
+  action?: () => void;
 };
 
 const StickyNote: React.FC<StickyNoteProps> = ({
   title,
   subtitle,
   listItems,
+  price,
+  action,
 }) => {
   return (
     <div className={c.wrapper}>
@@ -31,6 +35,14 @@ const StickyNote: React.FC<StickyNoteProps> = ({
             <span className={c.text}>{item.text}</span>
           </div>
         ))}
+      </div>
+      <div className={c.moreInfo}>
+        <span className={c.price}>{price} €</span>
+        {action && (
+          <button className={c.actionButton} onClick={action}>
+            Više informacija
+          </button>
+        )}
       </div>
     </div>
   );
