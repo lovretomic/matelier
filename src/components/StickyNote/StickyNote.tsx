@@ -24,12 +24,10 @@ const StickyNote: React.FC<StickyNoteProps> = ({
         <h4 className={c.title}>{title}</h4>
         <p className={c.subtitle}>{subtitle} </p>
       </div>
-      <div className={c.contentWrapper}>
+      <div className={c.listWrapper}>
         {listItems?.map((item, index) => (
           <div key={index} className={c.listItem}>
-            <div className={c.iconDiv}>
-              <item.icon className={c.icon} />
-            </div>
+            <item.icon className={c.icon} />
             <span className={c.text}>{item.text}</span>
           </div>
         ))}

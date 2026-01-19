@@ -59,12 +59,14 @@ body {
         scale: 0.85;
       }
     }
+
     @media screen and (max-width: 1100px) {
       > div {
         scale: 0.75;
         margin: 0 -30px;
       }
     }
+
     @media screen and (max-width: 890px) {
       flex-direction: column;
       align-items: center;
@@ -76,6 +78,7 @@ body {
         scale: 1;
       }
     }
+
     @media screen and (max-width: 460px) {
       gap: 0;
       > div {

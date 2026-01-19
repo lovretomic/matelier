@@ -21,27 +21,28 @@ function App() {
             title="Paket 1"
             subtitle="Polugodišnje pripreme"
             listItems={[
-              { icon: PhoneIcon, text: "Nazovi me" },
-              { icon: PhoneIcon, text: "Nazovi me" },
-              { icon: PhoneIcon, text: "Nazovi me" },
+              { icon: PhoneIcon, text: "36 školskih sati" },
+              { icon: PhoneIcon, text: "blok sat jednom tjedno" },
+              { icon: PhoneIcon, text: "od veljače 2025." },
             ]}
           />
           <StickyNote
             title="Paket 2"
             subtitle="Brze pripreme"
             listItems={[
-              { icon: PhoneIcon, text: "Nazovi me" },
-              { icon: PhoneIcon, text: "Nazovi me" },
-              { icon: PhoneIcon, text: "Nazovi me" },
+              { icon: PhoneIcon, text: "30 školskih sati" },
+              { icon: PhoneIcon, text: "svakodnevno po tri školska sata" },
+              { icon: PhoneIcon, text: "nakon završetka nastavne godine" },
             ]}
           />
           <StickyNote
             title="Simulacija"
             subtitle="prijemnog ispita"
             listItems={[
-              { icon: PhoneIcon, text: "Nazovi me" },
-              { icon: PhoneIcon, text: "Nazovi me" },
-              { icon: PhoneIcon, text: "Nazovi me" },
+              {
+                icon: PhoneIcon,
+                text: "uključuje povratnu informaciju i individualne konzultacije",
+              },
             ]}
           />
         </div>

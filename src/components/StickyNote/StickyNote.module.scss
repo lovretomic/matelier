@@ -48,8 +48,33 @@
     }
   }
 
-  .contentWrapper {
-    background-color: rgba(blue, 0.2);
+  .listWrapper {
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 24px;
+    gap: 8px;
+    z-index: 1;
+
+    .listItem {
+      display: flex;
+      align-items: center;
+      font-weight: 400;
+      color: $dark-blue;
+      font-size: 18px;
+      gap: 16px;
+
+      .icon {
+        $icon-size: 18px;
+        min-height: $icon-size;
+        height: $icon-size;
+        min-width: $icon-size;
+        width: $icon-size;
+        * {
+          fill: $brick-red;
+        }
+      }
+    }
   }
 }
