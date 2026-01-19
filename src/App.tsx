@@ -4,6 +4,7 @@ import PhoneIcon from "./assets/icons/phone.svg?react";
 import EmailIcon from "./assets/icons/email.svg?react";
 import InstagramIcon from "./assets/icons/instagram.svg?react";
 import PersonIcon from "./assets/icons/person.svg?react";
+import RedoIcon from "./assets/icons/redo.svg?react";
 
 import Card from "./components/Card";
 
@@ -14,9 +15,14 @@ function App() {
       <section className="hero"></section>
       <section className="why">
         <Card
-          text="pripreme vode profesorice iz prirodoslobno-matematičke gimnazije"
+          text="pripreme vode profesorice iz prirodoslovno-matematičke gimnazije"
           icon={<PersonIcon />}
-          color="dark-blue"
+          color="yellow"
+        />
+        <Card
+          text="sustavno i temeljito ponavljanje gradiva"
+          icon={<RedoIcon />}
+          color="pastel-blue"
         />
       </section>
       <section className="methods"></section>
