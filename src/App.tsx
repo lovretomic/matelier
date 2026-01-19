@@ -23,7 +23,9 @@ function App() {
           text="sustavno i temeljito ponavljanje gradiva"
           icon={<RedoIcon />}
           color="pastel-blue"
+          variant="medium"
         />
+        <Card text="big MF" icon={<RedoIcon />} color="pink" variant="large" />
       </section>
       <section className="methods"></section>
       <section className="goal"></section>
