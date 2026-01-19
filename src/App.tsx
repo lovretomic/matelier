@@ -3,6 +3,7 @@ import LogoSmall from "./assets/icons/logo-small.svg?react";
 import PhoneIcon from "./assets/icons/phone.svg?react";
 import EmailIcon from "./assets/icons/email.svg?react";
 import InstagramIcon from "./assets/icons/instagram.svg?react";
+import StickyNote from "./components/StickyNote";
 
 function App() {
   return (
@@ -15,7 +16,11 @@ function App() {
       <section className="who"></section>
       <section className="packages">
         <h2 className="title">Paketi</h2>
-        <div className="stickies-wrapper"></div>
+        <div className="stickies-wrapper">
+          <StickyNote />
+          <StickyNote />
+          <StickyNote />
+        </div>
       </section>
       <section className="location"></section>
       <footer className="footer">
@@ -58,7 +63,7 @@ function App() {
               onClick={() => {
                 window.open(
                   "https://www.instagram.com/matelier_pripreme/",
-                  "_blank",
+                  "_blank"
                 );
               }}
             >
