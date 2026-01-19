@@ -11,7 +11,7 @@ function App() {
       <header className="header"></header>
       <section className="hero"></section>
       <section className="why">
-        <Card text="Sample Text" icon={<PhoneIcon />} color="#ff0000" />
+        <Card text="Sample Text" icon={<PhoneIcon />} color="dark-blue" />
       </section>
       <section className="methods"></section>
       <section className="goal"></section>
