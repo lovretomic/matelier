@@ -183,12 +183,15 @@ body {
       color: $ugly-white;
       font-size: 34px;
       text-transform: uppercase;
+      margin-bottom: 24px;
     }
 
     .items-wrapper {
       display: flex;
       flex-direction: column;
       gap: 45px;
+      box-sizing: border-box;
+      padding-bottom: 40px;
 
       .item {
         display: flex;
