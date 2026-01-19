@@ -37,7 +37,7 @@ function App() {
           </div>
         </div>
         <div className="content-wrapper">
-          <h2>Termini i lokacija</h2>
+          <h2 className="title">Termini i lokacija</h2>
           <div className="address-tag">
             <LocationPinIcon className="icon" />
             <span className="address">
@@ -49,7 +49,7 @@ function App() {
             učenike koji imaju nastavu u smjenana, pripreme će se prilagoditi
             njihovoj smjeni (ujutro i poslijepodne).
           </p>
-          <p>
+          <p className="paragraph">
             Pripreme iz Paketa 2 odvijat će se svakodnevno od 12. lipnja 2026.,
             tj. nakon završetka nastave.
           </p>

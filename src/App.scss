@@ -7,14 +7,15 @@ body {
 }
 
 .location {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
   max-width: 1840px;
   box-sizing: border-box;
   padding: 40px;
   margin: 0 auto;
   min-height: 100dvh;
+  position: relative;
 
   .map-wrapper {
     box-sizing: border-box;
@@ -22,6 +23,8 @@ body {
     border: 1px solid rgba(black, 20%);
     border-radius: 8px;
     width: 100%;
+    height: fit-content;
+    margin: auto 0;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 10%);
 
     display: flex;
@@ -29,7 +32,8 @@ body {
     gap: 8px;
 
     iframe {
-      height: 70vh;
+      height: 80vh;
+      max-height: 800px;
       width: 100%;
     }
 
@@ -54,6 +58,51 @@ body {
   }
 
   .content-wrapper {
+    box-sizing: border-box;
+    padding: 40px 0;
+    height: 100%;
+    position: relative;
+
+    .title {
+      font-weight: 900;
+      font-size: 48px;
+      color: $dark-blue;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .address-tag {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      background-color: rgba(#264653, 10%);
+      box-sizing: border-box;
+      padding: 8px 16px;
+      border-radius: 50px;
+      border: 2px solid rgba(black, 10%);
+      color: $dark-blue;
+      margin-bottom: 32px;
+    }
+
+    .paragraph {
+      max-width: 700px;
+    }
+
+    .paragraph:not(:last-of-type) {
+      margin-bottom: 16px;
+    }
+
+    .tracing {
+      max-height: 50%;
+      height: fit-content;
+      width: 80%;
+      max-width: 300px;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-top: 40px;
+    }
   }
 }
 
