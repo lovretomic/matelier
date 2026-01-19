@@ -179,13 +179,20 @@ body {
 }
 
 .why {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1840px;
+  box-sizing: border-box;
+  padding: 80px 40px;
+  margin: 0 auto;
   min-height: 100dvh;
-  padding: 64px 64px;
+
   .content {
-    margin-left: 45%;
     display: inline-flex;
     flex-direction: column;
-    gap: 24px;
+    align-items: flex-start;
+    gap: 12px;
     .title {
       font-weight: 900;
       font-size: 60px;

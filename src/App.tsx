@@ -10,6 +10,7 @@ import MindIcon from "./assets/icons/mind.svg?react";
 import CheckmarkIcon from "./assets/icons/checkmark.svg?react";
 import SupportIcon from "./assets/icons/support.svg?react";
 import TextIcon from "./assets/icons/text.svg?react";
+import MathTrace from "./assets/tracings/math.svg?react";
 
 import Card from "./components/Card";
 
@@ -19,6 +20,10 @@ function App() {
       <header className="header"></header>
       <section className="hero"></section>
       <section className="why">
+        <div className="traces">
+          <MathTrace />
+        </div>
+
         <div className="content">
           <h1 className="title">
             Zašto upisati <br /> naše pripreme?
