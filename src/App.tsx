@@ -6,6 +6,10 @@ import InstagramIcon from "./assets/icons/instagram.svg?react";
 import StickyNote from "./components/StickyNote";
 import ThickArrowRight from "./assets/icons/thick-arrow-right.svg?react";
 
+import ClockIcon from "./assets/icons/clock.svg?react";
+import CalendarIcon from "./assets/icons/calendar.svg?react";
+import FlagIcon from "./assets/icons/flag.svg?react";
+
 function App() {
   return (
     <>
@@ -22,9 +26,9 @@ function App() {
             title="Paket 1"
             subtitle="Polugodišnje pripreme"
             listItems={[
-              { icon: PhoneIcon, text: "36 školskih sati" },
-              { icon: PhoneIcon, text: "blok sat jednom tjedno" },
-              { icon: PhoneIcon, text: "od veljače 2025." },
+              { icon: ClockIcon, text: "36 školskih sati" },
+              { icon: CalendarIcon, text: "blok sat jednom tjedno" },
+              { icon: FlagIcon, text: "od veljače 2025." },
             ]}
             price={345}
             action={() => {}}
@@ -33,9 +37,9 @@ function App() {
             title="Paket 2"
             subtitle="Brze pripreme"
             listItems={[
-              { icon: PhoneIcon, text: "30 školskih sati" },
-              { icon: PhoneIcon, text: "svakodnevno po tri školska sata" },
-              { icon: PhoneIcon, text: "nakon završetka nastavne godine" },
+              { icon: ClockIcon, text: "30 školskih sati" },
+              { icon: CalendarIcon, text: "svakodnevno po tri školska sata" },
+              { icon: FlagIcon, text: "nakon završetka nastavne godine" },
             ]}
             price={285}
             action={() => {}}
@@ -45,7 +49,7 @@ function App() {
             subtitle="prijemnog ispita"
             listItems={[
               {
-                icon: PhoneIcon,
+                icon: FlagIcon,
                 text: "uključuje povratnu informaciju i individualne konzultacije",
               },
             ]}
