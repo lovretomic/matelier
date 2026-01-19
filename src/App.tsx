@@ -17,9 +17,33 @@ function App() {
       <section className="packages">
         <h2 className="title">Paketi</h2>
         <div className="sticky-notes-wrapper">
-          <StickyNote />
-          <StickyNote />
-          <StickyNote />
+          <StickyNote
+            title="Paket 1"
+            subtitle="Polugodišnje pripreme"
+            listItems={[
+              { icon: PhoneIcon, text: "Nazovi me" },
+              { icon: PhoneIcon, text: "Nazovi me" },
+              { icon: PhoneIcon, text: "Nazovi me" },
+            ]}
+          />
+          <StickyNote
+            title="Paket 2"
+            subtitle="Brze pripreme"
+            listItems={[
+              { icon: PhoneIcon, text: "Nazovi me" },
+              { icon: PhoneIcon, text: "Nazovi me" },
+              { icon: PhoneIcon, text: "Nazovi me" },
+            ]}
+          />
+          <StickyNote
+            title="Simulacija"
+            subtitle="prijemnog ispita"
+            listItems={[
+              { icon: PhoneIcon, text: "Nazovi me" },
+              { icon: PhoneIcon, text: "Nazovi me" },
+              { icon: PhoneIcon, text: "Nazovi me" },
+            ]}
+          />
         </div>
       </section>
       <section className="location"></section>
