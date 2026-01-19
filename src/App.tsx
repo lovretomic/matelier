@@ -26,6 +26,7 @@ function App() {
               { icon: PhoneIcon, text: "od veljače 2025." },
             ]}
             price={345}
+            action={() => {}}
           />
           <StickyNote
             title="Paket 2"
@@ -36,6 +37,7 @@ function App() {
               { icon: PhoneIcon, text: "nakon završetka nastavne godine" },
             ]}
             price={285}
+            action={() => {}}
           />
           <StickyNote
             title="Simulacija"
