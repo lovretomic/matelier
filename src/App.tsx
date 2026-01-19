@@ -4,6 +4,7 @@ import PhoneIcon from "./assets/icons/phone.svg?react";
 import EmailIcon from "./assets/icons/email.svg?react";
 import InstagramIcon from "./assets/icons/instagram.svg?react";
 import StickyNote from "./components/StickyNote";
+import ThickArrowRight from "./assets/icons/thick-arrow-right.svg?react";
 
 function App() {
   return (
@@ -51,6 +52,10 @@ function App() {
             price={15}
           />
         </div>
+        <button className="apply-button">
+          Prijavi se!
+          <ThickArrowRight className="icon" />
+        </button>
       </section>
       <section className="location"></section>
       <footer className="footer">
