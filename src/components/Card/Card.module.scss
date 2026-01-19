@@ -1,4 +1,5 @@
 * {
+  font-family: Figtree;
   color: $dark-blue;
 }
 
@@ -38,4 +39,22 @@
   background: #f7f7f7;
   border: 1px solid #00000033;
   box-shadow: 0px 4px 10px 0px #0000001a;
+}
+
+.large {
+  display: inline-flex;
+  flex-direction: column;
+  max-width: 820px;
+  align-items: center;
+  border-radius: 8px;
+  padding: 32px;
+  gap: 24px;
+  background: #f7f7f7;
+  border: 1px solid #00000033;
+  box-shadow: 0px 4px 10px 0px #0000001a;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 34px;
 }

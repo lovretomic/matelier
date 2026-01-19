@@ -25,7 +25,13 @@ function App() {
           color="pastel-blue"
           variant="medium"
         />
-        <Card text="big MF" icon={<RedoIcon />} color="pink" variant="large" />
+        <Card
+          title="big MF"
+          text="Prelazak iz osnovne u srednju školu važna je prekretnica. Uz dobru pripremu, samopouzdanje i pravilno usmjerenje, svaki učenik može pokazati svoje znanje i postići odličan rezultat. Naš cilj je pomoći im da matematiku razumiju, zavole i – savladaju."
+          icon={<RedoIcon />}
+          color="pink"
+          variant="large"
+        />
       </section>
       <section className="methods"></section>
       <section className="goal"></section>

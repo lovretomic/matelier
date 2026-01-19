@@ -19,6 +19,7 @@ type CardProps = {
   icon: string | React.ReactElement;
   variant?: "small" | "medium" | "large";
   color: string;
+  title?: string;
 };
 
 const Card: React.FC<CardProps> = ({
@@ -26,6 +27,7 @@ const Card: React.FC<CardProps> = ({
   icon,
   variant = "small",
   color,
+  title = "",
 }) => {
   return (
     <div
@@ -47,6 +49,7 @@ const Card: React.FC<CardProps> = ({
           icon
         ) : null}
       </div>
+      {variant === "large" && title && <h3 className={c.title}>{title}</h3>}
       {text}
     </div>
   );
