@@ -10,6 +10,8 @@ const palette = {
   "dark-blue": "#264653",
   aquamarine: "#2a9d8f",
   "ugly-white": "#f7f7f7",
+  "pastel-blue": "#b2c6ce",
+  pink: "#d07f97",
 } as const;
 
 type CardProps = {

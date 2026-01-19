@@ -3,6 +3,8 @@ import LogoSmall from "./assets/icons/logo-small.svg?react";
 import PhoneIcon from "./assets/icons/phone.svg?react";
 import EmailIcon from "./assets/icons/email.svg?react";
 import InstagramIcon from "./assets/icons/instagram.svg?react";
+import PersonIcon from "./assets/icons/person.svg?react";
+
 import Card from "./components/Card";
 
 function App() {
@@ -11,7 +13,11 @@ function App() {
       <header className="header"></header>
       <section className="hero"></section>
       <section className="why">
-        <Card text="Sample Text" icon={<PhoneIcon />} color="dark-blue" />
+        <Card
+          text="pripreme vode profesorice iz prirodoslobno-matematičke gimnazije"
+          icon={<PersonIcon />}
+          color="dark-blue"
+        />
       </section>
       <section className="methods"></section>
       <section className="goal"></section>
