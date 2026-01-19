@@ -14,11 +14,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 40px;
 
   @media screen and (max-width: 890px) {
     box-sizing: border-box;
-    padding-top: 40px;
+    padding: 60px 0;
     gap: 0;
   }
 
@@ -43,6 +42,7 @@ body {
     box-sizing: border-box;
     padding: 40px 0;
     overflow: hidden;
+    margin: 24px 0;
 
     > div:nth-child(1) {
       margin-top: -10px;
@@ -78,6 +78,7 @@ body {
       flex-direction: column;
       align-items: center;
       gap: 32px;
+      margin: 0;
 
       > div {
         rotate: 0deg !important;
