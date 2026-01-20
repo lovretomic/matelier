@@ -8,6 +8,34 @@ body {
   font-family: "Figtree";
 }
 
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $ugly-white;
+  background-image: url("assets/images/meshgrid.svg");
+  padding: 40px;
+  padding-bottom: 80px;
+  .landing {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .icon {
+      width: 400px;
+      height: 400px;
+    }
+    .title {
+      font-weight: 900;
+      font-size: 80px;
+      max-width: 80%;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+}
+
 .why {
   display: flex;
   justify-content: center;

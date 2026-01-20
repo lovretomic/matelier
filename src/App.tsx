@@ -11,6 +11,7 @@ import CheckmarkIcon from "./assets/icons/checkmark.svg?react";
 import SupportIcon from "./assets/icons/support.svg?react";
 import TextIcon from "./assets/icons/text.svg?react";
 import MathTrace from "./assets/tracings/math.svg?react";
+import LogoBig from "./assets/icons/logo-big.svg?react";
 
 import Card from "./components/Card";
 import StickyNote from "./components/StickyNote";
@@ -28,7 +29,23 @@ function App() {
   return (
     <>
       <header className="header"></header>
-      <section className="hero"></section>
+      <section className="hero">
+        <div className="landing">
+          <LogoBig className="icon" />
+          <h1 className="title"> Sigurnijim korakom u srednju školu</h1>
+        </div>
+        <Card
+          variant="large"
+          icon={(props) => (
+            <div style={{ transform: "translateX(1px) translateY(3px)" }}>
+              <FlagIcon {...props} />
+            </div>
+          )}
+          color="pink"
+          title="Pripreme za prijemne ispite iz matematike"
+          text="Prelazak iz osnovne u srednju školu važna je prekretnica. Uz dobru pripremu, samopouzdanje i pravilno usmjerenje, svaki učenik može pokazati svoje znanje i postići odličan rezultat. Naš cilj je pomoći im da matematiku razumiju, zavole i – savladaju."
+        />
+      </section>
       <section className="why">
         <MathTrace className="traces" />
 
