@@ -27,6 +27,7 @@ import { teachers } from "./data";
 
 import BookAndGlassesTracing from "./assets/tracings/book-and-glasses.svg?react";
 import BulbAndNotesTracing from "./assets/tracings/bulb-and-notes.svg?react";
+import BulbAndNotes2Tracing from "./assets/tracings/bulb-and-notes-2.svg?react";
 
 function App() {
   return (
@@ -89,6 +90,7 @@ function App() {
         <BookAndGlassesTracing className="tracing-1" />
         <BulbAndNotesTracing className="tracing-2" />
         <div className="title-wrapper">
+          <BulbAndNotes2Tracing className="tracing-3" />
           <h2 className="title">Tko vodi pripreme?</h2>
           <p className="description">
             Pripreme vode profesorice matematike iz prirodoslovno matematičke
