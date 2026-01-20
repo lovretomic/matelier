@@ -13,6 +13,7 @@ import FlagIcon from "./assets/icons/flag.svg?react";
 import LocationPinIcon from "./assets/icons/location-pin.svg?react";
 
 import GeographyTracing from "./assets/tracings/geography.svg?react";
+import { teachers } from "./data";
 
 function App() {
   return (
@@ -22,7 +23,30 @@ function App() {
       <section className="why"></section>
       <section className="methods"></section>
       <section className="goal"></section>
-      <section className="who"></section>
+      <section className="who">
+        <div className="title-wrapper">
+          <h2 className="title">Tko vodi pripreme?</h2>
+          <p className="description">
+            Pripreme vode profesorice matematike iz prirodoslovno matematičke
+            gimnazije, s višegodišnjim iskustvom u nastavi te u radu s
+            talentiranim učenicima i natjecateljima.
+          </p>
+        </div>
+        <div className="teacher-cards-wrapper">
+          {teachers.map((teacher) => (
+            <div className="teacher-card" key={teacher.fullName}>
+              <img
+                src={teacher.photoUrl}
+                alt={`Fotografija profesora/ice ${teacher.fullName}`}
+                className="teacher-photo"
+              />
+              <h3 className="teacher-name">{teacher.fullName}</h3>
+              <h4 className="teacher-title">{teacher.title}</h4>
+              <button>Više informacija</button>
+            </div>
+          ))}
+        </div>
+      </section>
       <section className="packages">
         <h2 className="title">Paketi</h2>
         <div className="sticky-notes-wrapper">

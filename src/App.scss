@@ -8,6 +8,43 @@ body {
   font-family: "Figtree";
 }
 
+.who {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $ugly-white;
+
+  .title-wrapper {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    max-width: 550px;
+    gap: 4px;
+
+    .title {
+      font-size: 50px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+  }
+
+  .teacher-cards-wrapper {
+    display: flex;
+    gap: 32px;
+
+    .teacher-card {
+      border: 1px solid rgba(black, 20%);
+      border-radius: 16px;
+      box-sizing: border-box;
+      padding: 8px;
+      padding-bottom: 16px;
+    }
+  }
+}
+
 .packages {
   width: 100%;
   min-height: 100vh;
