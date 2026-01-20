@@ -28,8 +28,20 @@ import { teachers } from "./data";
 import BookAndGlassesTracing from "./assets/tracings/book-and-glasses.svg?react";
 import BulbAndNotesTracing from "./assets/tracings/bulb-and-notes.svg?react";
 import BulbAndNotes2Tracing from "./assets/tracings/bulb-and-notes-2.svg?react";
+import { useState } from "react";
+import Popup from "./components/Popup";
 
 function App() {
+  const [openPopupId, setOpenPopupId] = useState<string | null>(null);
+
+  function openModal(id: string) {
+    setOpenPopupId(id);
+  }
+
+  function closeModal() {
+    setOpenPopupId(null);
+  }
+
   return (
     <>
       <header className="header"></header>
@@ -100,20 +112,38 @@ function App() {
         </div>
         <div className="teacher-cards-wrapper">
           {teachers.map((teacher) => (
-            <div className="teacher-card" key={teacher.fullName}>
-              <div
-                className="image-with-gradient"
-                style={
-                  {
-                    "--img-url": `url(${teacher.photoUrl})`,
-                  } as React.CSSProperties
-                }
-              />
+            <>
+              <Popup
+                id={teacher.fullName}
+                openId={openPopupId}
+                onClose={closeModal}
+              >
+                <h1>{teacher.fullName}</h1>
+                <h4>{teacher.title}</h4>
+                {teacher.bio.map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))}
+              </Popup>
+              <div className="teacher-card" key={teacher.fullName}>
+                <div
+                  className="image-with-gradient"
+                  style={
+                    {
+                      "--img-url": `url(${teacher.photoUrl})`,
+                    } as React.CSSProperties
+                  }
+                />
 
-              <h3 className="teacher-name">{teacher.fullName}</h3>
-              <h4 className="teacher-title">{teacher.title}</h4>
-              <button className="button">Pročitaj više</button>
-            </div>
+                <h3 className="teacher-name">{teacher.fullName}</h3>
+                <h4 className="teacher-title">{teacher.title}</h4>
+                <button
+                  className="button"
+                  onClick={() => openModal(teacher.fullName)}
+                >
+                  Pročitaj više
+                </button>
+              </div>
+            </>
           ))}
         </div>
       </section>
