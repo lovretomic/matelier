@@ -25,13 +25,29 @@ body {
     .icon {
       width: 400px;
       height: 400px;
+      @media (max-width: 1235px) {
+        width: 350px;
+        height: 350px;
+      }
+      @media (max-width: 900px) {
+        width: 300px;
+        height: 300px;
+      }
     }
     .title {
       font-weight: 900;
       font-size: 80px;
-      max-width: 80%;
       text-align: center;
       text-transform: uppercase;
+      @media (max-width: 1235px) {
+        font-size: 70px;
+      }
+      @media (max-width: 900px) {
+        font-size: 60px;
+      }
+      @media (max-width: $mobile-margin-breakpoint) {
+        font-size: 48px;
+      }
     }
   }
 }

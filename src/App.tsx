@@ -32,7 +32,10 @@ function App() {
       <section className="hero">
         <div className="landing">
           <LogoBig className="icon" />
-          <h1 className="title"> Sigurnijim korakom u srednju školu</h1>
+          <h1 className="title">
+            {" "}
+            Sigurnijim korakom <br /> u srednju školu
+          </h1>
         </div>
         <Card
           variant="large"

@@ -1,3 +1,5 @@
+$mobile-margin-breakpoint: 600px;
+
 * {
   font-family: Figtree;
   color: $dark-blue;
@@ -60,8 +62,11 @@
   background: #f7f7f7;
   border: 1px solid #00000033;
   box-shadow: 0px 4px 10px 0px #0000001a;
-  @media (max-width: 500px) {
-    align-items: flex-start;
+  text-align: center;
+  .title {
+    @media (max-width: $mobile-margin-breakpoint) {
+      font-size: 28px;
+    }
   }
 }
 
