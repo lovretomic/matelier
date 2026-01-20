@@ -1,3 +1,5 @@
+$mobile-margin-breakpoint: 600px;
+
 body {
   margin: 0;
 }
@@ -125,6 +127,161 @@ body {
     .icon {
       width: 20px;
       height: 20px;
+    }
+  }
+}
+
+.location {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1840px;
+  box-sizing: border-box;
+  padding: 40px;
+  margin: 0 auto;
+  min-height: 100dvh;
+  position: relative;
+
+  @media screen and (max-width: 1150px) {
+    gap: 40px;
+  }
+
+  @media screen and (max-width: 1000px) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  @media screen and (max-width: $mobile-margin-breakpoint) {
+    padding: 40px 24px;
+  }
+
+  .map-wrapper {
+    box-sizing: border-box;
+    padding: 8px;
+    border: 1px solid rgba(black, 20%);
+    border-radius: 8px;
+    width: 100%;
+    height: fit-content;
+    margin: auto 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 10%);
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    iframe {
+      height: 80vh;
+      max-height: 600px;
+      width: 100%;
+
+      @media screen and (max-width: 1000px) {
+        height: 40vh;
+      }
+    }
+
+    .address-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+
+      .icon {
+        width: 16px;
+        height: 16px;
+      }
+
+      .address {
+        color: $dark-blue;
+
+        .secondary {
+          color: rgba($dark-blue, 0.5);
+        }
+      }
+    }
+  }
+
+  .content-wrapper {
+    box-sizing: border-box;
+    padding: 40px 0;
+    height: 100%;
+    margin: auto 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media screen and (max-width: 1000px) {
+      flex-direction: column-reverse;
+      padding: 0;
+    }
+
+    .text-wrapper {
+      .title {
+        font-weight: 900;
+        font-size: 48px;
+        color: $dark-blue;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+
+        @media screen and (max-width: 1150px) {
+          font-size: 36px;
+        }
+      }
+
+      .address-tag {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        width: fit-content;
+        background-color: rgba(#264653, 10%);
+        box-sizing: border-box;
+        padding: 8px 16px;
+        border-radius: 50px;
+        border: 2px solid rgba(black, 10%);
+        color: $dark-blue;
+        margin-bottom: 32px;
+
+        @media screen and (max-width: 1150px) {
+          font-size: 14px;
+          gap: 4px;
+
+          .icon {
+            height: 14px;
+            width: 14px;
+          }
+        }
+
+        @media screen and (max-width: 550px) {
+          .address {
+            .secondary {
+              display: none;
+            }
+          }
+        }
+      }
+
+      .paragraph {
+        max-width: 700px;
+      }
+
+      .paragraph:not(:last-of-type) {
+        margin-bottom: 16px;
+      }
+    }
+
+    .tracing {
+      max-height: 50%;
+      height: fit-content;
+      width: 80%;
+      max-width: 300px;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-top: 40px;
+
+      @media screen and (max-width: 1000px) {
+        margin-top: 0;
+        margin-bottom: 24px;
+      }
     }
   }
 }
