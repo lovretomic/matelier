@@ -17,6 +17,9 @@ body {
   background-image: url("assets/images/meshgrid.svg");
   padding: 40px;
   padding-bottom: 80px;
+  @media (max-width: $mobile-margin-breakpoint) {
+    align-items: flex-start;
+  }
   .landing {
     height: 100dvh;
     display: flex;
