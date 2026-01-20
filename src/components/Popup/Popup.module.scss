@@ -10,9 +10,55 @@
   align-items: center;
   z-index: 1000;
 
+  box-sizing: border-box;
+  padding: 24px;
+
   .popup {
     min-height: 100px;
+    max-height: 80%;
     min-width: 100px;
-    background-color: white;
+    max-width: 800px;
+    background-color: $ugly-white;
+
+    box-sizing: border-box;
+    padding: 40px;
+    border-radius: 16px;
+    border: 2px solid rgba(black, 10%);
+
+    box-shadow: 0 0 60px rgba(0, 0, 0, 20%);
+    position: relative;
+
+    .closeButton {
+      position: absolute;
+      height: 40px;
+      width: 40px;
+      top: 24px;
+      right: 24px;
+      cursor: pointer;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background-color: transparent;
+      border: none;
+      border-radius: 8px;
+      background-color: rgba($dark-blue, 5%);
+      transition: 100ms ease-in-out;
+
+      &:hover {
+        background-color: rgba($dark-blue, 10%);
+      }
+
+      &:active {
+        scale: 0.95;
+      }
+
+      .closeIcon {
+        * {
+          fill: rgba($dark-blue, 70%);
+        }
+      }
+    }
   }
 }

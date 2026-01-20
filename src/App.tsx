@@ -118,11 +118,15 @@ function App() {
                 openId={openPopupId}
                 onClose={closeModal}
               >
-                <h1>{teacher.fullName}</h1>
-                <h4>{teacher.title}</h4>
-                {teacher.bio.map((paragraph, index) => (
-                  <p key={index}>{paragraph}</p>
-                ))}
+                <h1 className="popup-title">{teacher.fullName}</h1>
+                <h4 className="popup-subtitle">{teacher.title}</h4>
+                <div className="popup-paragraphs">
+                  {teacher.bio.map((paragraph, index) => (
+                    <p className="paragraph" key={index}>
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
               </Popup>
               <div className="teacher-card" key={teacher.fullName}>
                 <div
