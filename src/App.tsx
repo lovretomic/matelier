@@ -25,6 +25,9 @@ import LocationPinIcon from "./assets/icons/location-pin.svg?react";
 import GeographyTracing from "./assets/tracings/geography.svg?react";
 import { teachers } from "./data";
 
+import BookAndGlassesTracing from "./assets/tracings/book-and-glasses.svg?react";
+import BulbAndNotesTracing from "./assets/tracings/bulb-and-notes.svg?react";
+
 function App() {
   return (
     <>
@@ -83,6 +86,8 @@ function App() {
       <section className="methods"></section>
       <section className="goal"></section>
       <section className="who">
+        <BookAndGlassesTracing className="tracing-1" />
+        <BulbAndNotesTracing className="tracing-2" />
         <div className="title-wrapper">
           <h2 className="title">Tko vodi pripreme?</h2>
           <p className="description">

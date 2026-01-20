@@ -80,6 +80,21 @@ body {
   align-items: center;
   justify-content: center;
   background-color: $ugly-white;
+  position: relative;
+
+  .tracing-1,
+  .tracing-2 {
+    position: absolute;
+    max-width: 14%;
+  }
+
+  .tracing-1 {
+    left: 7%;
+  }
+
+  .tracing-2 {
+    right: 7%;
+  }
 
   .title-wrapper {
     display: flex;
