@@ -30,9 +30,7 @@ function App() {
       <header className="header"></header>
       <section className="hero"></section>
       <section className="why">
-        <div>
-          <MathTrace className="traces" />
-        </div>
+        <MathTrace className="traces" />
 
         <div className="content">
           <h1 className="title">
@@ -209,7 +207,7 @@ function App() {
               onClick={() => {
                 window.open(
                   "https://www.instagram.com/matelier_pripreme/",
-                  "_blank"
+                  "_blank",
                 );
               }}
             >
