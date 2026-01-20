@@ -94,14 +94,19 @@ function App() {
         <div className="teacher-cards-wrapper">
           {teachers.map((teacher) => (
             <div className="teacher-card" key={teacher.fullName}>
-              <img
-                src={teacher.photoUrl}
-                alt={`Fotografija profesora/ice ${teacher.fullName}`}
-                className="teacher-photo"
+              <div
+                className="image-with-gradient"
+                style={
+                  {
+                    "--img-url": `url(${teacher.photoUrl})`,
+                  } as React.CSSProperties
+                }
               />
-              <h3 className="teacher-name">{teacher.fullName}</h3>
-              <h4 className="teacher-title">{teacher.title}</h4>
-              <button>Više informacija</button>
+              <div className="content-wrapper">
+                <h3 className="teacher-name">{teacher.fullName}</h3>
+                <h4 className="teacher-title">{teacher.title}</h4>
+                <button>Više informacija</button>
+              </div>
             </div>
           ))}
         </div>

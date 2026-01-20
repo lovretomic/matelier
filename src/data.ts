@@ -1,4 +1,5 @@
 import TeacherTempImage from "./assets/images/teacher-temp.png";
+import TeacherTemp2Image from "./assets/images/stylish-confident-businesswoman-smiling_176420-19466.avif";
 
 type Teacher = {
   fullName: string;
@@ -22,7 +23,7 @@ const teachers: Teacher[] = [
   {
     fullName: "Tea Amižić",
     title: "mag. educ. math.",
-    photoUrl: TeacherTempImage,
+    photoUrl: TeacherTemp2Image,
     bio: [
       "Diplomirana sam magistra edukacije matematike. Prirodoslovno-matematički fakultet Sveučilišta u Zagrebu završila sam 2018. godine, nakon čega se zapošljavam u školi kao profesorica matematike. Od 2021. godine radim u V. gimnaziji u Zagrebu.",
       "U svom radu posebno se bavim radom s darovitim učenicima, koje pripremam za školska, županijska i državna natjecanja, pri čemu se mogu pohvaliti mentorstvom učenika na svim razinama natjecanja. Također, kontinuirano pripremam učenike za Državnu maturu, sudjelujem u ispravljanju ispita Državne mature, kao i u ispravljanju prijemnih ispita iz matematike za upis u matematičke gimnazije, što mi omogućuje detaljan uvid u kriterije vrednovanja i najčešće pogreške učenika.",
