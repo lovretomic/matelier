@@ -28,6 +28,7 @@ function App() {
           <h1 className="title">
             Zašto upisati <br /> naše pripreme?
           </h1>
+
           <Card
             text="pripreme vode profesorice iz prirodoslovno-matematičke gimnazije"
             icon={PersonIcon}

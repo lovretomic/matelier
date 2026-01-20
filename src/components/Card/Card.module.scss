@@ -1,11 +1,10 @@
 * {
   font-family: Figtree;
   color: $dark-blue;
-  flex: none;
 }
 
 .small {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   border-radius: 8px;
   border-width: 1px;
@@ -71,4 +70,7 @@
 .text {
   font-weight: 400;
   font-size: 18px;
+  @media (max-width: 1050px) {
+    font-size: 16px;
+  }
 }
