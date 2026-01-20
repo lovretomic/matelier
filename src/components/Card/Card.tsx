@@ -1,5 +1,4 @@
 import type React from "react";
-import { isValidElement } from "react";
 import c from "./Card.module.scss";
 import clsx from "clsx";
 
@@ -16,7 +15,7 @@ const palette = {
 
 type CardProps = {
   text: string;
-  icon: string | React.ReactElement;
+  icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   variant?: "small" | "medium" | "large";
   color: string;
   title?: string;
@@ -24,7 +23,7 @@ type CardProps = {
 
 const Card: React.FC<CardProps> = ({
   text,
-  icon,
+  icon: Icon,
   variant = "small",
   color,
   title = "",
@@ -43,11 +42,7 @@ const Card: React.FC<CardProps> = ({
           backgroundColor: palette[color as keyof typeof palette] || color,
         }}
       >
-        {typeof icon === "string" ? (
-          <img src={icon} alt="icon" />
-        ) : isValidElement(icon) ? (
-          icon
-        ) : null}
+        <Icon className={c.icon} />
       </div>
       {variant === "large" && title && <h3 className={c.title}>{title}</h3>}
       {text && <span className={c.text}>{text}</span>}

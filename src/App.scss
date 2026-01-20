@@ -1,3 +1,5 @@
+$mobile-margin-breakpoint: 600px;
+
 body {
   margin: 0;
 }
@@ -180,13 +182,23 @@ body {
 
 .why {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 120px;
   align-items: center;
   max-width: 1840px;
   box-sizing: border-box;
-  padding: 80px 40px;
+  padding: 60px 40px;
   margin: 0 auto;
   min-height: 100dvh;
+  @media (max-width: $mobile-margin-breakpoint) {
+    //promjeni kasnije width!!!
+    padding: 24px;
+    flex-direction: column;
+  }
+  .traces {
+    width: 500px;
+    height: 500px;
+  }
 
   .content {
     display: inline-flex;
@@ -195,9 +207,9 @@ body {
     gap: 12px;
     .title {
       font-weight: 900;
-      font-size: 60px;
+      font-size: 50px;
       text-transform: uppercase;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
   }
 }

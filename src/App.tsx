@@ -20,8 +20,8 @@ function App() {
       <header className="header"></header>
       <section className="hero"></section>
       <section className="why">
-        <div className="traces">
-          <MathTrace />
+        <div>
+          <MathTrace className="traces" />
         </div>
 
         <div className="content">
@@ -30,42 +30,42 @@ function App() {
           </h1>
           <Card
             text="pripreme vode profesorice iz prirodoslovno-matematičke gimnazije"
-            icon={<PersonIcon />}
+            icon={PersonIcon}
             color="yellow"
           />
           <Card
             text="sustavno i temeljito ponavljanje gradiva"
-            icon={<RedoIcon />}
+            icon={RedoIcon}
             color="pastel-blue"
           />
           <Card
             text="priprema ciljano za prijemne ispite"
-            icon={<ClipboardIcon />}
+            icon={ClipboardIcon}
             color="pink"
           />
           <Card
             text="rad u manjim grupama (od pet do 12 učenika)"
-            icon={<PersonIcon />}
+            icon={PersonIcon}
             color="yellow"
           />
           <Card
             text="fokus na razumijevanje, ne „bubanje“ na pamet"
-            icon={<MindIcon />}
+            icon={MindIcon}
             color="pink"
           />
           <Card
             text="mnoštvo primjera, zadataka i strategija rješavanja"
-            icon={<CheckmarkIcon />}
+            icon={CheckmarkIcon}
             color="yellow"
           />
           <Card
             text="podrška, motivacija i individualni pristup"
-            icon={<SupportIcon />}
+            icon={SupportIcon}
             color="pink"
           />
           <Card
             text="redovito praćenje stečenog znanja i povratne informacije roditeljima"
-            icon={<TextIcon />}
+            icon={TextIcon}
             color="pastel-blue"
           />
         </div>
