@@ -3,6 +3,12 @@ import LogoSmall from "./assets/icons/logo-small.svg?react";
 import PhoneIcon from "./assets/icons/phone.svg?react";
 import EmailIcon from "./assets/icons/email.svg?react";
 import InstagramIcon from "./assets/icons/instagram.svg?react";
+import StickyNote from "./components/StickyNote";
+import ThickArrowRight from "./assets/icons/thick-arrow-right.svg?react";
+
+import ClockIcon from "./assets/icons/clock.svg?react";
+import CalendarIcon from "./assets/icons/calendar.svg?react";
+import FlagIcon from "./assets/icons/flag.svg?react";
 
 import LocationPinIcon from "./assets/icons/location-pin.svg?react";
 
@@ -17,7 +23,48 @@ function App() {
       <section className="methods"></section>
       <section className="goal"></section>
       <section className="who"></section>
-      <section className="packages"></section>
+      <section className="packages">
+        <h2 className="title">Paketi</h2>
+        <div className="sticky-notes-wrapper">
+          <StickyNote
+            title="Paket 1"
+            subtitle="Polugodišnje pripreme"
+            listItems={[
+              { icon: ClockIcon, text: "36 školskih sati" },
+              { icon: CalendarIcon, text: "blok sat jednom tjedno" },
+              { icon: FlagIcon, text: "od veljače 2025." },
+            ]}
+            price={345}
+            action={() => {}}
+          />
+          <StickyNote
+            title="Paket 2"
+            subtitle="Brze pripreme"
+            listItems={[
+              { icon: ClockIcon, text: "30 školskih sati" },
+              { icon: CalendarIcon, text: "svakodnevno po tri školska sata" },
+              { icon: FlagIcon, text: "nakon završetka nastavne godine" },
+            ]}
+            price={285}
+            action={() => {}}
+          />
+          <StickyNote
+            title="Simulacija"
+            subtitle="prijemnog ispita"
+            listItems={[
+              {
+                icon: FlagIcon,
+                text: "uključuje povratnu informaciju i individualne konzultacije",
+              },
+            ]}
+            price={15}
+          />
+        </div>
+        <button className="apply-button">
+          Prijavi se!
+          <ThickArrowRight className="icon" />
+        </button>
+      </section>
       <section className="location">
         <div className="map-wrapper">
           <iframe
