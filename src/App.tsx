@@ -102,11 +102,10 @@ function App() {
                   } as React.CSSProperties
                 }
               />
-              <div className="content-wrapper">
-                <h3 className="teacher-name">{teacher.fullName}</h3>
-                <h4 className="teacher-title">{teacher.title}</h4>
-                <button>Više informacija</button>
-              </div>
+
+              <h3 className="teacher-name">{teacher.fullName}</h3>
+              <h4 className="teacher-title">{teacher.title}</h4>
+              <button className="button">Pročitaj više</button>
             </div>
           ))}
         </div>
