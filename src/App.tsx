@@ -1,4 +1,5 @@
 import "./App.scss";
+import { useRef, useState, useEffect } from "react";
 import LogoSmall from "./assets/icons/logo-small.svg?react";
 import PhoneIcon from "./assets/icons/phone.svg?react";
 import EmailIcon from "./assets/icons/email.svg?react";
@@ -26,10 +27,41 @@ import LocationPinIcon from "./assets/icons/location-pin.svg?react";
 import GeographyTracing from "./assets/tracings/geography.svg?react";
 
 function App() {
+  const heroRef = useRef<HTMLElement>(null);
+  const [headerVisible, setHeaderVisible] = useState(true);
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const scrollingDown = currentScrollY > lastScrollY;
+      lastScrollY = currentScrollY;
+
+      const hero = heroRef.current;
+      if (!hero) return;
+
+      const inHero = currentScrollY < hero.offsetHeight;
+
+      if (inHero) {
+        setHeaderVisible(true);
+      } else {
+        setHeaderVisible(!scrollingDown);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
-      <header className="header"></header>
-      <section className="hero">
+      <header className={`header ${headerVisible ? "show" : "hide"}`}>
+        desibre
+      </header>
+      <section className="hero" ref={heroRef}>
         <div className="landing">
           <LogoBig className="icon" />
           <h1 className="title">
