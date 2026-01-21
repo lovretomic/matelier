@@ -60,7 +60,13 @@ function App() {
     <>
       <header className={`header ${headerVisible ? "show" : "hide"}`}>
         <LogoSmall className="logo" />
-        desibre
+        <div className="text-wrapper">
+          <span>Naše pripreme</span>
+          <span>Način rada</span>
+          <span>O nama</span>
+          <span>Paketi</span>
+          <span>Lokacija</span>
+        </div>
       </header>
       <section className="hero" ref={heroRef}>
         <div className="landing">

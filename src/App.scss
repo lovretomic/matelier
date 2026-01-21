@@ -13,17 +13,26 @@ body {
   width: 100%;
   background-color: $ugly-white;
   border-bottom: 1px solid;
+  box-sizing: border-box;
 
   z-index: 1000;
   transition: transform 0.3s ease;
 
   display: flex;
   align-items: center;
+  padding: 6px 16px;
   .logo {
     * {
       fill: $yellow;
     }
     height: 35px;
+    width: 120px;
+  }
+
+  .text-wrapper {
+    margin-left: auto;
+    display: flex;
+    gap: 32px;
   }
 }
 .header.hide {
