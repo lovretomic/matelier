@@ -72,18 +72,37 @@ body {
 }
 
 .goal {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
   min-height: 100dvh;
   background: linear-gradient(180deg, #e8a4b8 0%, #e67c9c 100%);
-  .title {
-    font-weight: 900;
-    font-size: 60px;
-    text-transform: uppercase;
-    color: $ugly-white;
-  }
-  .text {
-    font-weight: 400;
-    font-size: 34px;
-    color: $ugly-white;
+  .content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    width: 80%;
+    .tracing {
+      width: 600px;
+      height: 600px;
+    }
+    .text-wrapper {
+      display: flex;
+      gap: 16px;
+      flex-direction: column;
+      .title {
+        font-weight: 900;
+        font-size: 60px;
+        text-transform: uppercase;
+        color: $ugly-white;
+      }
+      .text {
+        font-weight: 400;
+        font-size: 28px;
+        color: $ugly-white;
+      }
+    }
   }
 }
 

@@ -24,6 +24,8 @@ import LocationPinIcon from "./assets/icons/location-pin.svg?react";
 
 import GeographyTracing from "./assets/tracings/geography.svg?react";
 
+import TargetTracing from "./assets/tracings/target.svg?react";
+
 function App() {
   return (
     <>
@@ -81,12 +83,17 @@ function App() {
       </section>
       <section className="methods"></section>
       <section className="goal">
-        <h1 className="title">Naš cilj</h1>
-        <p className="text">
-          Cilj nam nije samo „proći gradivo“, nego usaditi razumijevanje i
-          sigurnost koja ostaje i nakon prijemnog ispita te čini prelazak iz
-          osnovne škole u srednju „bezbolnim“.
-        </p>
+        <div className="content-wrapper">
+          <TargetTracing className="tracing" />
+          <div className="text-wrapper">
+            <h1 className="title">Naš cilj</h1>
+            <p className="text">
+              Cilj nam nije samo „proći gradivo“, nego usaditi razumijevanje i
+              sigurnost koja ostaje i nakon prijemnog ispita te čini prelazak iz
+              osnovne škole u srednju „bezbolnim“.
+            </p>
+          </div>
+        </div>
       </section>
       <section className="who"></section>
       <section className="packages">
