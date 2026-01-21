@@ -59,13 +59,13 @@ function App() {
   return (
     <>
       <header className={`header ${headerVisible ? "show" : "hide"}`}>
+        <LogoSmall className="logo" />
         desibre
       </header>
       <section className="hero" ref={heroRef}>
         <div className="landing">
           <LogoBig className="icon" />
           <h1 className="title">
-            {" "}
             Sigurnijim korakom <br /> u srednju školu
           </h1>
         </div>
