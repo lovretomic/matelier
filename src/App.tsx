@@ -25,6 +25,8 @@ import LocationPinIcon from "./assets/icons/location-pin.svg?react";
 import GeographyTracing from "./assets/tracings/geography.svg?react";
 
 import TargetTracing from "./assets/tracings/target.svg?react";
+import Arrow1Tracing from "./assets/tracings/arrow-1.svg?react";
+import Arrow2Tracing from "./assets/tracings/arrow-2.svg?react";
 
 function App() {
   return (
@@ -83,6 +85,8 @@ function App() {
       </section>
       <section className="methods"></section>
       <section className="goal">
+        <Arrow1Tracing className="arrow-1" />
+        <Arrow2Tracing className="arrow-2" />
         <div className="content-wrapper">
           <TargetTracing className="tracing" />
           <div className="text-wrapper">
