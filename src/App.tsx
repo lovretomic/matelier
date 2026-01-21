@@ -83,8 +83,9 @@ function App() {
       <section className="goal">
         <h1 className="title">Naš cilj</h1>
         <p className="text">
-          Naš je cilj pomoći učenicima da steknu čvrsto razumijevanje
-          matematičkog gradiva potrebnog za uspješno polaganje prijemnih ispita
+          Cilj nam nije samo „proći gradivo“, nego usaditi razumijevanje i
+          sigurnost koja ostaje i nakon prijemnog ispita te čini prelazak iz
+          osnovne škole u srednju „bezbolnim“.
         </p>
       </section>
       <section className="who"></section>
