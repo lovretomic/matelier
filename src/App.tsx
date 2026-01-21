@@ -80,7 +80,13 @@ function App() {
         </div>
       </section>
       <section className="methods"></section>
-      <section className="goal"></section>
+      <section className="goal">
+        <h1 className="title">Naš cilj</h1>
+        <p className="text">
+          Naš je cilj pomoći učenicima da steknu čvrsto razumijevanje
+          matematičkog gradiva potrebnog za uspješno polaganje prijemnih ispita
+        </p>
+      </section>
       <section className="who"></section>
       <section className="packages">
         <h2 className="title">Paketi</h2>

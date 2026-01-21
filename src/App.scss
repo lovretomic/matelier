@@ -71,6 +71,22 @@ body {
   }
 }
 
+.goal {
+  min-height: 100dvh;
+  background: linear-gradient(180deg, #e8a4b8 0%, #e67c9c 100%);
+  .title {
+    font-weight: 900;
+    font-size: 60px;
+    text-transform: uppercase;
+    color: $ugly-white;
+  }
+  .text {
+    font-weight: 400;
+    font-size: 34px;
+    color: $ugly-white;
+  }
+}
+
 .packages {
   width: 100%;
   min-height: 100vh;
