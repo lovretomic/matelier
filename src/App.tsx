@@ -41,7 +41,7 @@ function App() {
       const hero = heroRef.current;
       if (!hero) return;
 
-      const inHero = currentScrollY < hero.offsetHeight;
+      const inHero = currentScrollY < hero.offsetHeight - 50;
 
       if (inHero) {
         setHeaderVisible(true);
