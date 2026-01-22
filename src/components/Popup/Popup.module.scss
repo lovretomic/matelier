@@ -28,6 +28,10 @@
     box-shadow: 0 0 60px rgba(0, 0, 0, 20%);
     position: relative;
 
+    @media screen and (max-width: 600px) {
+      padding: 24px;
+    }
+
     .closeButton {
       position: absolute;
       height: 40px;
