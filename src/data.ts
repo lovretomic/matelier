@@ -1,7 +1,7 @@
 import TeacherTempImage from "./assets/images/teacher-temp.png";
 import TeacherTemp2Image from "./assets/images/stylish-confident-businesswoman-smiling_176420-19466.avif";
 
-type Teacher = {
+export type Teacher = {
   fullName: string;
   title: string;
   photoUrl: string;

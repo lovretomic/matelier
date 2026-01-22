@@ -23,13 +23,37 @@ import FlagIcon from "./assets/icons/flag.svg?react";
 import LocationPinIcon from "./assets/icons/location-pin.svg?react";
 
 import GeographyTracing from "./assets/tracings/geography.svg?react";
-import { teachers } from "./data";
+import { teachers, type Teacher } from "./data";
 
 import BookAndGlassesTracing from "./assets/tracings/book-and-glasses.svg?react";
 import BulbAndNotesTracing from "./assets/tracings/bulb-and-notes.svg?react";
 import BulbAndNotes2Tracing from "./assets/tracings/bulb-and-notes-2.svg?react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Popup from "./components/Popup";
+import { useIsOverflowing } from "./hooks/useIsOverflowing";
+
+function TeacherPopupContent({ teacher }: { teacher: Teacher }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const isOverflowing = useIsOverflowing(ref);
+
+  return (
+    <div className="popup-content-wrapper">
+      <h1 className="popup-title">{teacher.fullName}</h1>
+      <h4 className="popup-subtitle">{teacher.title}</h4>
+
+      <div
+        className={`popup-paragraphs ${isOverflowing ? "overflowing" : ""}`}
+        ref={ref}
+      >
+        {teacher.bio.map((paragraph, j) => (
+          <p className="paragraph" key={j}>
+            {paragraph}
+          </p>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 function App() {
   const [openPopupId, setOpenPopupId] = useState<string | null>(null);
@@ -118,15 +142,7 @@ function App() {
                 openId={openPopupId}
                 onClose={closeModal}
               >
-                <h1 className="popup-title">{teacher.fullName}</h1>
-                <h4 className="popup-subtitle">{teacher.title}</h4>
-                <div className="popup-paragraphs">
-                  {teacher.bio.map((paragraph, index) => (
-                    <p className="paragraph" key={index}>
-                      {paragraph}
-                    </p>
-                  ))}
-                </div>
+                <TeacherPopupContent teacher={teacher} />
               </Popup>
               <div className="teacher-card" key={teacher.fullName}>
                 <div
