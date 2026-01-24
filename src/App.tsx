@@ -52,25 +52,11 @@ function App() {
             color="pastel-blue"
           />
           <Card
-            text="priprema ciljano za prijemne ispite"
-            icon={ClipboardIcon}
-            color="pink"
-          />
-          <Card
             text="rad u manjim grupama (od pet do 12 učenika)"
             icon={PersonIcon}
-            color="yellow"
-          />
-          <Card
-            text="fokus na razumijevanje, ne „bubanje“ na pamet"
-            icon={MindIcon}
             color="pink"
           />
-          <Card
-            text="mnoštvo primjera, zadataka i strategija rješavanja"
-            icon={CheckmarkIcon}
-            color="yellow"
-          />
+          <Card text="fokus na razumijevanje" icon={MindIcon} color="yellow" />
           <Card
             text="podrška, motivacija i individualni pristup"
             icon={SupportIcon}
