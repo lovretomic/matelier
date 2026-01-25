@@ -1,8 +1,9 @@
 import type React from "react";
-import { sections, type SectionData } from "../../App";
+import { type SectionData } from "../../App";
 import c from "./MobileMenu.module.scss";
 
 import LogoBig from "../../assets/icons/logo-big.svg?react";
+import { useEffect } from "react";
 
 type MobileMenuType = {
   isOpen: boolean;
@@ -22,6 +23,17 @@ const MobileMenu: React.FC<MobileMenuType> = ({
     onNavigate(sectionId);
   }
 
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [isOpen]);
+
   return (
     <div
       className={c.mobileMenu}
@@ -37,6 +49,7 @@ const MobileMenu: React.FC<MobileMenuType> = ({
             {section.label}
           </button>
         ))}
+        <button className="apply-button">Prijavi se!</button>
       </nav>
     </div>
   );
