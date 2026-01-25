@@ -5,9 +5,7 @@ import EmailIcon from "./assets/icons/email.svg?react";
 import InstagramIcon from "./assets/icons/instagram.svg?react";
 import PersonIcon from "./assets/icons/person.svg?react";
 import RedoIcon from "./assets/icons/redo.svg?react";
-import ClipboardIcon from "./assets/icons/clipboard.svg?react";
 import MindIcon from "./assets/icons/mind.svg?react";
-import CheckmarkIcon from "./assets/icons/checkmark.svg?react";
 import SupportIcon from "./assets/icons/support.svg?react";
 import TextIcon from "./assets/icons/text.svg?react";
 import MathTrace from "./assets/tracings/math.svg?react";
@@ -67,6 +65,10 @@ function TeacherPopupContent({ teacher }: { teacher: Teacher }) {
   );
 }
 
+import TargetTracing from "./assets/tracings/target.svg?react";
+import Arrow1Tracing from "./assets/tracings/arrow-1.svg?react";
+import Arrow2Tracing from "./assets/tracings/arrow-2.svg?react";
+
 function App() {
   const [openPopupId, setOpenPopupId] = useState<string | null>(null);
 
@@ -120,25 +122,11 @@ function App() {
             color="pastel-blue"
           />
           <Card
-            text="priprema ciljano za prijemne ispite"
-            icon={ClipboardIcon}
-            color="pink"
-          />
-          <Card
             text="rad u manjim grupama (od pet do 12 učenika)"
             icon={PersonIcon}
-            color="yellow"
-          />
-          <Card
-            text="fokus na razumijevanje, ne „bubanje“ na pamet"
-            icon={MindIcon}
             color="pink"
           />
-          <Card
-            text="mnoštvo primjera, zadataka i strategija rješavanja"
-            icon={CheckmarkIcon}
-            color="yellow"
-          />
+          <Card text="fokus na razumijevanje" icon={MindIcon} color="yellow" />
           <Card
             text="podrška, motivacija i individualni pristup"
             icon={SupportIcon}
@@ -206,7 +194,21 @@ function App() {
           </div>
         </div>
       </section>
-      <section className="goal"></section>
+      <section className="goal">
+        <div className="content-wrapper">
+          <Arrow1Tracing className="arrow" />
+          <Arrow2Tracing className="arrow" />
+          <TargetTracing className="tracing" />
+          <div className="text-wrapper">
+            <h1 className="title">Naš cilj</h1>
+            <p className="text">
+              Cilj nam nije samo „proći gradivo“, nego usaditi razumijevanje i
+              sigurnost koja ostaje i nakon prijemnog ispita te čini prelazak iz
+              osnovne škole u srednju „bezbolnim“.
+            </p>
+          </div>
+        </div>
+      </section>
       <section className="who">
         <BookAndGlassesTracing className="tracing-1" />
         <BulbAndNotesTracing className="tracing-2" />
