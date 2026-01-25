@@ -35,7 +35,7 @@ import PencilTracing from "./assets/tracings/pencil.svg?react";
 import LocationPinIcon from "./assets/icons/location-pin.svg?react";
 
 import GeographyTracing from "./assets/tracings/geography.svg?react";
-import { formsLink, packages, teachers, type Teacher } from "./data";
+import { formsLink, teachers, type Teacher } from "./data";
 
 import BookAndGlassesTracing from "./assets/tracings/book-and-glasses.svg?react";
 import BulbAndNotesTracing from "./assets/tracings/bulb-and-notes.svg?react";
@@ -336,16 +336,86 @@ function App() {
       </section>
       <section className="packages" id="section-packages">
         <Popup id="package-1" openId={openPopupId} onClose={closePopup}>
-          <h3>{packages[0].title}</h3>
-          <h3>{packages[0].subtitle}</h3>
-          {packages[0].content}
+          <div className="package-popup">
+            <h3>Paket 1</h3>
+            <h4>Polugodišnje pripreme</h4>
+            <p>
+              Započnite pripreme za prijemne ispite na vrijeme i bez stresa!
+            </p>
+            <p>
+              Upisujemo <b>polugodišnje pripreme iz matematike</b> koje počinju
+              <b>u veljači 2026. godine</b> i traju <b>24 tjedna</b>. Pripreme
+              su namijenjene učenicima koji žele{" "}
+              <b>
+                postići najbolji rezultat i samouvjereno pristupiti prijemnom
+                ispitu.
+              </b>
+            </p>
+            <ul>
+              <li>
+                Rad u <b>malim grupama</b> omogućuje <b>individualni pristup</b>{" "}
+                svakom učeniku.
+              </li>
+              <li>
+                Kroz <b>redovit, kontinuiran i praćen rad</b> razvijamo
+                sigurnost i razumijevanje, a ne samo "brzo ponavljanje".
+              </li>
+              <li>
+                Program uključuje i <b>simulaciju ispita</b> – priliku da
+                učenici provjere svoje znanje u stvarnim uvjetima.
+              </li>
+            </ul>
+            <p>
+              <b>
+                Broj mjesta je ograničen – rezervirajte svoje mjesto na vrijeme!
+              </b>
+            </p>
+          </div>
         </Popup>
 
         <Popup id="package-2" openId={openPopupId} onClose={closePopup}>
-          <h3>{packages[1].title}</h3>
-          <h3>{packages[1].subtitle}</h3>
-          {packages[1].content}
+          <div className="package-popup">
+            <h3>Paket 2</h3>
+            <h4>Brze pripreme</h4>
+            <p>
+              Za sve učenike koji žele{" "}
+              <b>učvrstiti znanje i postići vrhunski rezultat</b>, organiziramo{" "}
+              <b>
+                intenzivne, brze pripreme u lipnju, nakon završetka nastavne
+                godine.
+              </b>
+            </p>
+            <ul>
+              <li>
+                Idealan izbor za učenike koji žele{" "}
+                <b>
+                  ponoviti gradivo, razjasniti nejasnoće i utvrditi sigurnost u
+                  rješavanju zadataka.
+                </b>
+              </li>
+              <li>
+                Rad u <b>malim grupama</b> omogućuje{" "}
+                <b>maksimalnu posvećenost svakom učeniku.</b>
+              </li>
+              <li>
+                Kroz <b>ciljano usmjerene vježbe i simulaciju ispita</b>,
+                učenici stječu sigurnost i rutinu potrebnu za usmjeh na
+                prijemnom.
+              </li>
+              <li>
+                Program je dinamičan i usmjeren na <b>rezultat</b> – savršen
+                završni korak prije ispita!
+              </li>
+            </ul>
+            <p>
+              <b>
+                {" "}
+                Broj mjesta je ograničen – rezervirajte svoje mjesto na vrijeme!
+              </b>
+            </p>
+          </div>
         </Popup>
+
         <h2 className="title">Paketi</h2>
         <div className="sticky-notes-wrapper">
           <StickyNote
