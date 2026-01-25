@@ -113,14 +113,24 @@ function App() {
     <>
       <header className={`header ${headerVisible ? "show" : "hide"}`}>
         <LogoSmall className="logo" />
-        <div className="text-wrapper">
-          <a href="#section-why">Naše pripreme</a>
-          <a href="#section-how">Način rada</a>
-          <a href="#section-who">O nama</a>
-          <a href="#section-packages">Paketi</a>
-          <a href="#section-location">Lokacija</a>
-          <div
-            className="forms"
+        <nav className="navigation">
+          <a className="item" href="#section-why">
+            Naše pripreme
+          </a>
+          <a className="item" href="#section-how">
+            Način rada
+          </a>
+          <a className="item" href="#section-who">
+            O nama
+          </a>
+          <a className="item" href="#section-packages">
+            Paketi
+          </a>
+          <a className="item" href="#section-location">
+            Lokacija
+          </a>
+          <button
+            className="apply-button"
             onClick={() =>
               window.open(
                 "https://forms.office.com/pages/responsepage.aspx?id=FvJamzTGgEurAgyaPQKQkW9Z9Um2rz5PsNIf7OZzxNhUNFlSOFlaSExNUDA5RlBUMFpITVdWTUs3RC4u&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAdGRleAPi29FleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAafMC6l5nB8q9vGIOTIUcsdpD7aPPQJVlz-oyxRk0oEmvqC7ZLCWo_wTiferng_aem_m2ySetS-X-0x6tsHRZVLgg&route=shorturl",
@@ -129,8 +139,8 @@ function App() {
             }
           >
             Prijavi se
-          </div>
-        </div>
+          </button>
+        </nav>
       </header>
       <section className="hero" ref={heroRef} id="section-hero">
         <div className="landing">

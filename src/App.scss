@@ -27,6 +27,7 @@ body {
 
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 16px 40px;
 
   .logo {
@@ -40,14 +41,34 @@ body {
     }
   }
 
-  .text-wrapper {
-    margin-left: auto;
+  .navigation {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 32px;
-    .forms {
+    gap: 24px;
+
+    .item {
+      text-decoration: none;
+      transition: 100ms ease-in-out;
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 1px solid rgba($dark-blue, 0);
+
+      &:hover {
+        background-color: rgba($dark-blue, 5%);
+        border: 1px solid rgba($dark-blue, 10%);
+      }
+
+      &:active {
+        background-color: rgba($dark-blue, 10%);
+        scale: 0.97;
+      }
+    }
+
+    .apply-button {
       color: $ugly-white;
+      outline: none;
+      border: none;
       font-weight: 700;
       font-size: 18px;
       background: linear-gradient(0deg, #ebb739 0%, #ffcf5c 100%);
@@ -56,6 +77,7 @@ body {
       border-radius: 4px;
       transition: 150ms ease-in-out;
       cursor: pointer;
+
       &:hover {
         scale: 1.1;
         filter: drop-shadow(0px 2px 10px rgba(black, 0.1));
@@ -69,6 +91,7 @@ body {
         font-size: 16px;
       }
     }
+
     @media (max-width: 800px) {
       font-size: 14px;
       gap: 20px;
