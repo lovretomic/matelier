@@ -131,8 +131,8 @@ function App() {
       <section className="methods"></section>
       <section className="goal">
         <div className="content-wrapper">
-          <Arrow1Tracing className="arrow-1" />
-          <Arrow2Tracing className="arrow-2" />
+          <Arrow1Tracing className="arrow" />
+          <Arrow2Tracing className="arrow" />
           <TargetTracing className="tracing" />
           <div className="text-wrapper">
             <h1 className="title">Naš cilj</h1>
