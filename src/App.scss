@@ -83,6 +83,7 @@ body {
   flex-direction: column;
   box-sizing: border-box;
   padding: 40px 24px;
+  background-color: $ugly-white;
 
   .text-wrapper {
     .title {
@@ -93,15 +94,51 @@ body {
   }
 
   .cards-wrapper {
+    position: relative;
+
+    .vertical-line {
+      width: 4px;
+      height: 80%;
+      background-color: rgba($dark-blue, 15%);
+      position: absolute;
+      left: 16px;
+      top: 12px;
+
+      display: none;
+    }
+
     .card-wrapper {
       display: flex;
       gap: 32px;
 
       .dot {
+        display: none;
         width: 40px;
+        margin-top: 12px;
+      }
+    }
+  }
 
-        @media screen and (min-width: $mobile-margin-breakpoint) {
-          display: none;
+  @media screen and (max-width: 1000px) {
+    .cards-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+
+      .vertical-line {
+        display: initial;
+      }
+
+      .card-wrapper {
+        display: flex;
+        gap: 32px;
+
+        .dot {
+          display: initial;
+        }
+
+        .card {
+          width: 100%;
         }
       }
     }

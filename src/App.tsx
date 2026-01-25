@@ -134,6 +134,7 @@ function App() {
           </p>
         </div>
         <div className="cards-wrapper">
+          <div className="vertical-line" />
           <div className="card-wrapper">
             <Dot1Tracing className="dot" />
             <Card
@@ -141,6 +142,7 @@ function App() {
               icon={ClipboardIcon}
               color="pink"
               variant="medium"
+              className="card"
             />
           </div>
           <div className="card-wrapper">
@@ -150,6 +152,7 @@ function App() {
               icon={ClipboardIcon}
               color="pink"
               variant="medium"
+              className="card"
             />
           </div>
           <div className="card-wrapper">
@@ -159,6 +162,7 @@ function App() {
               icon={ClipboardIcon}
               color="pink"
               variant="medium"
+              className="card"
             />
           </div>
           <div className="card-wrapper">
@@ -168,6 +172,7 @@ function App() {
               icon={ClipboardIcon}
               color="pink"
               variant="medium"
+              className="card"
             />
           </div>
         </div>
