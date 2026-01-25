@@ -112,7 +112,9 @@ function App() {
   return (
     <>
       <header className={`header ${headerVisible ? "show" : "hide"}`}>
-        <LogoSmall className="logo" />
+        <a href="#section-hero">
+          <LogoSmall className="logo" />
+        </a>
         <nav className="navigation">
           <a className="item" href="#section-why">
             Naše pripreme
