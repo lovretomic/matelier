@@ -24,7 +24,6 @@ body {
   margin: 0 auto;
   min-height: 100dvh;
   height: 100dvh;
-  background-color: $ugly-white;
 
   @media (max-width: 1280px) {
     gap: 60px;
@@ -84,7 +83,6 @@ body {
   flex-direction: column;
   box-sizing: border-box;
   padding: 40px 24px;
-  background-color: $ugly-white;
   max-width: 1300px;
   margin: 0 auto;
 
@@ -197,7 +195,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: $ugly-white;
   position: relative;
 
   @media screen and (max-width: 650px) {
