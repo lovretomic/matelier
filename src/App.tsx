@@ -127,11 +127,11 @@ function App() {
 
   const [openPopupId, setOpenPopupId] = useState<string | null>(null);
 
-  function openModal(id: string) {
+  function openPopup(id: string) {
     setOpenPopupId(id);
   }
 
-  function closeModal() {
+  function closePopup() {
     setOpenPopupId(null);
   }
 
@@ -307,7 +307,7 @@ function App() {
               <Popup
                 id={teacher.fullName}
                 openId={openPopupId}
-                onClose={closeModal}
+                onClose={closePopup}
               >
                 <TeacherPopupContent teacher={teacher} />
               </Popup>
@@ -325,7 +325,7 @@ function App() {
                 <h4 className="teacher-title">{teacher.title}</h4>
                 <button
                   className="button"
-                  onClick={() => openModal(teacher.fullName)}
+                  onClick={() => openPopup(teacher.fullName)}
                 >
                   Pročitaj više
                 </button>
@@ -335,6 +335,87 @@ function App() {
         </div>
       </section>
       <section className="packages" id="section-packages">
+        <Popup id="package-1" openId={openPopupId} onClose={closePopup}>
+          <div className="package-popup">
+            <h3>Paket 1</h3>
+            <h4>Polugodišnje pripreme</h4>
+            <p>
+              Započnite pripreme za prijemne ispite na vrijeme i bez stresa!
+            </p>
+            <p>
+              Upisujemo <b>polugodišnje pripreme iz matematike</b> koje počinju
+              <b>u veljači 2026. godine</b> i traju <b>24 tjedna</b>. Pripreme
+              su namijenjene učenicima koji žele{" "}
+              <b>
+                postići najbolji rezultat i samouvjereno pristupiti prijemnom
+                ispitu.
+              </b>
+            </p>
+            <ul>
+              <li>
+                Rad u <b>malim grupama</b> omogućuje <b>individualni pristup</b>{" "}
+                svakom učeniku.
+              </li>
+              <li>
+                Kroz <b>redovit, kontinuiran i praćen rad</b> razvijamo
+                sigurnost i razumijevanje, a ne samo "brzo ponavljanje".
+              </li>
+              <li>
+                Program uključuje i <b>simulaciju ispita</b> – priliku da
+                učenici provjere svoje znanje u stvarnim uvjetima.
+              </li>
+            </ul>
+            <p>
+              <b>
+                Broj mjesta je ograničen – rezervirajte svoje mjesto na vrijeme!
+              </b>
+            </p>
+          </div>
+        </Popup>
+
+        <Popup id="package-2" openId={openPopupId} onClose={closePopup}>
+          <div className="package-popup">
+            <h3>Paket 2</h3>
+            <h4>Brze pripreme</h4>
+            <p>
+              Za sve učenike koji žele{" "}
+              <b>učvrstiti znanje i postići vrhunski rezultat</b>, organiziramo{" "}
+              <b>
+                intenzivne, brze pripreme u lipnju, nakon završetka nastavne
+                godine.
+              </b>
+            </p>
+            <ul>
+              <li>
+                Idealan izbor za učenike koji žele{" "}
+                <b>
+                  ponoviti gradivo, razjasniti nejasnoće i utvrditi sigurnost u
+                  rješavanju zadataka.
+                </b>
+              </li>
+              <li>
+                Rad u <b>malim grupama</b> omogućuje{" "}
+                <b>maksimalnu posvećenost svakom učeniku.</b>
+              </li>
+              <li>
+                Kroz <b>ciljano usmjerene vježbe i simulaciju ispita</b>,
+                učenici stječu sigurnost i rutinu potrebnu za usmjeh na
+                prijemnom.
+              </li>
+              <li>
+                Program je dinamičan i usmjeren na <b>rezultat</b> – savršen
+                završni korak prije ispita!
+              </li>
+            </ul>
+            <p>
+              <b>
+                {" "}
+                Broj mjesta je ograničen – rezervirajte svoje mjesto na vrijeme!
+              </b>
+            </p>
+          </div>
+        </Popup>
+
         <h2 className="title">Paketi</h2>
         <div className="sticky-notes-wrapper">
           <StickyNote
@@ -346,8 +427,9 @@ function App() {
               { icon: FlagIcon, text: "od veljače 2025." },
             ]}
             price={345}
-            action={() => {}}
+            action={() => openPopup("package-1")}
           />
+
           <StickyNote
             title="Paket 2"
             subtitle="Brze pripreme"
@@ -357,8 +439,9 @@ function App() {
               { icon: FlagIcon, text: "nakon završetka nastavne godine" },
             ]}
             price={285}
-            action={() => {}}
+            action={() => openPopup("package-2")}
           />
+
           <StickyNote
             title="Simulacija"
             subtitle="prijemnog ispita"

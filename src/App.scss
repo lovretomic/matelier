@@ -785,6 +785,31 @@ body {
     }
   }
 
+  .package-popup {
+    color: $dark-blue;
+    overflow-y: auto;
+    height: 100%;
+
+    h3 {
+      text-transform: uppercase;
+      font-weight: 900;
+      font-size: 36px;
+    }
+
+    h4 {
+      opacity: 0.5;
+      text-transform: uppercase;
+      font-weight: 900;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+
+    p,
+    li {
+      margin-top: 8px;
+    }
+  }
+
   .sticky-notes-wrapper {
     display: flex;
     justify-content: center;
