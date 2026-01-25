@@ -308,8 +308,7 @@ function App() {
           <h2 className="title">Tko vodi pripreme?</h2>
           <p className="description">
             Pripreme vode profesorice matematike iz prirodoslovno matematičke
-            gimnazije, s višegodišnjim iskustvom u nastavi te u radu s
-            talentiranim učenicima i natjecateljima.
+            gimnazije, s višegodišnjim iskustvom rada u nastavi.
           </p>
         </div>
         <div className="teacher-cards-wrapper">
