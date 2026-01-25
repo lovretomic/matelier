@@ -9,6 +9,10 @@ import MindIcon from "./assets/icons/mind.svg?react";
 import SupportIcon from "./assets/icons/support.svg?react";
 import TextIcon from "./assets/icons/text.svg?react";
 import MathTrace from "./assets/tracings/math.svg?react";
+import ThumbsUpIcon from "./assets/icons/thumbs-up.svg?react";
+import ShieldIcon from "./assets/icons/shield.svg?react";
+import NumbersIcon from "./assets/icons/numbers.svg?react";
+import WarningIcon from "./assets/icons/warning.svg?react";
 import LogoBig from "./assets/icons/logo-big.svg?react";
 
 import Card from "./components/Card";
@@ -19,6 +23,13 @@ import ClockIcon from "./assets/icons/clock.svg?react";
 import CalendarIcon from "./assets/icons/calendar.svg?react";
 import FlagIcon from "./assets/icons/flag.svg?react";
 
+import Dot1Tracing from "./assets/tracings/dot-1.svg?react";
+import Dot2Tracing from "./assets/tracings/dot-2.svg?react";
+import Dot3Tracing from "./assets/tracings/dot-3.svg?react";
+import Dot4Tracing from "./assets/tracings/dot-4.svg?react";
+import CosineTracing from "./assets/tracings/cosine.svg?react";
+import PencilTracing from "./assets/tracings/pencil.svg?react";
+
 import LocationPinIcon from "./assets/icons/location-pin.svg?react";
 
 import GeographyTracing from "./assets/tracings/geography.svg?react";
@@ -27,7 +38,7 @@ import { teachers, type Teacher } from "./data";
 import BookAndGlassesTracing from "./assets/tracings/book-and-glasses.svg?react";
 import BulbAndNotesTracing from "./assets/tracings/bulb-and-notes.svg?react";
 import BulbAndNotes2Tracing from "./assets/tracings/bulb-and-notes-2.svg?react";
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import Popup from "./components/Popup";
 import { useIsOverflowing } from "./hooks/useIsOverflowing";
 
@@ -128,7 +139,61 @@ function App() {
           />
         </div>
       </section>
-      <section className="methods"></section>
+      <section className="how">
+        <PencilTracing className="pencil" />
+        <div className="text-wrapper">
+          <h2 className="title">Način rada</h2>
+          <p className="description">
+            Program koji obrađujemo pokriva sve ključne sadržaje iz
+            osnovnoškolskog kurikuluma potrebne za uspješno polaganje prijemnog
+            ispita iz matematike. Učenike učimo:
+          </p>
+        </div>
+        <div className="cards-wrapper">
+          <CosineTracing className="cosine" />
+          <div className="vertical-line" />
+          <div className="card-wrapper">
+            <Dot1Tracing className="dot" />
+            <Card
+              text="Kako organizirati rješenje korak-po-korak"
+              icon={ThumbsUpIcon}
+              color="yellow"
+              variant="medium"
+              className="card"
+            />
+          </div>
+          <div className="card-wrapper">
+            <Dot2Tracing className="dot" />
+            <Card
+              text="Kako prepoznati tip zadatka"
+              icon={ShieldIcon}
+              color="pastel-blue"
+              variant="medium"
+              className="card"
+            />
+          </div>
+          <div className="card-wrapper">
+            <Dot3Tracing className="dot" />
+            <Card
+              text="Kako izbjeći tipične pogreške"
+              icon={NumbersIcon}
+              color="pink"
+              variant="medium"
+              className="card"
+            />
+          </div>
+          <div className="card-wrapper">
+            <Dot4Tracing className="dot" />
+            <Card
+              text="Kako razviti sigurnost u rješavanju ispita"
+              icon={WarningIcon}
+              color="brick-red"
+              variant="medium"
+              className="card"
+            />
+          </div>
+        </div>
+      </section>
       <section className="goal">
         <div className="content-wrapper">
           <Arrow1Tracing className="arrow" />
