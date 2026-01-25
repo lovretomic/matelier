@@ -9,6 +9,7 @@ import MindIcon from "./assets/icons/mind.svg?react";
 import SupportIcon from "./assets/icons/support.svg?react";
 import TextIcon from "./assets/icons/text.svg?react";
 import MathTrace from "./assets/tracings/math.svg?react";
+import LogoBig from "./assets/icons/logo-big.svg?react";
 
 import Card from "./components/Card";
 import StickyNote from "./components/StickyNote";
@@ -21,16 +22,76 @@ import FlagIcon from "./assets/icons/flag.svg?react";
 import LocationPinIcon from "./assets/icons/location-pin.svg?react";
 
 import GeographyTracing from "./assets/tracings/geography.svg?react";
+import { teachers, type Teacher } from "./data";
+
+import BookAndGlassesTracing from "./assets/tracings/book-and-glasses.svg?react";
+import BulbAndNotesTracing from "./assets/tracings/bulb-and-notes.svg?react";
+import BulbAndNotes2Tracing from "./assets/tracings/bulb-and-notes-2.svg?react";
+import { useRef, useState } from "react";
+import Popup from "./components/Popup";
+import { useIsOverflowing } from "./hooks/useIsOverflowing";
+
+function TeacherPopupContent({ teacher }: { teacher: Teacher }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const isOverflowing = useIsOverflowing(ref);
+
+  return (
+    <div className="popup-content-wrapper">
+      <h1 className="popup-title">{teacher.fullName}</h1>
+      <h4 className="popup-subtitle">{teacher.title}</h4>
+
+      <div
+        className={`popup-paragraphs ${isOverflowing ? "overflowing" : ""}`}
+        ref={ref}
+      >
+        {teacher.bio.map((paragraph, j) => (
+          <p className="paragraph" key={j}>
+            {paragraph}
+          </p>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 import TargetTracing from "./assets/tracings/target.svg?react";
 import Arrow1Tracing from "./assets/tracings/arrow-1.svg?react";
 import Arrow2Tracing from "./assets/tracings/arrow-2.svg?react";
 
 function App() {
+  const [openPopupId, setOpenPopupId] = useState<string | null>(null);
+
+  function openModal(id: string) {
+    setOpenPopupId(id);
+  }
+
+  function closeModal() {
+    setOpenPopupId(null);
+  }
+
   return (
     <>
       <header className="header"></header>
-      <section className="hero"></section>
+      <section className="hero">
+        <div className="landing">
+          <LogoBig className="icon" />
+          <h1 className="title">
+            {" "}
+            Sigurnijim korakom <br /> u srednju školu
+          </h1>
+        </div>
+        <Card
+          variant="large"
+          icon={(props) => (
+            <div style={{ transform: "translateX(1px) translateY(3px)" }}>
+              <FlagIcon {...props} />
+            </div>
+          )}
+          color="pink"
+          title="Pripreme za prijemne ispite iz matematike"
+          text="Prelazak iz osnovne u srednju školu važna je prekretnica. Uz dobru pripremu, samopouzdanje i pravilno usmjerenje, svaki učenik može pokazati svoje znanje i postići odličan rezultat. Naš cilj je pomoći im da matematiku razumiju, zavole i – savladaju."
+        />
+      </section>
       <section className="why">
         <MathTrace className="traces" />
 
@@ -83,7 +144,51 @@ function App() {
           </div>
         </div>
       </section>
-      <section className="who"></section>
+      <section className="who">
+        <BookAndGlassesTracing className="tracing-1" />
+        <BulbAndNotesTracing className="tracing-2" />
+        <div className="title-wrapper">
+          <BulbAndNotes2Tracing className="tracing-3" />
+          <h2 className="title">Tko vodi pripreme?</h2>
+          <p className="description">
+            Pripreme vode profesorice matematike iz prirodoslovno matematičke
+            gimnazije, s višegodišnjim iskustvom u nastavi te u radu s
+            talentiranim učenicima i natjecateljima.
+          </p>
+        </div>
+        <div className="teacher-cards-wrapper">
+          {teachers.map((teacher) => (
+            <>
+              <Popup
+                id={teacher.fullName}
+                openId={openPopupId}
+                onClose={closeModal}
+              >
+                <TeacherPopupContent teacher={teacher} />
+              </Popup>
+              <div className="teacher-card" key={teacher.fullName}>
+                <div
+                  className="image-with-gradient"
+                  style={
+                    {
+                      "--img-url": `url(${teacher.photoUrl})`,
+                    } as React.CSSProperties
+                  }
+                />
+
+                <h3 className="teacher-name">{teacher.fullName}</h3>
+                <h4 className="teacher-title">{teacher.title}</h4>
+                <button
+                  className="button"
+                  onClick={() => openModal(teacher.fullName)}
+                >
+                  Pročitaj više
+                </button>
+              </div>
+            </>
+          ))}
+        </div>
+      </section>
       <section className="packages">
         <h2 className="title">Paketi</h2>
         <div className="sticky-notes-wrapper">
