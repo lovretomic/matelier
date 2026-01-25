@@ -15,6 +15,7 @@ import ShieldIcon from "./assets/icons/shield.svg?react";
 import NumbersIcon from "./assets/icons/numbers.svg?react";
 import WarningIcon from "./assets/icons/warning.svg?react";
 import LogoBig from "./assets/icons/logo-big.svg?react";
+import HamburgerMenuIcon from "./assets/icons/hamburger.svg?react";
 
 import Card from "./components/Card";
 import StickyNote from "./components/StickyNote";
@@ -143,6 +144,9 @@ function App() {
             Prijavi se
           </button>
         </nav>
+        <button className="hamburger-menu">
+          <HamburgerMenuIcon />
+        </button>
       </header>
       <section className="hero" ref={heroRef} id="section-hero">
         <div className="landing">

@@ -15,10 +15,12 @@ body {
 }
 
 .header {
+  $header-mobile-breakpoint: 900px;
+
   position: fixed;
   width: 100%;
   border-bottom: 2px solid rgba($dark-blue, 10%);
-  background-color: rgba($ugly-white, 0.75);
+  background-color: rgba($ugly-white, 0.85);
   backdrop-filter: blur(10px);
   box-sizing: border-box;
 
@@ -30,6 +32,10 @@ body {
   justify-content: space-between;
   padding: 16px 40px;
 
+  @media (max-width: $header-mobile-breakpoint) {
+    padding: 16px 24px;
+  }
+
   .logo {
     * {
       fill: $yellow;
@@ -40,16 +46,16 @@ body {
     cursor: pointer;
     transition: 100ms ease-in-out;
 
+    @media (max-width: $header-mobile-breakpoint) {
+      height: 28px;
+    }
+
     &:hover {
       scale: 1.03;
     }
 
     &:active {
       scale: 0.97;
-    }
-
-    @media (max-width: 800px) {
-      width: 90px;
     }
   }
 
@@ -96,15 +102,47 @@ body {
       &:active {
         scale: 0.97;
       }
+    }
 
-      @media (max-width: 800px) {
-        font-size: 16px;
+    @media (max-width: 1000px) {
+      font-size: 16px;
+      gap: 12px;
+    }
+
+    @media (max-width: $header-mobile-breakpoint) {
+      display: none;
+    }
+  }
+
+  .hamburger-menu {
+    svg {
+      height: 100%;
+      width: 100%;
+      * {
+        fill: $dark-blue;
       }
     }
 
-    @media (max-width: 800px) {
-      font-size: 14px;
-      gap: 20px;
+    background: none;
+    display: none;
+    border: none;
+
+    height: 40px;
+    width: 40px;
+    justify-content: center;
+    align-items: center;
+    transition: 100ms ease-in-out;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    &:active {
+      scale: 0.95;
+      background-color: rgba($dark-blue, 5%);
+    }
+
+    @media (max-width: $header-mobile-breakpoint) {
+      display: flex;
     }
   }
 }
