@@ -35,7 +35,7 @@ import PencilTracing from "./assets/tracings/pencil.svg?react";
 import LocationPinIcon from "./assets/icons/location-pin.svg?react";
 
 import GeographyTracing from "./assets/tracings/geography.svg?react";
-import { formsLink, teachers, type Teacher } from "./data";
+import { formsLink, packages, teachers, type Teacher } from "./data";
 
 import BookAndGlassesTracing from "./assets/tracings/book-and-glasses.svg?react";
 import BulbAndNotesTracing from "./assets/tracings/bulb-and-notes.svg?react";
@@ -127,11 +127,11 @@ function App() {
 
   const [openPopupId, setOpenPopupId] = useState<string | null>(null);
 
-  function openModal(id: string) {
+  function openPopup(id: string) {
     setOpenPopupId(id);
   }
 
-  function closeModal() {
+  function closePopup() {
     setOpenPopupId(null);
   }
 
@@ -307,7 +307,7 @@ function App() {
               <Popup
                 id={teacher.fullName}
                 openId={openPopupId}
-                onClose={closeModal}
+                onClose={closePopup}
               >
                 <TeacherPopupContent teacher={teacher} />
               </Popup>
@@ -325,7 +325,7 @@ function App() {
                 <h4 className="teacher-title">{teacher.title}</h4>
                 <button
                   className="button"
-                  onClick={() => openModal(teacher.fullName)}
+                  onClick={() => openPopup(teacher.fullName)}
                 >
                   Pročitaj više
                 </button>
@@ -335,6 +335,17 @@ function App() {
         </div>
       </section>
       <section className="packages" id="section-packages">
+        <Popup id="package-1" openId={openPopupId} onClose={closePopup}>
+          <h3>{packages[0].title}</h3>
+          <h3>{packages[0].subtitle}</h3>
+          {packages[0].content}
+        </Popup>
+
+        <Popup id="package-2" openId={openPopupId} onClose={closePopup}>
+          <h3>{packages[1].title}</h3>
+          <h3>{packages[1].subtitle}</h3>
+          {packages[1].content}
+        </Popup>
         <h2 className="title">Paketi</h2>
         <div className="sticky-notes-wrapper">
           <StickyNote
@@ -346,8 +357,9 @@ function App() {
               { icon: FlagIcon, text: "od veljače 2025." },
             ]}
             price={345}
-            action={() => {}}
+            action={() => openPopup("package-1")}
           />
+
           <StickyNote
             title="Paket 2"
             subtitle="Brze pripreme"
@@ -357,8 +369,9 @@ function App() {
               { icon: FlagIcon, text: "nakon završetka nastavne godine" },
             ]}
             price={285}
-            action={() => {}}
+            action={() => openPopup("package-2")}
           />
+
           <StickyNote
             title="Simulacija"
             subtitle="prijemnog ispita"
