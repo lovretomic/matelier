@@ -1,7 +1,12 @@
 $mobile-margin-breakpoint: 600px;
 
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
   margin: 0;
+  background-color: $ugly-white;
 }
 
 * {
@@ -82,8 +87,12 @@ body {
   align-items: center;
   background-color: $ugly-white;
   background-image: url("assets/images/meshgrid.svg");
-  padding: 40px;
+  background-position: bottom;
+  background-repeat: no-repeat;
   padding-bottom: 80px;
+  padding-left: 20px;
+  padding-right: 20px;
+  gap: 60px;
   @media (max-width: $mobile-margin-breakpoint) {
     align-items: flex-start;
   }
@@ -92,6 +101,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 40px;
     .icon {
       width: 400px;
       height: 400px;
@@ -180,6 +191,485 @@ body {
 
       @media (max-width: 1050px) {
         font-size: 40px;
+      }
+    }
+  }
+}
+
+.how {
+  min-height: 100dvh;
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 40px 24px;
+  max-width: 1300px;
+  margin: 0 auto;
+  position: relative;
+
+  $section-mobile-breakpoint: 1000px;
+
+  @media screen and (max-width: $section-mobile-breakpoint) {
+    max-width: 600px;
+  }
+
+  .text-wrapper {
+    .title {
+      text-transform: uppercase;
+      font-weight: 900;
+      font-size: 36px;
+      margin-bottom: 8px;
+    }
+
+    .description {
+      font-size: 18px;
+      max-width: 600px;
+    }
+  }
+
+  .pencil {
+    position: absolute;
+    right: 0;
+    height: 100px;
+  }
+
+  .cards-wrapper {
+    position: relative;
+
+    .vertical-line {
+      width: 4px;
+      height: 80%;
+      background-color: rgba($dark-blue, 15%);
+      position: absolute;
+      left: 16px;
+      top: 12px;
+
+      display: none;
+    }
+
+    .cosine {
+      width: 100%;
+    }
+
+    .card-wrapper {
+      position: absolute;
+
+      &:nth-of-type(2n + 1) {
+        top: 0;
+      }
+
+      &:nth-of-type(2n) {
+        bottom: -20px;
+
+        @media screen and (max-width: 1200px) {
+          bottom: 0;
+        }
+      }
+
+      &:nth-of-type(1) {
+        left: 80%;
+        background-color: red;
+      }
+
+      &:nth-of-type(2) {
+        left: 18%;
+      }
+
+      &:nth-of-type(3) {
+        left: 50%;
+      }
+
+      &:nth-of-type(4) {
+        right: 0;
+      }
+
+      @media screen and (max-width: 1300px) {
+        scale: 0.8;
+      }
+
+      .dot {
+        display: none;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    .pencil {
+      position: unset;
+      width: fit-content;
+    }
+
+    .cards-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+
+      .vertical-line {
+        display: initial;
+      }
+
+      .cosine {
+        display: none;
+      }
+
+      .card-wrapper {
+        display: flex;
+        gap: 32px;
+        position: initial;
+        scale: 1;
+
+        .dot {
+          display: initial;
+          width: 40px;
+          margin-top: 12px;
+        }
+
+        .card {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.goal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  background: linear-gradient(180deg, #e8a4b8 0%, #e67c9c 100%);
+
+  @media (max-width: $mobile-margin-breakpoint) {
+    align-items: center;
+    padding-top: 8vh;
+  }
+
+  .content-wrapper {
+    $section-mobile-breakpoint: 720px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    width: 80%;
+    position: relative;
+    margin-top: 100px;
+
+    @media (max-width: 900px) {
+      gap: 60px;
+    }
+
+    @media (max-width: $section-mobile-breakpoint) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 50px;
+    }
+
+    .arrow {
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      z-index: 1;
+    }
+
+    .arrow:nth-of-type(1) {
+      top: 20px;
+      left: 40%;
+      rotate: -10deg;
+
+      @media (max-width: 1200px) {
+        top: 60px;
+        left: 300px;
+        width: 125px;
+        height: 125px;
+      }
+
+      @media (max-width: 900px) {
+        top: 80px;
+        left: 250px;
+        width: 100px;
+        height: 100px;
+      }
+
+      @media (max-width: $section-mobile-breakpoint) {
+        top: -40px;
+        margin-left: 40px;
+      }
+
+      @media (max-width: 500px) {
+        display: none;
+      }
+    }
+
+    .arrow:nth-of-type(2) {
+      top: 0px;
+      right: 100px;
+
+      @media (max-width: 1200px) {
+        top: 40px;
+        right: 80px;
+        width: 125px;
+        height: 125px;
+      }
+
+      @media (max-width: 900px) {
+        top: 60px;
+        right: 10px;
+        width: 100px;
+        height: 100px;
+      }
+
+      @media (max-width: $section-mobile-breakpoint) {
+        display: none;
+      }
+    }
+
+    .tracing {
+      width: 800px;
+      height: 600px;
+
+      @media (max-width: $section-mobile-breakpoint) {
+        width: 220px;
+        height: 200px;
+      }
+
+      @media (max-width: 400px) {
+        width: 150px;
+        height: 150px;
+      }
+    }
+
+    .text-wrapper {
+      display: flex;
+      gap: 16px;
+      flex-direction: column;
+
+      .title {
+        font-weight: 900;
+        font-size: 60px;
+        text-transform: uppercase;
+        color: $ugly-white;
+
+        @media (max-width: 1200px) {
+          font-size: 50px;
+        }
+        @media (max-width: 900px) {
+          font-size: 45px;
+        }
+        @media (max-width: $section-mobile-breakpoint) {
+          font-size: 40px;
+        }
+      }
+
+      .text {
+        font-weight: 400;
+        font-size: 28px;
+        color: $ugly-white;
+
+        @media (max-width: 1200px) {
+          font-size: 24px;
+        }
+        @media (max-width: 900px) {
+          font-size: 22px;
+        }
+        @media (max-width: $section-mobile-breakpoint) {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+.who {
+  min-height: 100dvh;
+  display: flex;
+  gap: 32px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  @media screen and (max-width: 650px) {
+    padding: 0 24px;
+    padding-bottom: 80px;
+  }
+
+  .tracing-1,
+  .tracing-2 {
+    position: absolute;
+    max-width: 14%;
+  }
+
+  .tracing-1 {
+    left: 7%;
+  }
+
+  .tracing-2 {
+    right: 7%;
+  }
+
+  .tracing-3 {
+    display: none;
+  }
+
+  @media screen and (max-width: 1100px) {
+    .tracing-1 {
+      left: 4%;
+    }
+
+    .tracing-2 {
+      right: 4%;
+    }
+  }
+
+  @media screen and (max-width: 960px) {
+    .tracing-1,
+    .tracing-2 {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 650px) {
+    .tracing-3 {
+      display: block;
+      scale: 0.8;
+    }
+  }
+
+  .title-wrapper {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    max-width: 550px;
+    gap: 4px;
+
+    .title {
+      font-size: 50px;
+      font-weight: 900;
+      text-transform: uppercase;
+
+      @media screen and (max-width: 650px) {
+        font-size: 36px;
+      }
+    }
+  }
+
+  @mixin teacher-name {
+    font-size: 24px;
+    font-weight: 600;
+    color: $dark-blue;
+  }
+
+  @mixin teacher-title {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba($dark-blue, 70%);
+  }
+
+  .popup-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .popup-title {
+    @include teacher-name;
+    margin-right: 44px;
+  }
+
+  .popup-subtitle {
+    @include teacher-title;
+    margin-bottom: 24px;
+    margin-right: 44px;
+  }
+
+  .popup-paragraphs {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    height: 100%;
+    overflow-y: auto;
+
+    &.overflowing {
+      padding-bottom: 24px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: calc(100% - 48px);
+        bottom: 23px;
+        box-sizing: border-box;
+        height: 24px;
+        pointer-events: none;
+
+        background: linear-gradient(
+          to bottom,
+          rgba($ugly-white, 0) 0,
+          rgba($ugly-white, 1) 100%
+        );
+      }
+    }
+  }
+
+  .teacher-cards-wrapper {
+    display: flex;
+    gap: 32px;
+
+    @media screen and (max-width: 650px) {
+      flex-direction: column;
+    }
+
+    .teacher-card {
+      border: 1px solid rgba(black, 20%);
+      border-radius: 8px;
+      box-sizing: border-box;
+      padding: 8px;
+      padding-bottom: 16px;
+      width: 270px;
+      height: 420px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      .image-with-gradient {
+        --img-url: url("./assets/images/teacher-temp.png");
+        width: 100%;
+        height: 100%;
+
+        background-image:
+          linear-gradient(to top, rgba(#f7f7f7, 1) 0%, rgba(#f7f7f7, 0) 25%),
+          var(--img-url);
+
+        background-size: cover;
+        background-position: center;
+      }
+
+      .teacher-name {
+        @include teacher-name;
+        margin-top: 12px;
+      }
+
+      .teacher-title {
+        @include teacher-title;
+        margin-bottom: 12px;
+      }
+
+      .button {
+        background-color: $aquamarine;
+        color: $ugly-white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: 100ms ease-in-out;
+        &:hover {
+          background-color: darken($aquamarine, 5%);
+        }
       }
     }
   }
