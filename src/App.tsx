@@ -35,7 +35,7 @@ import PencilTracing from "./assets/tracings/pencil.svg?react";
 import LocationPinIcon from "./assets/icons/location-pin.svg?react";
 
 import GeographyTracing from "./assets/tracings/geography.svg?react";
-import { teachers, type Teacher } from "./data";
+import { formsLink, teachers, type Teacher } from "./data";
 
 import BookAndGlassesTracing from "./assets/tracings/book-and-glasses.svg?react";
 import BulbAndNotesTracing from "./assets/tracings/bulb-and-notes.svg?react";
@@ -156,12 +156,7 @@ function App() {
           ))}
           <button
             className="apply-button"
-            onClick={() =>
-              window.open(
-                "https://forms.office.com/pages/responsepage.aspx?id=FvJamzTGgEurAgyaPQKQkW9Z9Um2rz5PsNIf7OZzxNhUNFlSOFlaSExNUDA5RlBUMFpITVdWTUs3RC4u&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAdGRleAPi29FleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAafMC6l5nB8q9vGIOTIUcsdpD7aPPQJVlz-oyxRk0oEmvqC7ZLCWo_wTiferng_aem_m2ySetS-X-0x6tsHRZVLgg&route=shorturl",
-                "_blank",
-              )
-            }
+            onClick={() => window.open(formsLink, "_blank")}
           >
             Prijavi se
           </button>

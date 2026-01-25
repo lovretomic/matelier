@@ -4,6 +4,7 @@ import c from "./MobileMenu.module.scss";
 
 import LogoBig from "../../assets/icons/logo-big.svg?react";
 import { useEffect } from "react";
+import { formsLink } from "../../data";
 
 type MobileMenuType = {
   isOpen: boolean;
@@ -49,7 +50,14 @@ const MobileMenu: React.FC<MobileMenuType> = ({
             {section.label}
           </button>
         ))}
-        <button className="apply-button">Prijavi se!</button>
+        <button
+          className="apply-button"
+          onClick={() => {
+            window.open(formsLink, "_blank");
+          }}
+        >
+          Prijavi se!
+        </button>
       </nav>
     </div>
   );
