@@ -709,8 +709,8 @@ body {
       box-sizing: border-box;
       padding: 8px;
       padding-bottom: 16px;
-      width: 270px;
-      height: 420px;
+      width: 290px;
+      height: 500px;
 
       display: flex;
       flex-direction: column;
@@ -723,7 +723,7 @@ body {
         height: 100%;
 
         background-image:
-          linear-gradient(to top, rgba(#f7f7f7, 1) 0%, rgba(#f7f7f7, 0) 25%),
+          linear-gradient(to top, rgba(#f7f7f7, 1) 0%, rgba(#f7f7f7, 0) 5%),
           var(--img-url);
 
         background-size: cover;

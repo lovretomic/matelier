@@ -1,5 +1,5 @@
-import TeacherTempImage from "./assets/images/teacher-temp.png";
-import TeacherTemp2Image from "./assets/images/stylish-confident-businesswoman-smiling_176420-19466.avif";
+import AnaSpireljaGruic from "./assets/images/ana-spirelja-gruic.png";
+import TeaAmizic from "./assets/images/tea-amizic.png";
 
 export type Teacher = {
   fullName: string;
@@ -12,7 +12,7 @@ const teachers: Teacher[] = [
   {
     fullName: "Ana Špirelja Gruić",
     title: "prof. savjetnik i dipl. ing. matematike",
-    photoUrl: TeacherTempImage,
+    photoUrl: AnaSpireljaGruic,
     bio: [
       "Matematiku predajem 18 godina u V. gimnaziji u Zagrebu, a kao diplomirani inženjer matematike i profesor savjetnik, imala sam priliku raditi s generacijama učenika — od onih kojima je trebalo samo malo samopouzdanja, do onih koji su postizali izvanredne rezultate.",
       "Tijekom tih godina vidjela sam koliko je učenicima izazovan prelazak iz osnovne u srednju školu, osobito kada je riječ o matematici. Novi ritam, veći pritisak, brži tempo gradiva… i zato vjerujem da dobra priprema čini razliku — daje sigurnost, mir i dobar start.",
@@ -23,7 +23,7 @@ const teachers: Teacher[] = [
   {
     fullName: "Tea Amižić",
     title: "mag. educ. math.",
-    photoUrl: TeacherTemp2Image,
+    photoUrl: TeaAmizic,
     bio: [
       "Diplomirana sam magistra edukacije matematike. Prirodoslovno-matematički fakultet Sveučilišta u Zagrebu završila sam 2018. godine, nakon čega se zapošljavam u školi kao profesorica matematike. Od 2021. godine radim u V. gimnaziji u Zagrebu.",
       "U svom radu posebno se bavim radom s darovitim učenicima, koje pripremam za školska, županijska i državna natjecanja, pri čemu se mogu pohvaliti mentorstvom učenika na svim razinama natjecanja. Također, kontinuirano pripremam učenike za Državnu maturu, sudjelujem u ispravljanju ispita Državne mature, kao i u ispravljanju prijemnih ispita iz matematike za upis u matematičke gimnazije, što mi omogućuje detaljan uvid u kriterije vrednovanja i najčešće pogreške učenika.",
