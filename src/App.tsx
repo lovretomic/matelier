@@ -31,6 +31,7 @@ import BulbAndNotes2Tracing from "./assets/tracings/bulb-and-notes-2.svg?react";
 import { useRef, useState } from "react";
 import Popup from "./components/Popup";
 import { useIsOverflowing } from "./hooks/useIsOverflowing";
+import type { cardIconPallette } from "./components/Card/Card";
 
 function TeacherPopupContent({ teacher }: { teacher: Teacher }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -52,6 +53,18 @@ function TeacherPopupContent({ teacher }: { teacher: Teacher }) {
         ))}
       </div>
     </div>
+  );
+}
+
+function HowSectionCard(
+  text: string,
+  icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>,
+  color: keyof typeof cardIconPallette | string,
+) {
+  return (
+    <>
+      <Card className="show-desktop" text={text} icon={icon} color={color} />
+    </>
   );
 }
 
