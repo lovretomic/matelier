@@ -66,6 +66,17 @@ function App() {
           <span>O nama</span>
           <span>Paketi</span>
           <span>Lokacija</span>
+          <div
+            className="forms"
+            onClick={() =>
+              window.open(
+                "https://forms.office.com/pages/responsepage.aspx?id=FvJamzTGgEurAgyaPQKQkW9Z9Um2rz5PsNIf7OZzxNhUNFlSOFlaSExNUDA5RlBUMFpITVdWTUs3RC4u&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAdGRleAPi29FleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAafMC6l5nB8q9vGIOTIUcsdpD7aPPQJVlz-oyxRk0oEmvqC7ZLCWo_wTiferng_aem_m2ySetS-X-0x6tsHRZVLgg&route=shorturl",
+                "_blank",
+              )
+            }
+          >
+            Prijavi se
+          </div>
         </div>
       </header>
       <section className="hero" ref={heroRef}>
