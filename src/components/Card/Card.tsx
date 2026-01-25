@@ -11,13 +11,13 @@ export const cardIconPallette = {
   "ugly-white": "#f7f7f7",
   "pastel-blue": "#b2c6ce",
   pink: "#d07f97",
-};
+} as const;
 
 type CardProps = {
   text: string;
   icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   variant?: "small" | "medium" | "large";
-  color: keyof typeof cardIconPallette | string;
+  color: keyof typeof cardIconPallette;
   title?: string;
   className?: string;
 };

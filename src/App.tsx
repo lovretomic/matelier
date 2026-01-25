@@ -11,6 +11,10 @@ import CheckmarkIcon from "./assets/icons/checkmark.svg?react";
 import SupportIcon from "./assets/icons/support.svg?react";
 import TextIcon from "./assets/icons/text.svg?react";
 import MathTrace from "./assets/tracings/math.svg?react";
+import ThumbsUpIcon from "./assets/icons/thumbs-up.svg?react";
+import ShieldIcon from "./assets/icons/shield.svg?react";
+import NumbersIcon from "./assets/icons/numbers.svg?react";
+import WarningIcon from "./assets/icons/warning.svg?react";
 
 import Card from "./components/Card";
 import StickyNote from "./components/StickyNote";
@@ -141,8 +145,8 @@ function App() {
             <Dot1Tracing className="dot" />
             <Card
               text="Kako organizirati rješenje korak-po-korak"
-              icon={ClipboardIcon}
-              color="pink"
+              icon={ThumbsUpIcon}
+              color="yellow"
               variant="medium"
               className="card"
             />
@@ -151,8 +155,8 @@ function App() {
             <Dot2Tracing className="dot" />
             <Card
               text="Kako prepoznati tip zadatka"
-              icon={ClipboardIcon}
-              color="pink"
+              icon={ShieldIcon}
+              color="pastel-blue"
               variant="medium"
               className="card"
             />
@@ -161,7 +165,7 @@ function App() {
             <Dot3Tracing className="dot" />
             <Card
               text="Kako izbjeći tipične pogreške"
-              icon={ClipboardIcon}
+              icon={NumbersIcon}
               color="pink"
               variant="medium"
               className="card"
@@ -171,8 +175,8 @@ function App() {
             <Dot4Tracing className="dot" />
             <Card
               text="Kako razviti sigurnost u rješavanju ispita"
-              icon={ClipboardIcon}
-              color="pink"
+              icon={WarningIcon}
+              color="brick-red"
               variant="medium"
               className="card"
             />
