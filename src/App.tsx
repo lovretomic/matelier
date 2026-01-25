@@ -88,18 +88,29 @@ function App() {
   const heroRef = useRef<HTMLElement>(null);
   const [headerVisible, setHeaderVisible] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolling, setIsScrolling] = useState(false);
 
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (!el) return;
 
+    setIsScrolling(true);
+
+    setTimeout(() => {
+      setIsScrolling(false);
+    }, 1500);
+
     window.scrollTo({
       top: el.offsetTop,
       behavior: "smooth",
     });
+
+    setHeaderVisible(false);
   };
 
   useEffect(() => {
+    if (isScrolling) return;
+
     let lastScrollY = window.scrollY;
 
     const handleScroll = () => {
@@ -123,7 +134,7 @@ function App() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [isScrolling]);
 
   const [openPopupId, setOpenPopupId] = useState<string | null>(null);
 
@@ -149,7 +160,7 @@ function App() {
         </a>
         <nav className="navigation">
           {sections.map((section) => (
-            <a className="item" href={`#${section.id}`}>
+            <a className="item" onClick={() => scrollToSection(section.id)}>
               {section.label}
             </a>
           ))}
