@@ -1,4 +1,5 @@
 import "./App.scss";
+import { useRef, useState, useEffect } from "react";
 import LogoSmall from "./assets/icons/logo-small.svg?react";
 import PhoneIcon from "./assets/icons/phone.svg?react";
 import EmailIcon from "./assets/icons/email.svg?react";
@@ -14,6 +15,7 @@ import ShieldIcon from "./assets/icons/shield.svg?react";
 import NumbersIcon from "./assets/icons/numbers.svg?react";
 import WarningIcon from "./assets/icons/warning.svg?react";
 import LogoBig from "./assets/icons/logo-big.svg?react";
+import HamburgerMenuIcon from "./assets/icons/hamburger.svg?react";
 
 import Card from "./components/Card";
 import StickyNote from "./components/StickyNote";
@@ -33,12 +35,11 @@ import PencilTracing from "./assets/tracings/pencil.svg?react";
 import LocationPinIcon from "./assets/icons/location-pin.svg?react";
 
 import GeographyTracing from "./assets/tracings/geography.svg?react";
-import { teachers, type Teacher } from "./data";
+import { formsLink, teachers, type Teacher } from "./data";
 
 import BookAndGlassesTracing from "./assets/tracings/book-and-glasses.svg?react";
 import BulbAndNotesTracing from "./assets/tracings/bulb-and-notes.svg?react";
 import BulbAndNotes2Tracing from "./assets/tracings/bulb-and-notes-2.svg?react";
-import React, { useRef, useState } from "react";
 import Popup from "./components/Popup";
 import { useIsOverflowing } from "./hooks/useIsOverflowing";
 
@@ -68,8 +69,62 @@ function TeacherPopupContent({ teacher }: { teacher: Teacher }) {
 import TargetTracing from "./assets/tracings/target.svg?react";
 import Arrow1Tracing from "./assets/tracings/arrow-1.svg?react";
 import Arrow2Tracing from "./assets/tracings/arrow-2.svg?react";
+import MobileMenu from "./components/MobileMenu";
+
+export type SectionData = {
+  id: string;
+  label: string;
+};
+
+export const sections: SectionData[] = [
+  { id: "section-why", label: "Naše pripreme" },
+  { id: "section-how", label: "Način rada" },
+  { id: "section-who", label: "O nama" },
+  { id: "section-packages", label: "Paketi" },
+  { id: "section-location", label: "Lokacija" },
+];
 
 function App() {
+  const heroRef = useRef<HTMLElement>(null);
+  const [headerVisible, setHeaderVisible] = useState(true);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+
+    window.scrollTo({
+      top: el.offsetTop,
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const scrollingDown = currentScrollY > lastScrollY;
+      lastScrollY = currentScrollY;
+
+      const hero = heroRef.current;
+      if (!hero) return;
+
+      const inHero = currentScrollY < hero.offsetHeight - 50;
+
+      if (inHero) {
+        setHeaderVisible(true);
+      } else {
+        setHeaderVisible(!scrollingDown);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const [openPopupId, setOpenPopupId] = useState<string | null>(null);
 
   function openModal(id: string) {
@@ -82,12 +137,37 @@ function App() {
 
   return (
     <>
-      <header className="header"></header>
-      <section className="hero">
+      <MobileMenu
+        isOpen={isMobileMenuOpen}
+        sections={sections}
+        onNavigate={(id: string) => scrollToSection(id)}
+        onClose={() => setIsMobileMenuOpen(false)}
+      />
+      <header className={`header ${headerVisible ? "show" : "hide"}`}>
+        <a href="#section-hero">
+          <LogoSmall className="logo" />
+        </a>
+        <nav className="navigation">
+          {sections.map((section) => (
+            <a className="item" href={`#${section.id}`}>
+              {section.label}
+            </a>
+          ))}
+          <button
+            className="apply-button"
+            onClick={() => window.open(formsLink, "_blank")}
+          >
+            Prijavi se
+          </button>
+        </nav>
+        <button className="hamburger-menu">
+          <HamburgerMenuIcon onClick={() => setIsMobileMenuOpen(true)} />
+        </button>
+      </header>
+      <section className="hero" ref={heroRef} id="section-hero">
         <div className="landing">
           <LogoBig className="icon" />
           <h1 className="title">
-            {" "}
             Sigurnijim korakom <br /> u srednju školu
           </h1>
         </div>
@@ -103,7 +183,7 @@ function App() {
           text="Prelazak iz osnovne u srednju školu važna je prekretnica. Uz dobru pripremu, samopouzdanje i pravilno usmjerenje, svaki učenik može pokazati svoje znanje i postići odličan rezultat. Naš cilj je pomoći im da matematiku razumiju, zavole i – savladaju."
         />
       </section>
-      <section className="why">
+      <section className="why" id="section-why">
         <MathTrace className="traces" />
 
         <div className="content">
@@ -139,9 +219,9 @@ function App() {
           />
         </div>
       </section>
-      <section className="how">
-        <PencilTracing className="pencil" />
+      <section className="how" id="section-how">
         <div className="text-wrapper">
+          <PencilTracing className="pencil" />
           <h2 className="title">Način rada</h2>
           <p className="description">
             Program koji obrađujemo pokriva sve ključne sadržaje iz
@@ -194,7 +274,7 @@ function App() {
           </div>
         </div>
       </section>
-      <section className="goal">
+      <section className="goal" id="section-goal">
         <div className="content-wrapper">
           <Arrow1Tracing className="arrow" />
           <Arrow2Tracing className="arrow" />
@@ -209,7 +289,7 @@ function App() {
           </div>
         </div>
       </section>
-      <section className="who">
+      <section className="who" id="section-who">
         <BookAndGlassesTracing className="tracing-1" />
         <BulbAndNotesTracing className="tracing-2" />
         <div className="title-wrapper">
@@ -254,7 +334,7 @@ function App() {
           ))}
         </div>
       </section>
-      <section className="packages">
+      <section className="packages" id="section-packages">
         <h2 className="title">Paketi</h2>
         <div className="sticky-notes-wrapper">
           <StickyNote
@@ -296,7 +376,7 @@ function App() {
           <ThickArrowRight className="icon" />
         </button>
       </section>
-      <section className="location">
+      <section className="location" id="section-location">
         <div className="map-wrapper">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d437.7662589974481!2d15.970276874384956!3d45.812043529664045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d6e335d05a35%3A0x8e7b0e973cb2dfc7!2sOsnovna%20%C5%A1kola%20Josipa%20Jurja%20Strossmayera!5e0!3m2!1sen!2shr!4v1768836864912!5m2!1sen!2shr"
