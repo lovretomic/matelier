@@ -85,6 +85,7 @@ body {
   padding: 40px 24px;
   max-width: 1300px;
   margin: 0 auto;
+  position: relative;
 
   $section-mobile-breakpoint: 1000px;
 
@@ -97,12 +98,19 @@ body {
       text-transform: uppercase;
       font-weight: 900;
       font-size: 36px;
+      margin-bottom: 8px;
     }
 
     .description {
       font-size: 18px;
-      max-width: 400px;
+      max-width: 600px;
     }
+  }
+
+  .pencil {
+    position: absolute;
+    right: 0;
+    height: 100px;
   }
 
   .cards-wrapper {
@@ -166,6 +174,11 @@ body {
   }
 
   @media screen and (max-width: 1000px) {
+    .pencil {
+      position: unset;
+      width: fit-content;
+    }
+
     .cards-wrapper {
       display: flex;
       flex-direction: column;

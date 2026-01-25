@@ -29,6 +29,7 @@ import Dot2Tracing from "./assets/tracings/dot-2.svg?react";
 import Dot3Tracing from "./assets/tracings/dot-3.svg?react";
 import Dot4Tracing from "./assets/tracings/dot-4.svg?react";
 import CosineTracing from "./assets/tracings/cosine.svg?react";
+import PencilTracing from "./assets/tracings/pencil.svg?react";
 
 import LocationPinIcon from "./assets/icons/location-pin.svg?react";
 
@@ -131,11 +132,13 @@ function App() {
         </div>
       </section>
       <section className="how">
+        <PencilTracing className="pencil" />
         <div className="text-wrapper">
           <h2 className="title">Način rada</h2>
           <p className="description">
-            Ponavljamo osnovnu teoriju i rješavamo zadatake uz praktične
-            primjere. Učenike učimo:
+            Program koji obrađujemo pokriva sve ključne sadržaje iz
+            osnovnoškolskog kurikuluma potrebne za uspješno polaganje prijemnog
+            ispita iz matematike. Učenike učimo:
           </p>
         </div>
         <div className="cards-wrapper">
