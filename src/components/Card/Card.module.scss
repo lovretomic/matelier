@@ -1,3 +1,5 @@
+$mobile-margin-breakpoint: 600px;
+
 * {
   font-family: Figtree;
   color: $dark-blue;
@@ -30,6 +32,9 @@
 .icon {
   width: 18px;
   height: 18px;
+  * {
+    fill: white;
+  }
 }
 
 .medium {
@@ -47,7 +52,7 @@
 }
 
 .large {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   max-width: 820px;
   align-items: center;
@@ -57,8 +62,22 @@
   background: #f7f7f7;
   border: 1px solid #00000033;
   box-shadow: 0px 4px 10px 0px #0000001a;
-  @media (max-width: 500px) {
+  text-align: center;
+  @media (max-width: $mobile-margin-breakpoint) {
     align-items: flex-start;
+  }
+  .title {
+    @media (max-width: $mobile-margin-breakpoint) {
+      font-size: 28px;
+      text-align: left;
+      justify-content: flex-start;
+    }
+  }
+  .text {
+    @media (max-width: $mobile-margin-breakpoint) {
+      text-align: left;
+      justify-content: flex-start;
+    }
   }
 }
 
