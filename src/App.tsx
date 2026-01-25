@@ -98,6 +98,7 @@ function App() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   const [openPopupId, setOpenPopupId] = useState<string | null>(null);
 
   function openModal(id: string) {
@@ -113,11 +114,11 @@ function App() {
       <header className={`header ${headerVisible ? "show" : "hide"}`}>
         <LogoSmall className="logo" />
         <div className="text-wrapper">
-          <span>Naše pripreme</span>
-          <span>Način rada</span>
-          <span>O nama</span>
-          <span>Paketi</span>
-          <span>Lokacija</span>
+          <a href="#section-why">Naše pripreme</a>
+          <a href="#section-how">Način rada</a>
+          <a href="#section-who">O nama</a>
+          <a href="#section-packages">Paketi</a>
+          <a href="#section-location">Lokacija</a>
           <div
             className="forms"
             onClick={() =>
@@ -131,7 +132,7 @@ function App() {
           </div>
         </div>
       </header>
-      <section className="hero" ref={heroRef}>
+      <section className="hero" ref={heroRef} id="section-hero">
         <div className="landing">
           <LogoBig className="icon" />
           <h1 className="title">
@@ -150,7 +151,7 @@ function App() {
           text="Prelazak iz osnovne u srednju školu važna je prekretnica. Uz dobru pripremu, samopouzdanje i pravilno usmjerenje, svaki učenik može pokazati svoje znanje i postići odličan rezultat. Naš cilj je pomoći im da matematiku razumiju, zavole i – savladaju."
         />
       </section>
-      <section className="why">
+      <section className="why" id="section-why">
         <MathTrace className="traces" />
 
         <div className="content">
@@ -186,7 +187,7 @@ function App() {
           />
         </div>
       </section>
-      <section className="how">
+      <section className="how" id="section-how">
         <PencilTracing className="pencil" />
         <div className="text-wrapper">
           <h2 className="title">Način rada</h2>
@@ -241,7 +242,7 @@ function App() {
           </div>
         </div>
       </section>
-      <section className="goal">
+      <section className="goal" id="section-goal">
         <div className="content-wrapper">
           <Arrow1Tracing className="arrow" />
           <Arrow2Tracing className="arrow" />
@@ -256,7 +257,7 @@ function App() {
           </div>
         </div>
       </section>
-      <section className="who">
+      <section className="who" id="section-who">
         <BookAndGlassesTracing className="tracing-1" />
         <BulbAndNotesTracing className="tracing-2" />
         <div className="title-wrapper">
@@ -301,7 +302,7 @@ function App() {
           ))}
         </div>
       </section>
-      <section className="packages">
+      <section className="packages" id="section-packages">
         <h2 className="title">Paketi</h2>
         <div className="sticky-notes-wrapper">
           <StickyNote
@@ -343,7 +344,7 @@ function App() {
           <ThickArrowRight className="icon" />
         </button>
       </section>
-      <section className="location">
+      <section className="location" id="section-location">
         <div className="map-wrapper">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d437.7662589974481!2d15.970276874384956!3d45.812043529664045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d6e335d05a35%3A0x8e7b0e973cb2dfc7!2sOsnovna%20%C5%A1kola%20Josipa%20Jurja%20Strossmayera!5e0!3m2!1sen!2shr!4v1768836864912!5m2!1sen!2shr"
