@@ -91,6 +91,21 @@ body {
       font-size: 36px;
     }
   }
+
+  .cards-wrapper {
+    .card-wrapper {
+      display: flex;
+      gap: 32px;
+
+      .dot {
+        width: 40px;
+
+        @media screen and (min-width: $mobile-margin-breakpoint) {
+          display: none;
+        }
+      }
+    }
+  }
 }
 
 .who {

@@ -21,9 +21,9 @@ import CalendarIcon from "./assets/icons/calendar.svg?react";
 import FlagIcon from "./assets/icons/flag.svg?react";
 
 import Dot1Tracing from "./assets/tracings/dot-1.svg?react";
-import Dot2Tracing from "./assets/tracings/dot-1.svg?react";
-import Dot3Tracing from "./assets/tracings/dot-1.svg?react";
-import Dot4Tracing from "./assets/tracings/dot-1.svg?react";
+import Dot2Tracing from "./assets/tracings/dot-2.svg?react";
+import Dot3Tracing from "./assets/tracings/dot-3.svg?react";
+import Dot4Tracing from "./assets/tracings/dot-4.svg?react";
 
 import LocationPinIcon from "./assets/icons/location-pin.svg?react";
 
@@ -36,7 +36,6 @@ import BulbAndNotes2Tracing from "./assets/tracings/bulb-and-notes-2.svg?react";
 import React, { useRef, useState } from "react";
 import Popup from "./components/Popup";
 import { useIsOverflowing } from "./hooks/useIsOverflowing";
-import type { cardIconPallette } from "./components/Card/Card";
 
 function TeacherPopupContent({ teacher }: { teacher: Teacher }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -60,50 +59,6 @@ function TeacherPopupContent({ teacher }: { teacher: Teacher }) {
     </div>
   );
 }
-
-type HowSectionCardProps = {
-  text: string;
-  icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
-  color: keyof typeof cardIconPallette | string;
-  index: number;
-};
-
-const HowSectionCard: React.FC<HowSectionCardProps> = ({
-  text,
-  icon,
-  color,
-  index = 0,
-}) => {
-  const getDot = (index: number) => {
-    switch ((index % 4) + 1) {
-      case 1:
-        return <Dot1Tracing className="dot-tracing" />;
-      case 2:
-        return <Dot2Tracing className="dot-tracing" />;
-      case 3:
-        return <Dot3Tracing className="dot-tracing" />;
-      case 4:
-        return <Dot4Tracing className="dot-tracing" />;
-    }
-  };
-
-  return (
-    <>
-      <Card
-        className="desktop-card"
-        text={text}
-        icon={icon}
-        color={color}
-        variant="medium"
-      />
-
-      <div className="mobile-card">
-        {getDot(index)}
-        <Card text={text} icon={icon} color={color} variant="medium" />
-      </div>
-    </>
-  );
-};
 
 function App() {
   const [openPopupId, setOpenPopupId] = useState<string | null>(null);
@@ -179,30 +134,42 @@ function App() {
           </p>
         </div>
         <div className="cards-wrapper">
-          <HowSectionCard
-            text="Kako organizirati rješenje korak-po-korak"
-            icon={ClipboardIcon}
-            color="pink"
-            index={0}
-          />
-          <HowSectionCard
-            text="Kako prepoznati tip zadatka"
-            icon={ClipboardIcon}
-            color="pink"
-            index={1}
-          />
-          <HowSectionCard
-            text="Kako izbjeći tipične pogreške"
-            icon={ClipboardIcon}
-            color="pink"
-            index={2}
-          />
-          <HowSectionCard
-            text="Kako razviti sigurnost u rješavanju ispita"
-            icon={ClipboardIcon}
-            color="pink"
-            index={3}
-          />
+          <div className="card-wrapper">
+            <Dot1Tracing className="dot" />
+            <Card
+              text="Kako organizirati rješenje korak-po-korak"
+              icon={ClipboardIcon}
+              color="pink"
+              variant="medium"
+            />
+          </div>
+          <div className="card-wrapper">
+            <Dot2Tracing className="dot" />
+            <Card
+              text="Kako prepoznati tip zadatka"
+              icon={ClipboardIcon}
+              color="pink"
+              variant="medium"
+            />
+          </div>
+          <div className="card-wrapper">
+            <Dot3Tracing className="dot" />
+            <Card
+              text="Kako izbjeći tipične pogreške"
+              icon={ClipboardIcon}
+              color="pink"
+              variant="medium"
+            />
+          </div>
+          <div className="card-wrapper">
+            <Dot4Tracing className="dot" />
+            <Card
+              text="Kako razviti sigurnost u rješavanju ispita"
+              icon={ClipboardIcon}
+              color="pink"
+              variant="medium"
+            />
+          </div>
         </div>
       </section>
       <section className="goal"></section>
