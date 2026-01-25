@@ -24,6 +24,7 @@ import Dot1Tracing from "./assets/tracings/dot-1.svg?react";
 import Dot2Tracing from "./assets/tracings/dot-2.svg?react";
 import Dot3Tracing from "./assets/tracings/dot-3.svg?react";
 import Dot4Tracing from "./assets/tracings/dot-4.svg?react";
+import CosineTracing from "./assets/tracings/cosine.svg?react";
 
 import LocationPinIcon from "./assets/icons/location-pin.svg?react";
 
@@ -134,6 +135,7 @@ function App() {
           </p>
         </div>
         <div className="cards-wrapper">
+          <CosineTracing className="cosine" />
           <div className="vertical-line" />
           <div className="card-wrapper">
             <Dot1Tracing className="dot" />

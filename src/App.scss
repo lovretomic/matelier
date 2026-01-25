@@ -6,6 +6,7 @@ html {
 
 body {
   margin: 0;
+  background-color: $ugly-white;
 }
 
 * {
@@ -84,6 +85,8 @@ body {
   box-sizing: border-box;
   padding: 40px 24px;
   background-color: $ugly-white;
+  max-width: 1300px;
+  margin: 0 auto;
 
   .text-wrapper {
     .title {
@@ -107,14 +110,48 @@ body {
       display: none;
     }
 
+    .cosine {
+      width: 100%;
+    }
+
     .card-wrapper {
-      display: flex;
-      gap: 32px;
+      position: absolute;
+
+      &:nth-of-type(2n + 1) {
+        top: 0;
+      }
+
+      &:nth-of-type(2n) {
+        bottom: -20px;
+
+        @media screen and (max-width: 1200px) {
+          bottom: 0;
+        }
+      }
+
+      &:nth-of-type(1) {
+        left: 80%;
+        background-color: red;
+      }
+
+      &:nth-of-type(2) {
+        left: 18%;
+      }
+
+      &:nth-of-type(3) {
+        left: 50%;
+      }
+
+      &:nth-of-type(4) {
+        right: 0;
+      }
+
+      @media screen and (max-width: 1300px) {
+        scale: 0.8;
+      }
 
       .dot {
         display: none;
-        width: 40px;
-        margin-top: 12px;
       }
     }
   }
@@ -129,12 +166,20 @@ body {
         display: initial;
       }
 
+      .cosine {
+        display: none;
+      }
+
       .card-wrapper {
         display: flex;
         gap: 32px;
+        position: initial;
+        scale: 1;
 
         .dot {
           display: initial;
+          width: 40px;
+          margin-top: 12px;
         }
 
         .card {
