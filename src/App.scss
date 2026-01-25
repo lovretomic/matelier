@@ -27,6 +27,9 @@ body {
     }
     height: 35px;
     width: 120px;
+    @media (max-width: 800px) {
+      width: 90px;
+    }
   }
 
   .text-wrapper {
@@ -53,6 +56,14 @@ body {
       &:active {
         scale: 1.05;
       }
+
+      @media (max-width: 800px) {
+        font-size: 16px;
+      }
+    }
+    @media (max-width: 800px) {
+      font-size: 14px;
+      gap: 20px;
     }
   }
 }
