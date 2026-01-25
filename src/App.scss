@@ -76,6 +76,23 @@ body {
   }
 }
 
+.how {
+  min-height: 100dvh;
+  display: flex;
+  gap: 32px;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 40px 24px;
+
+  .text-wrapper {
+    .title {
+      text-transform: uppercase;
+      font-weight: 900;
+      font-size: 36px;
+    }
+  }
+}
+
 .who {
   min-height: 100dvh;
   display: flex;

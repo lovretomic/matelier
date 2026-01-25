@@ -120,7 +120,41 @@ function App() {
           />
         </div>
       </section>
-      <section className="methods"></section>
+      <section className="how">
+        <div className="text-wrapper">
+          <h2 className="title">Način rada</h2>
+          <p className="description">
+            Ponavljamo osnovnu teoriju i rješavamo zadatake uz praktične
+            primjere. Učenike učimo:
+          </p>
+        </div>
+        <div className="cards-wrapper">
+          <Card
+            text="Kako organizirati rješenje korak-po-korak"
+            icon={ClipboardIcon}
+            color="pink"
+            variant="medium"
+          />
+          <Card
+            text="Kako prepoznati tip zadatka"
+            icon={ClipboardIcon}
+            color="pink"
+            variant="medium"
+          />
+          <Card
+            text="Kako izbjeći tipične pogreške"
+            icon={ClipboardIcon}
+            color="pink"
+            variant="medium"
+          />
+          <Card
+            text="Kako razviti sigurnost u rješavanju ispita"
+            icon={ClipboardIcon}
+            color="pink"
+            variant="medium"
+          />
+        </div>
+      </section>
       <section className="goal"></section>
       <section className="who">
         <BookAndGlassesTracing className="tracing-1" />
