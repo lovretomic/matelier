@@ -92,6 +92,7 @@ body {
       padding: 8px 16px;
       border-radius: 8px;
       border: 1px solid rgba($dark-blue, 0);
+      cursor: pointer;
 
       &:hover {
         background-color: rgba($dark-blue, 5%);
