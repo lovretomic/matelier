@@ -79,18 +79,29 @@ body {
 .how {
   min-height: 100dvh;
   display: flex;
-  gap: 32px;
+  gap: 40px;
   flex-direction: column;
   box-sizing: border-box;
   padding: 40px 24px;
   max-width: 1300px;
   margin: 0 auto;
 
+  $section-mobile-breakpoint: 1000px;
+
+  @media screen and (max-width: $section-mobile-breakpoint) {
+    max-width: 600px;
+  }
+
   .text-wrapper {
     .title {
       text-transform: uppercase;
       font-weight: 900;
       font-size: 36px;
+    }
+
+    .description {
+      font-size: 18px;
+      max-width: 400px;
     }
   }
 
