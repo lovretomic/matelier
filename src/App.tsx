@@ -20,6 +20,11 @@ import ClockIcon from "./assets/icons/clock.svg?react";
 import CalendarIcon from "./assets/icons/calendar.svg?react";
 import FlagIcon from "./assets/icons/flag.svg?react";
 
+import Dot1Tracing from "./assets/tracings/dot-1.svg?react";
+import Dot2Tracing from "./assets/tracings/dot-1.svg?react";
+import Dot3Tracing from "./assets/tracings/dot-1.svg?react";
+import Dot4Tracing from "./assets/tracings/dot-1.svg?react";
+
 import LocationPinIcon from "./assets/icons/location-pin.svg?react";
 
 import GeographyTracing from "./assets/tracings/geography.svg?react";
@@ -28,7 +33,7 @@ import { teachers, type Teacher } from "./data";
 import BookAndGlassesTracing from "./assets/tracings/book-and-glasses.svg?react";
 import BulbAndNotesTracing from "./assets/tracings/bulb-and-notes.svg?react";
 import BulbAndNotes2Tracing from "./assets/tracings/bulb-and-notes-2.svg?react";
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import Popup from "./components/Popup";
 import { useIsOverflowing } from "./hooks/useIsOverflowing";
 import type { cardIconPallette } from "./components/Card/Card";
@@ -56,17 +61,49 @@ function TeacherPopupContent({ teacher }: { teacher: Teacher }) {
   );
 }
 
-function HowSectionCard(
-  text: string,
-  icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>,
-  color: keyof typeof cardIconPallette | string,
-) {
+type HowSectionCardProps = {
+  text: string;
+  icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+  color: keyof typeof cardIconPallette | string;
+  index: number;
+};
+
+const HowSectionCard: React.FC<HowSectionCardProps> = ({
+  text,
+  icon,
+  color,
+  index = 0,
+}) => {
+  const getDot = (index: number) => {
+    switch ((index % 4) + 1) {
+      case 1:
+        return <Dot1Tracing className="dot-tracing" />;
+      case 2:
+        return <Dot2Tracing className="dot-tracing" />;
+      case 3:
+        return <Dot3Tracing className="dot-tracing" />;
+      case 4:
+        return <Dot4Tracing className="dot-tracing" />;
+    }
+  };
+
   return (
     <>
-      <Card className="show-desktop" text={text} icon={icon} color={color} />
+      <Card
+        className="desktop-card"
+        text={text}
+        icon={icon}
+        color={color}
+        variant="medium"
+      />
+
+      <div className="mobile-card">
+        {getDot(index)}
+        <Card text={text} icon={icon} color={color} variant="medium" />
+      </div>
     </>
   );
-}
+};
 
 function App() {
   const [openPopupId, setOpenPopupId] = useState<string | null>(null);
@@ -142,29 +179,29 @@ function App() {
           </p>
         </div>
         <div className="cards-wrapper">
-          <Card
+          <HowSectionCard
             text="Kako organizirati rješenje korak-po-korak"
             icon={ClipboardIcon}
             color="pink"
-            variant="medium"
+            index={0}
           />
-          <Card
+          <HowSectionCard
             text="Kako prepoznati tip zadatka"
             icon={ClipboardIcon}
             color="pink"
-            variant="medium"
+            index={1}
           />
-          <Card
+          <HowSectionCard
             text="Kako izbjeći tipične pogreške"
             icon={ClipboardIcon}
             color="pink"
-            variant="medium"
+            index={2}
           />
-          <Card
+          <HowSectionCard
             text="Kako razviti sigurnost u rješavanju ispita"
             icon={ClipboardIcon}
             color="pink"
-            variant="medium"
+            index={3}
           />
         </div>
       </section>
