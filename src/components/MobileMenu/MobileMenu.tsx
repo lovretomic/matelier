@@ -3,6 +3,7 @@ import { type SectionData } from "../../App";
 import c from "./MobileMenu.module.scss";
 
 import LogoBig from "../../assets/icons/logo-big.svg?react";
+import CloseIcon from "../../assets/icons/close.svg?react";
 import { useEffect } from "react";
 import { formsLink } from "../../data";
 
@@ -40,6 +41,9 @@ const MobileMenu: React.FC<MobileMenuType> = ({
       className={c.mobileMenu}
       style={{ transform: `translateX(${isOpen ? "0%" : "100%"})` }}
     >
+      <button className={c.closeButton} onClick={onClose}>
+        <CloseIcon />
+      </button>
       <LogoBig className={c.logo} />
       <nav className={c.navigation}>
         {sections.map((section) => (
