@@ -202,7 +202,7 @@ function App() {
             color="pastel-blue"
           />
           <Card
-            text="rad u manjim grupama (od pet do 12 učenika)"
+            text="rad u manjim grupama (od 5 do 12 učenika)"
             icon={PersonIcon}
             color="pink"
           />
@@ -344,7 +344,7 @@ function App() {
             </p>
             <p>
               Upisujemo <b>polugodišnje pripreme iz matematike</b> koje počinju
-              <b>u veljači 2026. godine</b> i traju <b>24 tjedna</b>. Pripreme
+              <b> u veljači 2026. godine</b> i traju <b>24 tjedna</b>. Pripreme
               su namijenjene učenicima koji žele{" "}
               <b>
                 postići najbolji rezultat i samouvjereno pristupiti prijemnom
@@ -399,7 +399,7 @@ function App() {
               </li>
               <li>
                 Kroz <b>ciljano usmjerene vježbe i simulaciju ispita</b>,
-                učenici stječu sigurnost i rutinu potrebnu za usmjeh na
+                učenici stječu sigurnost i rutinu potrebnu za uspjeh na
                 prijemnom.
               </li>
               <li>
@@ -415,6 +415,22 @@ function App() {
             </p>
           </div>
         </Popup>
+        <Popup id="package-3" openId={openPopupId} onClose={closePopup}>
+          <div className="package-popup">
+            <h3>Simulacija</h3>
+            <h4>Prijemnog ispita</h4>
+            <p>
+              Simulacije prijemnih ispita iz matematike su osmišljene kako bi
+              učenici iskusili <b>stvarne uvjete pisanja</b> prijemnog ispita.
+            </p>
+            <p>
+              Traju <b>60 minuta</b>, a koncept zadataka je sličan onome na{" "}
+              <b>pravom prijemnom ispitu</b>. Nakon pisanja, učenici dobivaju{" "}
+              <b>povratnu informaciju</b> i <b>detaljnu analizu</b> ispita, uz
+              objašnjenje rješenja i savjete za poboljšanje rezultata.
+            </p>
+          </div>
+        </Popup>
 
         <h2 className="title">Paketi</h2>
         <div className="sticky-notes-wrapper">
@@ -424,7 +440,7 @@ function App() {
             listItems={[
               { icon: ClockIcon, text: "36 školskih sati" },
               { icon: CalendarIcon, text: "blok sat jednom tjedno" },
-              { icon: FlagIcon, text: "od veljače 2025." },
+              { icon: FlagIcon, text: "od veljače 2026." },
             ]}
             price={345}
             action={() => openPopup("package-1")}
@@ -452,9 +468,13 @@ function App() {
               },
             ]}
             price={15}
+            action={() => openPopup("package-3")}
           />
         </div>
-        <button className="apply-button">
+        <button
+          className="apply-button"
+          onClick={() => window.open(formsLink, "_blank")}
+        >
           Prijavi se!
           <ThickArrowRight className="icon" />
         </button>
@@ -491,7 +511,7 @@ function App() {
             </div>
             <p className="paragraph">
               Pripreme iz <b>Paketa 1</b> odvijaju se jednom tjedno od 17:30 do
-              18 h. Za učenike koji imaju nastavu u smjenana, pripreme će se
+              19 h. Za učenike koji imaju nastavu u smjenama, pripreme će se
               prilagoditi njihovoj smjeni (ujutro i poslijepodne).
             </p>
             <p className="paragraph">
