@@ -77,7 +77,6 @@ export type SectionData = {
 };
 
 export const sections: SectionData[] = [
-  { id: "section-hero", label: "Početna" },
   { id: "section-why", label: "Naše pripreme" },
   { id: "section-how", label: "Način rada" },
   { id: "section-who", label: "O nama" },

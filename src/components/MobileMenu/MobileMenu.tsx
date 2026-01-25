@@ -44,7 +44,10 @@ const MobileMenu: React.FC<MobileMenuType> = ({
       <button className={c.closeButton} onClick={onClose}>
         <CloseIcon />
       </button>
-      <LogoBig className={c.logo} />
+      <LogoBig
+        className={c.logo}
+        onClick={() => handleItemClick("section-hero")}
+      />
       <nav className={c.navigation}>
         {sections.map((section) => (
           <button
