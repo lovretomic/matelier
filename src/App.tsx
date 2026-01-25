@@ -188,8 +188,8 @@ function App() {
         </div>
       </section>
       <section className="how" id="section-how">
-        <PencilTracing className="pencil" />
         <div className="text-wrapper">
+          <PencilTracing className="pencil" />
           <h2 className="title">Način rada</h2>
           <p className="description">
             Program koji obrađujemo pokriva sve ključne sadržaje iz

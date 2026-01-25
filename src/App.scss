@@ -73,6 +73,7 @@ body {
     }
   }
 }
+
 .header.hide {
   transform: translateY(-100%);
 }
@@ -200,6 +201,7 @@ body {
 .how {
   min-height: 100dvh;
   display: flex;
+  justify-content: center;
   gap: 40px;
   flex-direction: column;
   box-sizing: border-box;
@@ -215,6 +217,8 @@ body {
   }
 
   .text-wrapper {
+    position: relative;
+
     .title {
       text-transform: uppercase;
       font-weight: 900;
@@ -226,12 +230,13 @@ body {
       font-size: 18px;
       max-width: 600px;
     }
-  }
 
-  .pencil {
-    position: absolute;
-    right: 0;
-    height: 100px;
+    .pencil {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100px;
+    }
   }
 
   .cards-wrapper {
@@ -295,9 +300,12 @@ body {
   }
 
   @media screen and (max-width: 1000px) {
-    .pencil {
-      position: unset;
-      width: fit-content;
+    .text-wrapper {
+      .pencil {
+        position: unset;
+        width: fit-content;
+        margin-bottom: 32px;
+      }
     }
 
     .cards-wrapper {
