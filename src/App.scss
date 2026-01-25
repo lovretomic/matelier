@@ -17,8 +17,9 @@ body {
 .header {
   position: fixed;
   width: 100%;
-  background-color: $ugly-white;
-  border-bottom: 1px solid;
+  border-bottom: 2px solid rgba($dark-blue, 10%);
+  background-color: rgba($ugly-white, 0.75);
+  backdrop-filter: blur(10px);
   box-sizing: border-box;
 
   z-index: 1000;
@@ -26,7 +27,8 @@ body {
 
   display: flex;
   align-items: center;
-  padding: 6px 16px;
+  padding: 16px 40px;
+
   .logo {
     * {
       fill: $yellow;
