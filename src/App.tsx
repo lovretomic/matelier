@@ -87,23 +87,18 @@ export const sections: SectionData[] = [
 
 function App() {
   const heroRef = useRef<HTMLElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
   const [headerVisible, setHeaderVisible] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  function scrollToSection(id: string) {
-    const container = containerRef.current;
-    const target = document.getElementById(id);
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (!el) return;
 
-    if (!container || !target) return;
-
-    const top = target.offsetTop;
-
-    container.scrollTo({
-      top,
+    window.scrollTo({
+      top: el.offsetTop,
       behavior: "smooth",
     });
-  }
+  };
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -142,11 +137,12 @@ function App() {
   }
 
   return (
-    <div ref={containerRef}>
+    <>
       <MobileMenu
         isOpen={isMobileMenuOpen}
         sections={sections}
-        onNavigate={() => scrollToSection}
+        onNavigate={(id: string) => scrollToSection(id)}
+        onClose={() => setIsMobileMenuOpen(false)}
       />
       <header className={`header ${headerVisible ? "show" : "hide"}`}>
         <a href="#section-hero">
@@ -481,7 +477,7 @@ function App() {
           </div>
         </div>
       </footer>
-    </div>
+    </>
   );
 }
 

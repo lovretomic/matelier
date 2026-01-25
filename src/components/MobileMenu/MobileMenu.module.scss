@@ -2,7 +2,7 @@
   position: fixed;
   inset: 0; /* top:0 right:0 bottom:0 left:0 */
   height: 100dvh;
-  width: 100vw;
+  width: 100%;
 
   background-color: $dark-blue;
 
@@ -10,4 +10,22 @@
   transition: transform 0.3s ease;
 
   z-index: 1000;
+
+  .logo {
+    width: 250px;
+    box-sizing: border-box;
+
+    * {
+      fill: $ugly-white;
+    }
+  }
+
+  .navigation {
+    display: flex;
+    flex-direction: column;
+
+    .item {
+      color: $ugly-white;
+    }
+  }
 }
