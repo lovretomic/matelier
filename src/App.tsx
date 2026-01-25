@@ -69,10 +69,41 @@ function TeacherPopupContent({ teacher }: { teacher: Teacher }) {
 import TargetTracing from "./assets/tracings/target.svg?react";
 import Arrow1Tracing from "./assets/tracings/arrow-1.svg?react";
 import Arrow2Tracing from "./assets/tracings/arrow-2.svg?react";
+import MobileMenu from "./components/MobileMenu";
+
+export type SectionData = {
+  id: string;
+  label: string;
+};
+
+export const sections: SectionData[] = [
+  { id: "section-hero", label: "Početna" },
+  { id: "section-why", label: "Naše pripreme" },
+  { id: "section-how", label: "Način rada" },
+  { id: "section-who", label: "O nama" },
+  { id: "section-packages", label: "Paketi" },
+  { id: "section-location", label: "Lokacija" },
+];
 
 function App() {
   const heroRef = useRef<HTMLElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const [headerVisible, setHeaderVisible] = useState(true);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  function scrollToSection(id: string) {
+    const container = containerRef.current;
+    const target = document.getElementById(id);
+
+    if (!container || !target) return;
+
+    const top = target.offsetTop;
+
+    container.scrollTo({
+      top,
+      behavior: "smooth",
+    });
+  }
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -111,27 +142,22 @@ function App() {
   }
 
   return (
-    <>
+    <div ref={containerRef}>
+      <MobileMenu
+        isOpen={isMobileMenuOpen}
+        sections={sections}
+        onNavigate={() => scrollToSection}
+      />
       <header className={`header ${headerVisible ? "show" : "hide"}`}>
         <a href="#section-hero">
           <LogoSmall className="logo" />
         </a>
         <nav className="navigation">
-          <a className="item" href="#section-why">
-            Naše pripreme
-          </a>
-          <a className="item" href="#section-how">
-            Način rada
-          </a>
-          <a className="item" href="#section-who">
-            O nama
-          </a>
-          <a className="item" href="#section-packages">
-            Paketi
-          </a>
-          <a className="item" href="#section-location">
-            Lokacija
-          </a>
+          {sections.map((section) => (
+            <a className="item" href={`#${section.id}`}>
+              {section.label}
+            </a>
+          ))}
           <button
             className="apply-button"
             onClick={() =>
@@ -145,7 +171,7 @@ function App() {
           </button>
         </nav>
         <button className="hamburger-menu">
-          <HamburgerMenuIcon />
+          <HamburgerMenuIcon onClick={() => setIsMobileMenuOpen(true)} />
         </button>
       </header>
       <section className="hero" ref={heroRef} id="section-hero">
@@ -455,7 +481,7 @@ function App() {
           </div>
         </div>
       </footer>
-    </>
+    </div>
   );
 }
 
