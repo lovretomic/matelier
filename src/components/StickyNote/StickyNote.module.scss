@@ -115,6 +115,10 @@
       &:active {
         scale: 0.97;
       }
+
+      @media screen and (max-width: 460px) {
+        font-size: 18px;
+      }
     }
   }
 }
