@@ -1084,7 +1084,9 @@ body {
   gap: 60px;
 
   .logo {
-    height: 250px;
+    max-height: 250px;
+    max-width: 70%;
+    height: fit-content;
     width: fit-content;
     * {
       fill: $ugly-white;
@@ -1121,7 +1123,6 @@ body {
       flex-direction: column;
       gap: 18px;
       box-sizing: border-box;
-      padding-bottom: 40px;
 
       .item {
         display: flex;
@@ -1191,10 +1192,18 @@ body {
   }
 
   @media (max-width: 630px) {
+    padding: 40px 0;
+
+    .content-wrapper {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 0 24px;
+    }
+
     .content-block {
       width: 100%;
       box-sizing: border-box;
-      padding: 0 40px;
+      //padding: 0 40px;
 
       .label {
         text-align: center;
@@ -1208,16 +1217,21 @@ body {
           width: 100%;
           box-sizing: border-box;
           padding: 0 10px;
-          height: 150px;
           background-color: rgba(247, 247, 247, 0.05);
           border-radius: 16px;
           border: 5px solid rgba(247, 247, 247, 0.05);
+          height: 150px;
+          flex-direction: column;
 
           display: flex;
-          flex-direction: column;
           justify-content: center;
           align-items: center;
           gap: 18px;
+
+          &.transparent {
+            height: 50px;
+            flex-direction: row;
+          }
 
           &:hover {
             opacity: 1;
@@ -1241,12 +1255,6 @@ body {
           }
         }
       }
-    }
-  }
-
-  @media (max-width: 460px) {
-    .contacts {
-      padding: 0 24px;
     }
   }
 }
