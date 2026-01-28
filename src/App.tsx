@@ -1,5 +1,5 @@
 import "./App.scss";
-import { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { formsLink, sections, teachers, type Teacher } from "./data";
 import { useIsOverflowing } from "./hooks/useIsOverflowing";
 
@@ -59,8 +59,8 @@ function TeacherPopupContent({ teacher }: { teacher: Teacher }) {
         className={`popup-paragraphs ${isOverflowing ? "overflowing" : ""}`}
         ref={ref}
       >
-        {teacher.bio.map((paragraph, j) => (
-          <p className="paragraph" key={j}>
+        {teacher.bio.map((paragraph, index) => (
+          <p className="paragraph" key={index}>
             {paragraph}
           </p>
         ))}
@@ -144,8 +144,12 @@ function App() {
           <LogoSmall className="logo" />
         </a>
         <nav className="navigation">
-          {sections.map((section) => (
-            <a className="item" onClick={() => scrollToSection(section.id)}>
+          {sections.map((section, index) => (
+            <a
+              className="item"
+              key={index}
+              onClick={() => scrollToSection(section.id)}
+            >
               {section.label}
             </a>
           ))}
@@ -303,11 +307,12 @@ function App() {
         </div>
         <div className="teacher-cards-wrapper">
           {teachers.map((teacher) => (
-            <>
+            <React.Fragment key={teacher.fullName}>
               <Popup
                 id={teacher.fullName}
                 openId={openPopupId}
                 onClose={closePopup}
+                key={teacher.fullName + "-popup"}
               >
                 <TeacherPopupContent teacher={teacher} />
               </Popup>
@@ -330,7 +335,7 @@ function App() {
                   Pročitaj više
                 </button>
               </div>
-            </>
+            </React.Fragment>
           ))}
         </div>
       </section>
@@ -570,10 +575,11 @@ function App() {
           <nav className="content-block">
             <h2 className="label">Pročitaj opet</h2>
             <div className="items-wrapper">
-              {sections.map((section) => (
+              {sections.map((section, index) => (
                 <div
                   className="item transparent"
                   onClick={() => scrollToSection(section.id)}
+                  key={index}
                 >
                   <div className="icon-div">
                     <ArrowRightIcon className="icon" />
