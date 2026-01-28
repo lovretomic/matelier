@@ -35,7 +35,7 @@ import PencilTracing from "./assets/tracings/pencil.svg?react";
 import LocationPinIcon from "./assets/icons/location-pin.svg?react";
 
 import GeographyTracing from "./assets/tracings/geography.svg?react";
-import { formsLink, teachers, type Teacher } from "./data";
+import { formsLink, sections, teachers, type Teacher } from "./data";
 
 import BookAndGlassesTracing from "./assets/tracings/book-and-glasses.svg?react";
 import BulbAndNotesTracing from "./assets/tracings/bulb-and-notes.svg?react";
@@ -70,19 +70,6 @@ import TargetTracing from "./assets/tracings/target.svg?react";
 import Arrow1Tracing from "./assets/tracings/arrow-1.svg?react";
 import Arrow2Tracing from "./assets/tracings/arrow-2.svg?react";
 import MobileMenu from "./components/MobileMenu";
-
-export type SectionData = {
-  id: string;
-  label: string;
-};
-
-export const sections: SectionData[] = [
-  { id: "section-why", label: "Naše pripreme" },
-  { id: "section-how", label: "Način rada" },
-  { id: "section-who", label: "O nama" },
-  { id: "section-packages", label: "Paketi" },
-  { id: "section-location", label: "Lokacija" },
-];
 
 function App() {
   const heroRef = useRef<HTMLElement>(null);
