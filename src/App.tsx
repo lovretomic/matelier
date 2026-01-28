@@ -520,12 +520,7 @@ function App() {
         </div>
       </section>
       <footer className="footer">
-        <div className="logo-wrapper">
-          <LogoSmall className="logo" />
-          <h1 className="subtitle">
-            Pripreme za prijemne <br /> ispite iz matematike
-          </h1>
-        </div>
+        <LogoBig className="logo" />
 
         <div className="contacts">
           <h2 className="label">Kontakt</h2>
