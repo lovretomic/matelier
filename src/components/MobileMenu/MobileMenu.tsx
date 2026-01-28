@@ -1,11 +1,10 @@
 import type React from "react";
-import { type SectionData } from "../../App";
 import c from "./MobileMenu.module.scss";
 
 import LogoBig from "../../assets/icons/logo-big.svg?react";
 import CloseIcon from "../../assets/icons/close.svg?react";
 import { useEffect } from "react";
-import { formsLink } from "../../data";
+import { formsLink, type SectionData } from "../../data";
 
 type MobileMenuType = {
   isOpen: boolean;
@@ -49,10 +48,11 @@ const MobileMenu: React.FC<MobileMenuType> = ({
         onClick={() => handleItemClick("section-hero")}
       />
       <nav className={c.navigation}>
-        {sections.map((section) => (
+        {sections.map((section, index) => (
           <button
             className={c.item}
             onClick={() => handleItemClick(section.id)}
+            key={index}
           >
             {section.label}
           </button>

@@ -1,3 +1,5 @@
+@use "sass:color";
+
 $mobile-margin-breakpoint: 600px;
 
 html {
@@ -188,19 +190,20 @@ body {
     }
 
     .icon {
-      width: 400px;
-      height: 400px;
+      width: 350px;
+      height: 350px;
 
       @media (max-width: 1235px) {
-        width: 350px;
-        height: 350px;
-      }
-
-      @media (max-width: 900px) {
         width: 300px;
         height: 300px;
       }
+
+      @media (max-width: 900px) {
+        width: 250px;
+        height: 250px;
+      }
     }
+
     .title {
       font-weight: 900;
       font-size: 80px;
@@ -351,7 +354,7 @@ body {
       &:nth-of-type(2n) {
         bottom: -20px;
 
-        @media screen and (max-width: 1200px) {
+        @media screen and (max-width: 1500px) {
           bottom: 0;
         }
       }
@@ -373,8 +376,8 @@ body {
         right: 0;
       }
 
-      @media screen and (max-width: 1300px) {
-        scale: 0.8;
+      @media screen and (max-width: 1500px) {
+        scale: 0.9;
       }
 
       .dot {
@@ -583,8 +586,7 @@ body {
   position: relative;
 
   @media screen and (max-width: 650px) {
-    padding: 0 24px;
-    padding-bottom: 80px;
+    padding: 80px 24px;
   }
 
   .tracing-1,
@@ -761,7 +763,7 @@ body {
         cursor: pointer;
         transition: 100ms ease-in-out;
         &:hover {
-          background-color: darken($aquamarine, 5%);
+          background-color: color.adjust($aquamarine, $lightness: -5%);
         }
       }
     }
@@ -1077,53 +1079,42 @@ body {
 
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 
   gap: 60px;
 
-  .logo-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    margin-top: 93px;
-    max-width: 80%;
-
-    .logo {
-      width: 100%;
-      max-width: 330px;
-      height: auto;
-
-      @media (max-width: 450px) {
-        max-width: 250px;
-      }
-    }
-
-    .subtitle {
-      font-weight: 700;
-      color: $ugly-white;
-      opacity: 0.6;
-      font-size: 24px;
-      text-align: center;
-      line-height: 100%;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-
-      @media (max-width: 450px) {
-        font-size: 18px;
-      }
+  .logo {
+    max-height: 250px;
+    max-width: 70%;
+    height: fit-content;
+    width: fit-content;
+    * {
+      fill: $ugly-white;
     }
   }
 
-  .contacts {
+  .content-wrapper {
+    display: flex;
+    gap: 80px;
+
+    @media screen and (max-width: 750px) {
+      gap: 40px;
+    }
+
+    @media screen and (max-width: 650px) {
+      flex-direction: column;
+    }
+  }
+
+  .content-block {
     display: flex;
     flex-direction: column;
 
     .label {
       font-weight: 900;
       color: $ugly-white;
-      font-size: 34px;
+      font-size: 24px;
       text-transform: uppercase;
       margin-bottom: 24px;
     }
@@ -1131,20 +1122,38 @@ body {
     .items-wrapper {
       display: flex;
       flex-direction: column;
-      gap: 45px;
+      gap: 18px;
       box-sizing: border-box;
-      padding-bottom: 40px;
 
       .item {
         display: flex;
         flex-direction: row;
         align-items: center;
-        gap: 32px;
+        gap: 18px;
         cursor: pointer;
         transition: 100ms ease-in-out;
-
         &:hover {
-          opacity: 0.5;
+          .text {
+            opacity: 0.7;
+          }
+
+          &.transparent {
+            .icon-div {
+              transform: translateX(4px);
+            }
+          }
+        }
+
+        &.transparent {
+          .icon-div {
+            background-color: transparent;
+            width: fit-content;
+            height: fit-content;
+
+            * {
+              fill: rgba($ugly-white, 50%);
+            }
+          }
         }
 
         .icon-div {
@@ -1152,10 +1161,11 @@ body {
           height: 38px;
           gap: 8px;
           border-radius: 8px;
-          background-color: rgba(247, 247, 247, 0.2);
+          background-color: rgba($ugly-white, 20%);
           display: flex;
           justify-content: center;
           align-items: center;
+          transition: 100ms ease-in-out;
 
           .contact-icon {
             width: 22px;
@@ -1166,8 +1176,9 @@ body {
         .text {
           font-weight: 400;
           color: $ugly-white;
-          font-size: 34px;
+          font-size: 20px;
           line-height: 100%;
+          transition: 100ms ease-in-out;
 
           @media (max-width: 630px) {
             font-size: 24px;
@@ -1182,14 +1193,18 @@ body {
   }
 
   @media (max-width: 630px) {
-    .logo-wrapper {
-      width: 80%;
+    padding: 40px 0;
+
+    .content-wrapper {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 0 24px;
     }
 
-    .contacts {
+    .content-block {
       width: 100%;
       box-sizing: border-box;
-      padding: 0 40px;
+      //padding: 0 40px;
 
       .label {
         text-align: center;
@@ -1203,16 +1218,21 @@ body {
           width: 100%;
           box-sizing: border-box;
           padding: 0 10px;
-          height: 150px;
           background-color: rgba(247, 247, 247, 0.05);
           border-radius: 16px;
           border: 5px solid rgba(247, 247, 247, 0.05);
+          height: 150px;
+          flex-direction: column;
 
           display: flex;
-          flex-direction: column;
           justify-content: center;
           align-items: center;
           gap: 18px;
+
+          &.transparent {
+            height: 50px;
+            flex-direction: row;
+          }
 
           &:hover {
             opacity: 1;
@@ -1236,12 +1256,6 @@ body {
           }
         }
       }
-    }
-  }
-
-  @media (max-width: 460px) {
-    .contacts {
-      padding: 0 24px;
     }
   }
 }

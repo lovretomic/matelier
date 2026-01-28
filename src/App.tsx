@@ -1,47 +1,50 @@
 import "./App.scss";
-import { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
+import { formsLink, sections, teachers, type Teacher } from "./data";
+import { useIsOverflowing } from "./hooks/useIsOverflowing";
+
 import LogoSmall from "./assets/icons/logo-small.svg?react";
-import PhoneIcon from "./assets/icons/phone.svg?react";
+import LogoBig from "./assets/icons/logo-big.svg?react";
+
+import ArrowRightIcon from "./assets/icons/arrow-right.svg?react";
+import CalendarIcon from "./assets/icons/calendar.svg?react";
+import ClockIcon from "./assets/icons/clock.svg?react";
 import EmailIcon from "./assets/icons/email.svg?react";
+import FlagIcon from "./assets/icons/flag.svg?react";
+import HamburgerMenuIcon from "./assets/icons/hamburger.svg?react";
 import InstagramIcon from "./assets/icons/instagram.svg?react";
+import LocationPinIcon from "./assets/icons/location-pin.svg?react";
+import MindIcon from "./assets/icons/mind.svg?react";
+import NumbersIcon from "./assets/icons/numbers.svg?react";
+import PhoneIcon from "./assets/icons/phone.svg?react";
 import PersonIcon from "./assets/icons/person.svg?react";
 import RedoIcon from "./assets/icons/redo.svg?react";
-import MindIcon from "./assets/icons/mind.svg?react";
+import ShieldIcon from "./assets/icons/shield.svg?react";
 import SupportIcon from "./assets/icons/support.svg?react";
 import TextIcon from "./assets/icons/text.svg?react";
-import MathTrace from "./assets/tracings/math.svg?react";
+import ThickArrowRightIcon from "./assets/icons/thick-arrow-right.svg?react";
 import ThumbsUpIcon from "./assets/icons/thumbs-up.svg?react";
-import ShieldIcon from "./assets/icons/shield.svg?react";
-import NumbersIcon from "./assets/icons/numbers.svg?react";
 import WarningIcon from "./assets/icons/warning.svg?react";
-import LogoBig from "./assets/icons/logo-big.svg?react";
-import HamburgerMenuIcon from "./assets/icons/hamburger.svg?react";
 
-import Card from "./components/Card";
-import StickyNote from "./components/StickyNote";
-import ThickArrowRight from "./assets/icons/thick-arrow-right.svg?react";
-
-import ClockIcon from "./assets/icons/clock.svg?react";
-import CalendarIcon from "./assets/icons/calendar.svg?react";
-import FlagIcon from "./assets/icons/flag.svg?react";
-
+import Arrow1Tracing from "./assets/tracings/arrow-1.svg?react";
+import Arrow2Tracing from "./assets/tracings/arrow-2.svg?react";
+import BookAndGlassesTracing from "./assets/tracings/book-and-glasses.svg?react";
+import BulbAndNotesTracing from "./assets/tracings/bulb-and-notes.svg?react";
+import BulbAndNotes2Tracing from "./assets/tracings/bulb-and-notes-2.svg?react";
+import CosineTracing from "./assets/tracings/cosine.svg?react";
 import Dot1Tracing from "./assets/tracings/dot-1.svg?react";
 import Dot2Tracing from "./assets/tracings/dot-2.svg?react";
 import Dot3Tracing from "./assets/tracings/dot-3.svg?react";
 import Dot4Tracing from "./assets/tracings/dot-4.svg?react";
-import CosineTracing from "./assets/tracings/cosine.svg?react";
-import PencilTracing from "./assets/tracings/pencil.svg?react";
-
-import LocationPinIcon from "./assets/icons/location-pin.svg?react";
-
 import GeographyTracing from "./assets/tracings/geography.svg?react";
-import { formsLink, teachers, type Teacher } from "./data";
+import MathTracing from "./assets/tracings/math.svg?react";
+import PencilTracing from "./assets/tracings/pencil.svg?react";
+import TargetTracing from "./assets/tracings/target.svg?react";
 
-import BookAndGlassesTracing from "./assets/tracings/book-and-glasses.svg?react";
-import BulbAndNotesTracing from "./assets/tracings/bulb-and-notes.svg?react";
-import BulbAndNotes2Tracing from "./assets/tracings/bulb-and-notes-2.svg?react";
+import Card from "./components/Card";
+import MobileMenu from "./components/MobileMenu";
 import Popup from "./components/Popup";
-import { useIsOverflowing } from "./hooks/useIsOverflowing";
+import StickyNote from "./components/StickyNote";
 
 function TeacherPopupContent({ teacher }: { teacher: Teacher }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -56,8 +59,8 @@ function TeacherPopupContent({ teacher }: { teacher: Teacher }) {
         className={`popup-paragraphs ${isOverflowing ? "overflowing" : ""}`}
         ref={ref}
       >
-        {teacher.bio.map((paragraph, j) => (
-          <p className="paragraph" key={j}>
+        {teacher.bio.map((paragraph, index) => (
+          <p className="paragraph" key={index}>
             {paragraph}
           </p>
         ))}
@@ -65,24 +68,6 @@ function TeacherPopupContent({ teacher }: { teacher: Teacher }) {
     </div>
   );
 }
-
-import TargetTracing from "./assets/tracings/target.svg?react";
-import Arrow1Tracing from "./assets/tracings/arrow-1.svg?react";
-import Arrow2Tracing from "./assets/tracings/arrow-2.svg?react";
-import MobileMenu from "./components/MobileMenu";
-
-export type SectionData = {
-  id: string;
-  label: string;
-};
-
-export const sections: SectionData[] = [
-  { id: "section-why", label: "Naše pripreme" },
-  { id: "section-how", label: "Način rada" },
-  { id: "section-who", label: "O nama" },
-  { id: "section-packages", label: "Paketi" },
-  { id: "section-location", label: "Lokacija" },
-];
 
 function App() {
   const heroRef = useRef<HTMLElement>(null);
@@ -159,8 +144,12 @@ function App() {
           <LogoSmall className="logo" />
         </a>
         <nav className="navigation">
-          {sections.map((section) => (
-            <a className="item" onClick={() => scrollToSection(section.id)}>
+          {sections.map((section, index) => (
+            <a
+              className="item"
+              key={index}
+              onClick={() => scrollToSection(section.id)}
+            >
               {section.label}
             </a>
           ))}
@@ -191,11 +180,11 @@ function App() {
           )}
           color="pink"
           title="Pripreme za prijemne ispite iz matematike"
-          text="Prelazak iz osnovne u srednju školu važna je prekretnica. Uz dobru pripremu, samopouzdanje i pravilno usmjerenje, svaki učenik može pokazati svoje znanje i postići odličan rezultat. Naš cilj je pomoći im da matematiku razumiju, zavole i – savladaju."
+          text="Prelazak iz osnovne u srednju školu važna je prekretnica. Uz dobru pripremu, samopouzdanje i pravilno usmjerenje, svaki učenik može pokazati svoje znanje i postići odličan rezultat. Naš je cilj pomoći im da matematiku razumiju, zavole i – svladaju."
         />
       </section>
       <section className="why" id="section-why">
-        <MathTrace className="traces" />
+        <MathTracing className="traces" />
 
         <div className="content">
           <h1 className="title">
@@ -208,23 +197,27 @@ function App() {
             color="yellow"
           />
           <Card
-            text="sustavno i temeljito ponavljanje gradiva"
+            text="gradivo sustavno i temeljito ponavljamo"
             icon={RedoIcon}
             color="pastel-blue"
           />
           <Card
-            text="rad u manjim grupama (od 5 do 12 učenika)"
+            text="radimo u manjim grupama (od 5 do 12 učenika)"
             icon={PersonIcon}
             color="pink"
           />
-          <Card text="fokus na razumijevanje" icon={MindIcon} color="yellow" />
           <Card
-            text="podrška, motivacija i individualni pristup"
+            text="fokus usmjeravamo na razumijevanje"
+            icon={MindIcon}
+            color="yellow"
+          />
+          <Card
+            text="pružamo podršku, motivaciju i individualni pristup"
             icon={SupportIcon}
             color="pink"
           />
           <Card
-            text="redovito praćenje stečenog znanja i povratne informacije roditeljima"
+            text="redovito pratimo stečeno znanje, a roditeljima dajemo povratne informacije"
             icon={TextIcon}
             color="pastel-blue"
           />
@@ -236,7 +229,7 @@ function App() {
           <h2 className="title">Način rada</h2>
           <p className="description">
             Program koji obrađujemo pokriva sve ključne sadržaje iz
-            osnovnoškolskog kurikuluma potrebne za uspješno polaganje prijemnog
+            osnovnoškolskog kurikula potrebne za uspješno polaganje prijemnog
             ispita iz matematike. Učenike učimo:
           </p>
         </div>
@@ -246,7 +239,7 @@ function App() {
           <div className="card-wrapper">
             <Dot1Tracing className="dot" />
             <Card
-              text="Kako organizirati rješenje korak-po-korak"
+              text="Kako organizirati rješenje korak po korak"
               icon={ThumbsUpIcon}
               color="yellow"
               variant="medium"
@@ -307,18 +300,19 @@ function App() {
           <BulbAndNotes2Tracing className="tracing-3" />
           <h2 className="title">Tko vodi pripreme?</h2>
           <p className="description">
-            Pripreme vode profesorice matematike iz prirodoslovno matematičke
+            Pripreme vode profesorice matematike iz prirodoslovno-matematičke
             gimnazije, s višegodišnjim iskustvom u nastavi te u radu s
             talentiranim učenicima i natjecateljima.
           </p>
         </div>
         <div className="teacher-cards-wrapper">
           {teachers.map((teacher) => (
-            <>
+            <React.Fragment key={teacher.fullName}>
               <Popup
                 id={teacher.fullName}
                 openId={openPopupId}
                 onClose={closePopup}
+                key={teacher.fullName + "-popup"}
               >
                 <TeacherPopupContent teacher={teacher} />
               </Popup>
@@ -341,7 +335,7 @@ function App() {
                   Pročitaj više
                 </button>
               </div>
-            </>
+            </React.Fragment>
           ))}
         </div>
       </section>
@@ -368,7 +362,7 @@ function App() {
                 svakom učeniku.
               </li>
               <li>
-                Kroz <b>redovit, kontinuiran i praćen rad</b> razvijamo
+                <b>Redovitim, kontinuiranim i praćenim radom</b> razvijamo
                 sigurnost i razumijevanje, a ne samo "brzo ponavljanje".
               </li>
               <li>
@@ -390,7 +384,7 @@ function App() {
             <h4>Brze pripreme</h4>
             <p>
               Za sve učenike koji žele{" "}
-              <b>učvrstiti znanje i postići vrhunski rezultat</b>, organiziramo{" "}
+              <b>učvrstiti znanje i postići vrhunski rezultat</b> organiziramo{" "}
               <b>
                 intenzivne, brze pripreme u lipnju, nakon završetka nastavne
                 godine.
@@ -409,9 +403,8 @@ function App() {
                 <b>maksimalnu posvećenost svakom učeniku.</b>
               </li>
               <li>
-                Kroz <b>ciljano usmjerene vježbe i simulaciju ispita</b>,
-                učenici stječu sigurnost i rutinu potrebnu za uspjeh na
-                prijemnom.
+                <b>Ciljano usmjerenim vježbama i simulacijom ispita</b> učenici
+                stječu sigurnost i rutinu potrebnu za uspjeh na prijemnom.
               </li>
               <li>
                 Program je dinamičan i usmjeren na <b>rezultat</b> – savršen
@@ -420,7 +413,6 @@ function App() {
             </ul>
             <p>
               <b>
-                {" "}
                 Broj mjesta je ograničen – rezervirajte svoje mjesto na vrijeme!
               </b>
             </p>
@@ -431,11 +423,11 @@ function App() {
             <h3>Simulacija</h3>
             <h4>Prijemnog ispita</h4>
             <p>
-              Simulacije prijemnih ispita iz matematike su osmišljene kako bi
+              Simulacije prijemnih ispita iz matematike osmišljene su kako bi
               učenici iskusili <b>stvarne uvjete pisanja</b> prijemnog ispita.
             </p>
             <p>
-              Traju <b>60 minuta</b>, a koncept zadataka je sličan onome na{" "}
+              Traju <b>60 minuta</b>, a koncept zadataka sličan je onome na{" "}
               <b>pravom prijemnom ispitu</b>. Nakon pisanja, učenici dobivaju{" "}
               <b>povratnu informaciju</b> i <b>detaljnu analizu</b> ispita, uz
               objašnjenje rješenja i savjete za poboljšanje rezultata.
@@ -450,7 +442,7 @@ function App() {
             subtitle="Polugodišnje pripreme"
             listItems={[
               { icon: ClockIcon, text: "36 školskih sati" },
-              { icon: CalendarIcon, text: "blok sat jednom tjedno" },
+              { icon: CalendarIcon, text: "blok-sat jednom tjedno" },
               { icon: FlagIcon, text: "od veljače 2026." },
             ]}
             price={345}
@@ -487,7 +479,7 @@ function App() {
           onClick={() => window.open(formsLink, "_blank")}
         >
           Prijavi se!
-          <ThickArrowRight className="icon" />
+          <ThickArrowRightIcon className="icon" />
         </button>
       </section>
       <section className="location" id="section-location">
@@ -522,7 +514,7 @@ function App() {
             </div>
             <p className="paragraph">
               Pripreme iz <b>Paketa 1</b> odvijaju se jednom tjedno od 17:30 do
-              19 h. Za učenike koji imaju nastavu u smjenama, pripreme će se
+              19 h. Za učenike koji imaju nastavu u smjenama pripreme će se
               prilagoditi njihovoj smjeni (ujutro i poslijepodne).
             </p>
             <p className="paragraph">
@@ -534,55 +526,69 @@ function App() {
         </div>
       </section>
       <footer className="footer">
-        <div className="logo-wrapper">
-          <LogoSmall className="logo" />
-          <h1 className="subtitle">
-            Pripreme za prijemne <br /> ispite iz matematike
-          </h1>
-        </div>
+        <LogoBig className="logo" />
 
-        <div className="contacts">
-          <h2 className="label">Kontakt</h2>
-          <div className="items-wrapper">
-            <div
-              className="item"
-              onClick={() => {
-                window.location.href = "tel:0989234897";
-              }}
-            >
-              <div className="icon-div">
-                <PhoneIcon className="icon" />
+        <div className="content-wrapper">
+          <div className="content-block">
+            <h2 className="label">Kontakt</h2>
+            <div className="items-wrapper">
+              <div
+                className="item"
+                onClick={() => {
+                  window.location.href = "tel:0989234897";
+                }}
+              >
+                <div className="icon-div">
+                  <PhoneIcon className="icon" />
+                </div>
+                <span className="text">098 923 4897</span>
               </div>
-              <span className="text">098 923 4897</span>
-            </div>
 
-            <div
-              className="item"
-              onClick={() => {
-                window.location.href = "mailto:matelierpripreme@gmail.com";
-              }}
-            >
-              <div className="icon-div">
-                <EmailIcon className="icon" />
+              <div
+                className="item"
+                onClick={() => {
+                  window.location.href = "mailto:matelierpripreme@gmail.com";
+                }}
+              >
+                <div className="icon-div">
+                  <EmailIcon className="icon" />
+                </div>
+                <span className="text">matelierpripreme@gmail.com</span>
               </div>
-              <span className="text">matelierpripreme@gmail.com</span>
-            </div>
 
-            <div
-              className="item"
-              onClick={() => {
-                window.open(
-                  "https://www.instagram.com/matelier_pripreme/",
-                  "_blank",
-                );
-              }}
-            >
-              <div className="icon-div">
-                <InstagramIcon className="icon" />
+              <div
+                className="item"
+                onClick={() => {
+                  window.open(
+                    "https://www.instagram.com/matelier_pripreme/",
+                    "_blank",
+                  );
+                }}
+              >
+                <div className="icon-div">
+                  <InstagramIcon className="icon" />
+                </div>
+                <span className="text">@matelier_pripreme</span>
               </div>
-              <span className="text">@matelier_pripreme</span>
             </div>
           </div>
+          <nav className="content-block">
+            <h2 className="label">Pročitaj opet</h2>
+            <div className="items-wrapper">
+              {sections.map((section, index) => (
+                <div
+                  className="item transparent"
+                  onClick={() => scrollToSection(section.id)}
+                  key={index}
+                >
+                  <div className="icon-div">
+                    <ArrowRightIcon className="icon" />
+                  </div>
+                  <span className="text">{section.label}</span>
+                </div>
+              ))}
+            </div>
+          </nav>
         </div>
       </footer>
     </>
