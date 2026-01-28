@@ -352,7 +352,7 @@ body {
       &:nth-of-type(2n) {
         bottom: -20px;
 
-        @media screen and (max-width: 1200px) {
+        @media screen and (max-width: 1500px) {
           bottom: 0;
         }
       }
@@ -374,8 +374,8 @@ body {
         right: 0;
       }
 
-      @media screen and (max-width: 1300px) {
-        scale: 0.8;
+      @media screen and (max-width: 1500px) {
+        scale: 0.9;
       }
 
       .dot {
