@@ -1,6 +1,12 @@
 import "./App.scss";
 import React, { useRef, useState, useEffect } from "react";
-import { formsLink, sections, teachers, type Teacher } from "./data";
+import {
+  formsLink,
+  phoneNumber,
+  sections,
+  teachers,
+  type Teacher,
+} from "./data";
 import { useIsOverflowing } from "./hooks/useIsOverflowing";
 
 import LogoSmall from "./assets/icons/logo-small.svg?react";
@@ -130,6 +136,23 @@ function App() {
   function closePopup() {
     setOpenPopupId(null);
   }
+
+  const handlePhoneClick = async () => {
+    const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(
+      navigator.userAgent,
+    );
+
+    if (isMobile) {
+      window.location.href = `tel:${phoneNumber}`;
+    } else {
+      try {
+        await navigator.clipboard.writeText(phoneNumber);
+        alert("Phone number copied 📋");
+      } catch {
+        alert("Failed to copy phone number");
+      }
+    }
+  };
 
   return (
     <>
@@ -534,14 +557,15 @@ function App() {
             <div className="items-wrapper">
               <div
                 className="item"
-                onClick={() => {
-                  window.location.href = "tel:0989234897";
-                }}
+                onClick={handlePhoneClick}
+                role="button"
+                tabIndex={0}
               >
                 <div className="icon-div">
                   <PhoneIcon className="icon" />
                 </div>
-                <span className="text">098 923 4897</span>
+
+                <span className="text">{phoneNumber}</span>
               </div>
 
               <div

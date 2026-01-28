@@ -49,4 +49,6 @@ export const sections: SectionData[] = [
   { id: "section-location", label: "Lokacija" },
 ];
 
+export const phoneNumber = "+385 98 923 4897";
+
 export { teachers, formsLink };
