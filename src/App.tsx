@@ -1,47 +1,49 @@
 import "./App.scss";
 import { useRef, useState, useEffect } from "react";
+import { formsLink, sections, teachers, type Teacher } from "./data";
+import { useIsOverflowing } from "./hooks/useIsOverflowing";
+
 import LogoSmall from "./assets/icons/logo-small.svg?react";
-import PhoneIcon from "./assets/icons/phone.svg?react";
+import LogoBig from "./assets/icons/logo-big.svg?react";
+
+import CalendarIcon from "./assets/icons/calendar.svg?react";
+import ClockIcon from "./assets/icons/clock.svg?react";
 import EmailIcon from "./assets/icons/email.svg?react";
+import FlagIcon from "./assets/icons/flag.svg?react";
+import HamburgerMenuIcon from "./assets/icons/hamburger.svg?react";
 import InstagramIcon from "./assets/icons/instagram.svg?react";
+import LocationPinIcon from "./assets/icons/location-pin.svg?react";
+import MindIcon from "./assets/icons/mind.svg?react";
+import NumbersIcon from "./assets/icons/numbers.svg?react";
+import PhoneIcon from "./assets/icons/phone.svg?react";
 import PersonIcon from "./assets/icons/person.svg?react";
 import RedoIcon from "./assets/icons/redo.svg?react";
-import MindIcon from "./assets/icons/mind.svg?react";
+import ShieldIcon from "./assets/icons/shield.svg?react";
 import SupportIcon from "./assets/icons/support.svg?react";
 import TextIcon from "./assets/icons/text.svg?react";
-import MathTrace from "./assets/tracings/math.svg?react";
+import ThickArrowRightIcon from "./assets/icons/thick-arrow-right.svg?react";
 import ThumbsUpIcon from "./assets/icons/thumbs-up.svg?react";
-import ShieldIcon from "./assets/icons/shield.svg?react";
-import NumbersIcon from "./assets/icons/numbers.svg?react";
 import WarningIcon from "./assets/icons/warning.svg?react";
-import LogoBig from "./assets/icons/logo-big.svg?react";
-import HamburgerMenuIcon from "./assets/icons/hamburger.svg?react";
 
-import Card from "./components/Card";
-import StickyNote from "./components/StickyNote";
-import ThickArrowRight from "./assets/icons/thick-arrow-right.svg?react";
-
-import ClockIcon from "./assets/icons/clock.svg?react";
-import CalendarIcon from "./assets/icons/calendar.svg?react";
-import FlagIcon from "./assets/icons/flag.svg?react";
-
+import Arrow1Tracing from "./assets/tracings/arrow-1.svg?react";
+import Arrow2Tracing from "./assets/tracings/arrow-2.svg?react";
+import BookAndGlassesTracing from "./assets/tracings/book-and-glasses.svg?react";
+import BulbAndNotesTracing from "./assets/tracings/bulb-and-notes.svg?react";
+import BulbAndNotes2Tracing from "./assets/tracings/bulb-and-notes-2.svg?react";
+import CosineTracing from "./assets/tracings/cosine.svg?react";
 import Dot1Tracing from "./assets/tracings/dot-1.svg?react";
 import Dot2Tracing from "./assets/tracings/dot-2.svg?react";
 import Dot3Tracing from "./assets/tracings/dot-3.svg?react";
 import Dot4Tracing from "./assets/tracings/dot-4.svg?react";
-import CosineTracing from "./assets/tracings/cosine.svg?react";
-import PencilTracing from "./assets/tracings/pencil.svg?react";
-
-import LocationPinIcon from "./assets/icons/location-pin.svg?react";
-
 import GeographyTracing from "./assets/tracings/geography.svg?react";
-import { formsLink, sections, teachers, type Teacher } from "./data";
+import MathTracing from "./assets/tracings/math.svg?react";
+import PencilTracing from "./assets/tracings/pencil.svg?react";
+import TargetTracing from "./assets/tracings/target.svg?react";
 
-import BookAndGlassesTracing from "./assets/tracings/book-and-glasses.svg?react";
-import BulbAndNotesTracing from "./assets/tracings/bulb-and-notes.svg?react";
-import BulbAndNotes2Tracing from "./assets/tracings/bulb-and-notes-2.svg?react";
+import Card from "./components/Card";
+import MobileMenu from "./components/MobileMenu";
 import Popup from "./components/Popup";
-import { useIsOverflowing } from "./hooks/useIsOverflowing";
+import StickyNote from "./components/StickyNote";
 
 function TeacherPopupContent({ teacher }: { teacher: Teacher }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -65,11 +67,6 @@ function TeacherPopupContent({ teacher }: { teacher: Teacher }) {
     </div>
   );
 }
-
-import TargetTracing from "./assets/tracings/target.svg?react";
-import Arrow1Tracing from "./assets/tracings/arrow-1.svg?react";
-import Arrow2Tracing from "./assets/tracings/arrow-2.svg?react";
-import MobileMenu from "./components/MobileMenu";
 
 function App() {
   const heroRef = useRef<HTMLElement>(null);
@@ -182,7 +179,7 @@ function App() {
         />
       </section>
       <section className="why" id="section-why">
-        <MathTrace className="traces" />
+        <MathTracing className="traces" />
 
         <div className="content">
           <h1 className="title">
@@ -476,7 +473,7 @@ function App() {
           onClick={() => window.open(formsLink, "_blank")}
         >
           Prijavi se!
-          <ThickArrowRight className="icon" />
+          <ThickArrowRightIcon className="icon" />
         </button>
       </section>
       <section className="location" id="section-location">
