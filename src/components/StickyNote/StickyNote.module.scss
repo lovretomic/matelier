@@ -1,3 +1,5 @@
+@use "sass:color";
+
 .wrapper {
   display: flex;
   width: 350px;
@@ -109,7 +111,7 @@
       transition: 100ms ease-in-out;
 
       &:hover {
-        background-color: darken($aquamarine, 4%);
+        background-color: color.adjust($aquamarine, $lightness: -4%);
       }
 
       &:active {

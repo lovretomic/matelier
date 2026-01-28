@@ -1,3 +1,5 @@
+@use "sass:color";
+
 $mobile-margin-breakpoint: 600px;
 
 html {
@@ -761,7 +763,7 @@ body {
         cursor: pointer;
         transition: 100ms ease-in-out;
         &:hover {
-          background-color: darken($aquamarine, 5%);
+          background-color: color.adjust($aquamarine, $lightness: -5%);
         }
       }
     }
