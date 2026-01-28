@@ -191,7 +191,7 @@ function App() {
           )}
           color="pink"
           title="Pripreme za prijemne ispite iz matematike"
-          text="Prelazak iz osnovne u srednju školu važna je prekretnica. Uz dobru pripremu, samopouzdanje i pravilno usmjerenje, svaki učenik može pokazati svoje znanje i postići odličan rezultat. Naš cilj je pomoći im da matematiku razumiju, zavole i – savladaju."
+          text="Prelazak iz osnovne u srednju školu važna je prekretnica. Uz dobru pripremu, samopouzdanje i pravilno usmjerenje, svaki učenik može pokazati svoje znanje i postići odličan rezultat. Naš je cilj pomoći im da matematiku razumiju, zavole i – svladaju."
         />
       </section>
       <section className="why" id="section-why">
@@ -208,23 +208,27 @@ function App() {
             color="yellow"
           />
           <Card
-            text="sustavno i temeljito ponavljanje gradiva"
+            text="gradivo sustavno i temeljito ponavljamo"
             icon={RedoIcon}
             color="pastel-blue"
           />
           <Card
-            text="rad u manjim grupama (od 5 do 12 učenika)"
+            text="radimo u manjim grupama (od 5 do 12 učenika)"
             icon={PersonIcon}
             color="pink"
           />
-          <Card text="fokus na razumijevanje" icon={MindIcon} color="yellow" />
           <Card
-            text="podrška, motivacija i individualni pristup"
+            text="fokus usmjeravamo na razumijevanje"
+            icon={MindIcon}
+            color="yellow"
+          />
+          <Card
+            text="pružamo podršku, motivaciju i individualni pristup"
             icon={SupportIcon}
             color="pink"
           />
           <Card
-            text="redovito praćenje stečenog znanja i povratne informacije roditeljima"
+            text="redovito pratimo stečeno znanje, a roditeljima dajemo povratne informacije"
             icon={TextIcon}
             color="pastel-blue"
           />
@@ -236,7 +240,7 @@ function App() {
           <h2 className="title">Način rada</h2>
           <p className="description">
             Program koji obrađujemo pokriva sve ključne sadržaje iz
-            osnovnoškolskog kurikuluma potrebne za uspješno polaganje prijemnog
+            osnovnoškolskog kurikula potrebne za uspješno polaganje prijemnog
             ispita iz matematike. Učenike učimo:
           </p>
         </div>
@@ -246,7 +250,7 @@ function App() {
           <div className="card-wrapper">
             <Dot1Tracing className="dot" />
             <Card
-              text="Kako organizirati rješenje korak-po-korak"
+              text="Kako organizirati rješenje korak po korak"
               icon={ThumbsUpIcon}
               color="yellow"
               variant="medium"
@@ -307,7 +311,7 @@ function App() {
           <BulbAndNotes2Tracing className="tracing-3" />
           <h2 className="title">Tko vodi pripreme?</h2>
           <p className="description">
-            Pripreme vode profesorice matematike iz prirodoslovno matematičke
+            Pripreme vode profesorice matematike iz prirodoslovno-matematičke
             gimnazije, s višegodišnjim iskustvom u nastavi te u radu s
             talentiranim učenicima i natjecateljima.
           </p>
@@ -368,7 +372,7 @@ function App() {
                 svakom učeniku.
               </li>
               <li>
-                Kroz <b>redovit, kontinuiran i praćen rad</b> razvijamo
+                <b>Redovitim, kontinuiranim i praćenim radom</b> razvijamo
                 sigurnost i razumijevanje, a ne samo "brzo ponavljanje".
               </li>
               <li>
@@ -390,7 +394,7 @@ function App() {
             <h4>Brze pripreme</h4>
             <p>
               Za sve učenike koji žele{" "}
-              <b>učvrstiti znanje i postići vrhunski rezultat</b>, organiziramo{" "}
+              <b>učvrstiti znanje i postići vrhunski rezultat</b> organiziramo{" "}
               <b>
                 intenzivne, brze pripreme u lipnju, nakon završetka nastavne
                 godine.
@@ -409,9 +413,8 @@ function App() {
                 <b>maksimalnu posvećenost svakom učeniku.</b>
               </li>
               <li>
-                Kroz <b>ciljano usmjerene vježbe i simulaciju ispita</b>,
-                učenici stječu sigurnost i rutinu potrebnu za uspjeh na
-                prijemnom.
+                <b>Ciljano usmjerenim vježbama i simulacijom ispita</b> učenici
+                stječu sigurnost i rutinu potrebnu za uspjeh na prijemnom.
               </li>
               <li>
                 Program je dinamičan i usmjeren na <b>rezultat</b> – savršen
@@ -420,7 +423,6 @@ function App() {
             </ul>
             <p>
               <b>
-                {" "}
                 Broj mjesta je ograničen – rezervirajte svoje mjesto na vrijeme!
               </b>
             </p>
@@ -431,11 +433,11 @@ function App() {
             <h3>Simulacija</h3>
             <h4>Prijemnog ispita</h4>
             <p>
-              Simulacije prijemnih ispita iz matematike su osmišljene kako bi
+              Simulacije prijemnih ispita iz matematike osmišljene su kako bi
               učenici iskusili <b>stvarne uvjete pisanja</b> prijemnog ispita.
             </p>
             <p>
-              Traju <b>60 minuta</b>, a koncept zadataka je sličan onome na{" "}
+              Traju <b>60 minuta</b>, a koncept zadataka sličan je onome na{" "}
               <b>pravom prijemnom ispitu</b>. Nakon pisanja, učenici dobivaju{" "}
               <b>povratnu informaciju</b> i <b>detaljnu analizu</b> ispita, uz
               objašnjenje rješenja i savjete za poboljšanje rezultata.
@@ -450,7 +452,7 @@ function App() {
             subtitle="Polugodišnje pripreme"
             listItems={[
               { icon: ClockIcon, text: "36 školskih sati" },
-              { icon: CalendarIcon, text: "blok sat jednom tjedno" },
+              { icon: CalendarIcon, text: "blok-sat jednom tjedno" },
               { icon: FlagIcon, text: "od veljače 2026." },
             ]}
             price={345}
@@ -522,7 +524,7 @@ function App() {
             </div>
             <p className="paragraph">
               Pripreme iz <b>Paketa 1</b> odvijaju se jednom tjedno od 17:30 do
-              19 h. Za učenike koji imaju nastavu u smjenama, pripreme će se
+              19 h. Za učenike koji imaju nastavu u smjenama pripreme će se
               prilagoditi njihovoj smjeni (ujutro i poslijepodne).
             </p>
             <p className="paragraph">
