@@ -1,6 +1,12 @@
 import "./App.scss";
 import React, { useRef, useState, useEffect } from "react";
-import { formsLink, sections, teachers, type Teacher } from "./data";
+import {
+  formsLink,
+  phoneNumber,
+  sections,
+  teachers,
+  type Teacher,
+} from "./data";
 import { useIsOverflowing } from "./hooks/useIsOverflowing";
 
 import LogoSmall from "./assets/icons/logo-small.svg?react";
@@ -45,6 +51,7 @@ import Card from "./components/Card";
 import MobileMenu from "./components/MobileMenu";
 import Popup from "./components/Popup";
 import StickyNote from "./components/StickyNote";
+import toast, { Toaster } from "react-hot-toast";
 
 function TeacherPopupContent({ teacher }: { teacher: Teacher }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -131,8 +138,26 @@ function App() {
     setOpenPopupId(null);
   }
 
+  const handlePhoneClick = async () => {
+    const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(
+      navigator.userAgent,
+    );
+
+    if (isMobile) {
+      window.location.href = `tel:${phoneNumber}`;
+    } else {
+      try {
+        await navigator.clipboard.writeText(phoneNumber);
+        toast.success("Broj mobitela kopiran u međuspremnik 📋");
+      } catch (error) {
+        console.error("Failed to copy phone number: ", error);
+      }
+    }
+  };
+
   return (
     <>
+      <Toaster />
       <MobileMenu
         isOpen={isMobileMenuOpen}
         sections={sections}
@@ -534,14 +559,15 @@ function App() {
             <div className="items-wrapper">
               <div
                 className="item"
-                onClick={() => {
-                  window.location.href = "tel:0989234897";
-                }}
+                onClick={handlePhoneClick}
+                role="button"
+                tabIndex={0}
               >
                 <div className="icon-div">
                   <PhoneIcon className="icon" />
                 </div>
-                <span className="text">098 923 4897</span>
+
+                <span className="text">{phoneNumber}</span>
               </div>
 
               <div
