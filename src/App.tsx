@@ -173,6 +173,7 @@ function App() {
             <a
               className="item"
               key={index}
+              href={`#${section.id}`}
               onClick={() => scrollToSection(section.id)}
             >
               {section.label}
