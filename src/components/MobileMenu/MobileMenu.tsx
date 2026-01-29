@@ -39,15 +39,20 @@ const MobileMenu: React.FC<MobileMenuType> = ({
     <div
       className={c.mobileMenu}
       style={{ transform: `translateX(${isOpen ? "0%" : "100%"})` }}
+      role="contentinfo"
     >
-      <button className={c.closeButton} onClick={onClose}>
+      <button
+        className={c.closeButton}
+        onClick={onClose}
+        aria-label="Zatvori izbornik"
+      >
         <CloseIcon />
       </button>
       <LogoBig
         className={c.logo}
         onClick={() => handleItemClick("section-hero")}
       />
-      <nav className={c.navigation}>
+      <nav className={c.navigation} role="navigation">
         {sections.map((section, index) => (
           <button
             className={c.item}
