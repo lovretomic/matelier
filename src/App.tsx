@@ -380,7 +380,7 @@ function App() {
               <p>
                 Upisujemo <b>polugodišnje pripreme iz matematike</b> koje
                 počinju
-                <b> u veljači 2026. godine</b> i traju <b>24 tjedna</b>.
+                <b> u veljači 2026. godine</b> i traju <b>18 tjedana</b>.
                 Pripreme su namijenjene učenicima koji žele{" "}
                 <b>
                   postići najbolji rezultat i samouvjereno pristupiti prijemnom
