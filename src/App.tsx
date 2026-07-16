@@ -198,7 +198,7 @@ function App() {
           <div className="landing">
             <LogoBig className="icon" />
             <h1 className="title">
-              Sigurnijim korakom <br /> u srednju školu
+              Sigurnijim korakom <br /> u srednju školu <br /> i na fakultet
             </h1>
           </div>
           <Card
@@ -211,6 +211,17 @@ function App() {
             color="pink"
             title="Pripreme za prijemne ispite iz matematike"
             text="Prelazak iz osnovne u srednju školu važna je prekretnica. Uz dobru pripremu, samopouzdanje i pravilno usmjerenje, svaki učenik može pokazati svoje znanje i postići odličan rezultat. Naš je cilj pomoći im da matematiku razumiju, zavole i – svladaju."
+          />
+          <Card
+            variant="large"
+            icon={(props) => (
+              <div style={{ transform: "translateX(1px) translateY(3px)" }}>
+                <FlagIcon {...props} />
+              </div>
+            )}
+            color="yellow"
+            title="Pripreme za državnu maturu iz matematike – A razina"
+            text="Uspjeh na državnoj maturi ne ovisi samo o znanju, već i o dobroj pripremi. Bez obzira ciljate li tehnički, prirodoslovni ili neki drugi fakultet, dobar rezultat na A razini državne mature iz matematike otvara vrata željenom fakultetu. Matematika na državnoj maturi traži više od pamćenja formula – traži razumijevanje, logičko razmišljanje i sigurnost u rješavanju zadataka."
           />
         </section>
         <section className="why" id="section-why">
@@ -258,10 +269,23 @@ function App() {
             <PencilTracing className="pencil" />
             <h2 className="title">Način rada</h2>
             <p className="description">
-              Program koji obrađujemo pokriva sve ključne sadržaje iz
-              osnovnoškolskog kurikula potrebne za uspješno polaganje prijemnog
-              ispita iz matematike. Učenike učimo:
+              Pripreme za prijemni ispit iz matematike obuhvaćaju sve ključne
+              sadržaje iz osnovoškolskog kurikula potrebne za uspješno polaganje
+              prijemnog ispita iz matematike za prirodoslovne gimnazije.
             </p>
+            <p className="description">
+              Pripreme za A razinu državne mature iz matematike obuhvaćaju sve
+              nastavne cjeline obuhvaćene aktualnim ispitnim katalogom za A
+              razinu mature.
+            </p>
+            <p className="description">
+              Sustavno prolazimo kroz gradivo rješavajući razne tipove zadataka
+              kao i one s prethodnih prijemnih ispita/državnih matura. Kroz
+              redovite kratke provjere znanja i domaće zadaće kontinuirano
+              pratimo rad i napredak učenika te ih učimo kako učinkovito
+              pristupiti ispitu – s manje stresa i više sigurnosti.
+            </p>
+            <p className="description">Učenike učimo:</p>
           </div>
           <div className="cards-wrapper">
             <CosineTracing className="cosine" />
@@ -317,8 +341,8 @@ function App() {
               <h1 className="title">Naš cilj</h1>
               <p className="text">
                 Cilj nam nije samo „proći gradivo“, nego usaditi razumijevanje i
-                sigurnost koja ostaje i nakon prijemnog ispita te čini prelazak
-                iz osnovne škole u srednju „bezbolnim“.
+                sigurnost koja ostaje i nakon naših priprema te otvara vrata
+                željenoj budućnosti.
               </p>
             </div>
           </div>
@@ -372,139 +396,167 @@ function App() {
         <section className="packages" id="section-packages">
           <Popup id="package-1" openId={openPopupId} onClose={closePopup}>
             <div className="package-popup">
-              <h3>Paket 1</h3>
-              <h4>Polugodišnje pripreme</h4>
+              <h3>PRIPREME ZA PRIJEMNE ISPITE U GIMNAZIJAMA</h3>
               <p>
-                Započnite pripreme za prijemne ispite na vrijeme i bez stresa!
+                Upisujemo polugodišnje pripreme iz matematike koje počinju u
+                siječnju 2027. godine i traju do sredine lipnja 2027. Pripreme
+                su namijenjene učenicima koji žele postići najbolji rezultat i
+                samouvjereno pristupiti prijemnom ispitu kroz polagano i
+                temeljito usvajanje gradiva.{" "}
               </p>
               <p>
-                Upisujemo <b>polugodišnje pripreme iz matematike</b> koje
-                počinju
-                <b> u veljači 2026. godine</b> i traju <b>18 tjedana</b>.
-                Pripreme su namijenjene učenicima koji žele{" "}
                 <b>
-                  postići najbolji rezultat i samouvjereno pristupiti prijemnom
-                  ispitu.
+                  Dosadašnje iskustvo pokazalo je da upravo ovakav oblik
+                  priprema zaslužan za 100% upis naših dosadašnjih polaznika u
+                  željenu gimnaziju!
                 </b>
               </p>
+              <p>Osim toga, naglašavamo da:</p>
               <ul>
                 <li>
-                  Rad u <b>malim grupama</b> omogućuje{" "}
-                  <b>individualni pristup</b> svakom učeniku.
+                  Radom u malim grupama (5-12 učenika) omogućujemo individualni
+                  pristup svakom učeniku
                 </li>
                 <li>
-                  <b>Redovitim, kontinuiranim i praćenim radom</b> razvijamo
-                  sigurnost i razumijevanje, a ne samo "brzo ponavljanje".
+                  Redovitim i praćenim radom kroz kratke provjere znanja
+                  kontinuirano pratimo napredak učenika i razvijamo sigurnost i
+                  razumijevanje gradiva
                 </li>
                 <li>
-                  Program uključuje i <b>simulaciju ispita</b> – priliku da
-                  učenici provjere svoje znanje u stvarnim uvjetima.
+                  Program uključuje i simulaciju prijemnog ispita - priliku da
+                  učenici provjere svoje znanje u stvarnim uvjetima (60 min
+                  pisanja ispita s dozvoljenim priborom) te analizu napisanog
                 </li>
               </ul>
               <p>
-                <b>
-                  Broj mjesta je ograničen – rezervirajte svoje mjesto na
-                  vrijeme!
-                </b>
+                Broj mjesta je ograničen – rezervirajte svoje mjesto i započnite
+                pripreme na vrijeme i bez stresa!
               </p>
             </div>
           </Popup>
-
           <Popup id="package-2" openId={openPopupId} onClose={closePopup}>
             <div className="package-popup">
-              <h3>Paket 2</h3>
-              <h4>Brze pripreme</h4>
+              <h3>PRIPREME ZA DRŽAVNU MATURU - A RAZINA</h3>
               <p>
-                Za sve učenike koji žele{" "}
-                <b>učvrstiti znanje i postići vrhunski rezultat</b> organiziramo{" "}
+                Upisujemo duge pripreme iz matematike koje počinju 12. listopada
+                2027. godine i traju sve do kraja lipnja kada je očekivani
+                ispita državne mature iz matematike. Pripreme su namijenjene
+                maturantima koji žele postići najbolji rezultat i samouvjereno
+                pristupiti prijemnom ispitu kroz polagano i temeljito
+                ponavljanje gradiva.{" "}
                 <b>
-                  intenzivne, brze pripreme u lipnju, nakon završetka nastavne
-                  godine.
+                  Dosadašnje iskustvo pokazalo je da upravo ovakav oblik
+                  priprema zaslužan za 100% prolaznost naših maturanata na A
+                  razini i to sa visokim prosjekom ocjena!
                 </b>
               </p>
+              <p>Osim toga, naglašavamo da:</p>
               <ul>
                 <li>
-                  Idealan izbor za učenike koji žele{" "}
-                  <b>
-                    ponoviti gradivo, razjasniti nejasnoće i utvrditi sigurnost
-                    u rješavanju zadataka.
-                  </b>
+                  Radom u malim grupama (5-12 učenika) omogućujemo individualni
+                  pristup svakom učeniku
                 </li>
                 <li>
-                  Rad u <b>malim grupama</b> omogućuje{" "}
-                  <b>maksimalnu posvećenost svakom učeniku.</b>
+                  Redovitim i praćenim radom kroz kratke provjere znanja
+                  kontinuirano pratimo napredak učenika i razvijamo sigurnost te
+                  razumijevanje gradiva
                 </li>
                 <li>
-                  <b>Ciljano usmjerenim vježbama i simulacijom ispita</b>{" "}
-                  učenici stječu sigurnost i rutinu potrebnu za uspjeh na
-                  prijemnom.
-                </li>
-                <li>
-                  Program je dinamičan i usmjeren na <b>rezultat</b> – savršen
-                  završni korak prije ispita!
+                  Program uključuje i simulaciju ispita državne mature – priliku
+                  da učenici provjere svoje znanje u stvarnim uvjetima (180 min
+                  pisanja ispita sa dozvoljenim priborom) te analizu napisanog
                 </li>
               </ul>
               <p>
-                <b>
-                  Broj mjesta je ograničen – rezervirajte svoje mjesto na
-                  vrijeme!
-                </b>
+                Broj mjesta je ograničen – rezervirajte svoje mjesto i započnite
+                pripreme na vrijeme i bez stresa!
               </p>
             </div>
           </Popup>
           <Popup id="package-3" openId={openPopupId} onClose={closePopup}>
             <div className="package-popup">
-              <h3>Simulacija</h3>
-              <h4>Prijemnog ispita</h4>
+              <h3>Simulacija ispita</h3>
               <p>
-                Simulacije prijemnih ispita iz matematike osmišljene su kako bi
-                učenici iskusili <b>stvarne uvjete pisanja</b> prijemnog ispita.
+                Simulacije prijemnih ispita/državne mature iz matematike
+                osmišljene su kako bi učenici iskusili stvarne uvjete pisanja
+                ispita. Koncept zadataka sličan je po težini onome na pravom
+                ispitu. Nakon pisanja, učenici dobivaju povratnu informaciju o
+                svom rezultatu te detaljnu analizu ispita, uz objašnjena
+                rješenja i savjete za eventualno poboljšanje rezultata.
               </p>
               <p>
-                Traju <b>60 minuta</b>, a koncept zadataka sličan je onome na{" "}
-                <b>pravom prijemnom ispitu</b>. Nakon pisanja, učenici dobivaju{" "}
-                <b>povratnu informaciju</b> i <b>detaljnu analizu</b> ispita, uz
-                objašnjenje rješenja i savjete za poboljšanje rezultata.
+                <b>Prijemni ispit iz matematike</b> za prirodoslovno-matematičke
+                gimnazije piše se 60 minuta te je dozvoljeno korištenje samo
+                kemijske olovke i jednog ravnala ili trokuta. Ispit se sastoji
+                od 22 zadatka od kojih je 13 zadataka višestrukog izbora, a 9
+                zadataka kratkog odgovora. Na ispitu je moguće maksimalno
+                ostvariti 10 bodova (4 zadatka po 0.25 bodova i 18 zadataka po
+                0.5 bodova). Postupak se nigdje ne boduje te je iznimno važno
+                biti točan i siguran u svoje rješenje.
+              </p>
+              <p>
+                <b>Ispit državne mature iz matematike na A razini</b> piše se
+                180 minuta te je dozvoljeno korištenje kemijske olovke, jednog
+                ravnala ili trokuta, znanstvenog kalkulatora te službeno
+                objavljenih formula. Sastoji se od tri dijela: zadatci
+                višestrukog izbora, zadatci kratkog odgovora te zadatci
+                produženog odgovora. Na ispitu je moguće maksimalno ostvariti 60
+                bodova. Zadnja skupina zadataka, popularno zvana „zadatci s
+                postupkom“ često predstavlja najveći problem učenicima iz više
+                razloga. Vrednovanje postupka rješavanja, umor koji se do tog
+                trenutka već osjeti, težina „zadnjeg“ zadatka koji često
+                iziskuje modeliranje i spajanje znanja iz više nastavnih
+                sadržaja... Sve su to izazovi s kojima se na pripremama vješto
+                suočavamo i učimo kako ih premostiti, a pritom biti precizni u
+                onim početnim zadatcima koji iziskuju isključivo točno rješenje.
               </p>
             </div>
           </Popup>
 
-          <h2 className="title">Paketi</h2>
+          <h2 className="title">Programi</h2>
           <div className="sticky-notes-wrapper">
             <StickyNote
-              title="Paket 1"
-              subtitle="Polugodišnje pripreme"
+              title="PRIPREME ZA PRIJEMNE ISPITE U GIMNAZIJAMA"
               listItems={[
-                { icon: ClockIcon, text: "36 školskih sati" },
-                { icon: CalendarIcon, text: "blok-sat jednom tjedno" },
-                { icon: FlagIcon, text: "od veljače 2026." },
+                { icon: ClockIcon, text: "40 školskih sati" },
+                {
+                  icon: CalendarIcon,
+                  text: "blok sat jednom tjedno radnim danom",
+                },
+                { icon: FlagIcon, text: "od siječnja 2027." },
               ]}
-              price={345}
+              price={360}
               action={() => openPopup("package-1")}
             />
 
             <StickyNote
-              title="Paket 2"
-              subtitle="Brze pripreme"
+              title="PRIPREME ZA DRŽAVNU MATURU - A RAZINA"
               listItems={[
-                { icon: ClockIcon, text: "30 školskih sati" },
-                { icon: CalendarIcon, text: "svakodnevno po tri školska sata" },
-                { icon: FlagIcon, text: "nakon završetka nastavne godine" },
+                { icon: ClockIcon, text: "70 školskih sati" },
+                {
+                  icon: CalendarIcon,
+                  text: "blok sat jednom tjedno radnim danom",
+                },
+                { icon: FlagIcon, text: "od 12. listopada 2026." },
               ]}
-              price={285}
+              price={580}
               action={() => openPopup("package-2")}
             />
 
             <StickyNote
-              title="Simulacija"
-              subtitle="prijemnog ispita"
+              title="SIMULACIJA ISPITA"
               listItems={[
                 {
                   icon: FlagIcon,
-                  text: "uključuje povratnu informaciju i individualne konzultacije",
+                  text: "prijemni ispit za gimnazije (4 školska sata – 20€)",
                 },
+                {
+                  icon: FlagIcon,
+                  text: "ispit A razine državne mature (6 školskih sati – 30€)",
+                },
+                { icon: CalendarIcon, text: "od lipnja 2027." },
               ]}
-              price={15}
+              price={"20-30"}
               action={() => openPopup("package-3")}
             />
           </div>
@@ -551,13 +603,12 @@ function App() {
                 </span>
               </div>
               <p className="paragraph">
-                Pripreme iz <b>Paketa 1</b> odvijaju se jednom tjedno od 17:30
-                do 19 h. Za učenike koji imaju nastavu u smjenama pripreme će se
-                prilagoditi njihovoj smjeni (ujutro i poslijepodne).
+                Pripreme se drže jednom tjedno, radnim danom, po dva školska
+                sata, ujutro ili popodne. Grupe se slažu prema turnusima u školi
+                koje imaju učenici.
               </p>
               <p className="paragraph">
-                Pripreme iz <b>Paketa 2</b> odvijat će se svakodnevno od 12.
-                lipnja 2026., tj. nakon završetka nastave.
+                Točni termini bit će objavljeni uskoro.
               </p>
             </div>
             <GeographyTracing className="tracing" />
