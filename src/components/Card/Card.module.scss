@@ -68,7 +68,7 @@ $mobile-margin-breakpoint: 600px;
   }
   .title {
     @media (max-width: $mobile-margin-breakpoint) {
-      font-size: 28px;
+      font-size: 24px;
       text-align: left;
       justify-content: flex-start;
     }
@@ -83,7 +83,7 @@ $mobile-margin-breakpoint: 600px;
 
 .title {
   font-weight: 700;
-  font-size: 34px;
+  font-size: 30px;
 }
 
 .text {

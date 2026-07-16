@@ -10,7 +10,7 @@ type StickyNoteProps = {
   title: string;
   subtitle?: string;
   listItems?: IconListItem[];
-  price: number;
+  price: number | string;
   action?: () => void;
 };
 
